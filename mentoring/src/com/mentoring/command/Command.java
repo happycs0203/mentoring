@@ -6,7 +6,3 @@ public interface Command {
 	public String execute( HttpServletRequest request ) throws CommandException;
 }
 
-
-//hihi
-//hello
-//hi ilju

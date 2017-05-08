@@ -24,5 +24,4 @@ public class MentoringService {
 	public Image insertImage(Image img){
 		return repo.insertImage(img);
 	}
-	
 }
