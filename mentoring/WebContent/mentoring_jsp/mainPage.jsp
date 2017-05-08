@@ -8,7 +8,7 @@
    <meta name="description" content="">
    <meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
    
-   <title>Metoring Site</title>
+   <title>멘토링 사이트</title>
 
    <link rel="shortcut icon" href="assets/images/gt_favicon.png">
    
