@@ -1,5 +1,91 @@
 package com.mentoring.model;
 
 public class Project {
-
+	int pNum;
+	String uId;
+	String pDiv;
+	String pTitle;
+	String pPlace;
+	int pCost;
+	int pMinmem;
+	int pMaxmem;
+	String pContent;
+	String pTime;
+	String pEnroll;
+	String pConfirm;
+	
+	public int getpNum() {
+		return pNum;
+	}
+	public void setpNum(int pNum) {
+		this.pNum = pNum;
+	}
+	public String getuId() {
+		return uId;
+	}
+	public void setuId(String uId) {
+		this.uId = uId;
+	}
+	public String getpDiv() {
+		return pDiv;
+	}
+	public void setpDiv(String pDiv) {
+		this.pDiv = pDiv;
+	}
+	public String getpTitle() {
+		return pTitle;
+	}
+	public void setpTitle(String pTitle) {
+		this.pTitle = pTitle;
+	}
+	public String getpPlace() {
+		return pPlace;
+	}
+	public void setpPlace(String pPlace) {
+		this.pPlace = pPlace;
+	}
+	public int getpCost() {
+		return pCost;
+	}
+	public void setpCost(int pCost) {
+		this.pCost = pCost;
+	}
+	public int getpMinmem() {
+		return pMinmem;
+	}
+	public void setpMinmem(int pMinmem) {
+		this.pMinmem = pMinmem;
+	}
+	public int getpMaxmem() {
+		return pMaxmem;
+	}
+	public void setpMaxmem(int pMaxmem) {
+		this.pMaxmem = pMaxmem;
+	}
+	public String getpContent() {
+		return pContent;
+	}
+	public void setpContent(String pContent) {
+		this.pContent = pContent;
+	}
+	public String getpTime() {
+		return pTime;
+	}
+	public void setpTime(String pTime) {
+		this.pTime = pTime;
+	}
+	public String getpEnroll() {
+		return pEnroll;
+	}
+	public void setpEnroll(String pEnroll) {
+		this.pEnroll = pEnroll;
+	}
+	public String getpConfirm() {
+		return pConfirm;
+	}
+	public void setpConfirm(String pConfirm) {
+		this.pConfirm = pConfirm;
+	}
+	
+	
 }
