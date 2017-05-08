@@ -1,5 +1,19 @@
+<%@page import="com.mentoring.model.Project"%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%
+	// 1. 해당 게시물의 게시글번호값을 얻어온다
+	// 2. Service에 getArticleById() 호출하여 그 게시글번호를 갖는 레코드를 검색한다.
+	//String pNum = request.getParameter("pNum");
+		String pNum = "1";
+	
+	//Project modelProject;
+%> 
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
@@ -57,6 +71,13 @@
 <body>
 
 <header id="header">
+
+	<div class="login-join">
+            <ul class="login-join form">
+               <li><a href="index.html">로그인</a></li>
+               <li class="active"><a href="about.html">회원가입</a></li>
+            </ul>
+    </div>
 	<div id="head" class="parallax" parallax-speed="1">
 		<h1 id="logo" class="text-center">
 			<span class="title">Minju's College</span>
