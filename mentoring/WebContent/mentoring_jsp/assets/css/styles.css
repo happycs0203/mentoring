@@ -14,6 +14,8 @@ body {
 .topspace {
   margin-top: 40px;
 }
+
+
 /*********************************************************************
 
 
@@ -21,6 +23,15 @@ body {
 
 
 **********************************************************************/
+
+.login-join .form > li{
+   float: right;
+   display: inline-block;
+}
+
+.login-join .form > li > a{
+   padding: 8px 8px;
+}
 
 .small-title{
 	font-weight:bold;
@@ -216,7 +227,7 @@ h5 {
   font-size: 1.25rem;
 }
 a {
-  color: #bd1550;
+  color: black;
 }
 a:hover {
   color: #e93675;
