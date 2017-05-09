@@ -36,7 +36,7 @@ public class MentoringControl extends HttpServlet {
 		//nullÀº db¾È°¬´Ù¿È
 		commandMap.put("main-page",	new CommandNull("main.jsp") );
 		commandMap.put("input-form", new CommandNull("insertMessage.jsp") );
-		commandMap.put("insert-do", new CommandInput("saveMessage.jsp") );
+
 		
 	}
 
