@@ -12,7 +12,13 @@
 <meta name="author" content="freehtml5.co" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>register.jsp</title>
-
+<script type="text/javascript">
+	function checkFields(){
+		var frmObj =document.frm;
+		frmObj.action= "xxx.mento?cmd=register-form";
+		frmObj.submit();
+	}
+</script>
 <link rel="stylesheet" href="/mentoring/mentoring_jsp/assets/css/register.css">
 
 <link rel="shortcut icon"
@@ -59,7 +65,7 @@
 	</header>
 
 	
-	
+	<form name="frm" method="post">
 	<div id="page">
 		<nav class="fh5co-nav" role="navigation">
 		
@@ -158,7 +164,7 @@ type="text" id="MentoringId" class="name_info" value
 								autocomplete="off" maxlength="30">
 						</dt>
 					</dl>
-					<button id="btn_yes" class="btn btn-primary btn-lg">회원가입</button>
+					<button id="btn_yes" class="btn btn-primary btn-lg" onclick="Javascript:checkFields()">회원가입</button>
 				</div>
 			</div>
 		</div>
