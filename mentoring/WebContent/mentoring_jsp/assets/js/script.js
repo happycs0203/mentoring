@@ -4,7 +4,7 @@ $(function(){
 	// 팝업 창 띄우기
 	new jBox('Modal', {	
 	    attach: '#login',
-	    title: 'LOGIN',
+	    title: '로그인',
 	    ajax: {
 	    	url:'login.html',
 	    	data:'',
