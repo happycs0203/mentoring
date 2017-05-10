@@ -65,7 +65,7 @@
                     <div class="carousel-inner" role="listbox">
                         <!-- Begin Slide 1 -->
                         <div class="item active">
-                            <img src="assets/images/slider1.png" height="400" alt="first">
+                            <img src="/mentoring/mentoring_jsp/assets/images/slider1.png" height="400" alt="first">
                             <div class="carousel-caption">
                                 <h3 class="carousel-title hidden-xs">Office BOOTSTRAP TEMPLATE</h3>
                                 <p class="carousel-body">RESPONSIVE \ MULTI PAGE</p>
@@ -75,7 +75,7 @@
 
                         <!-- Begin Slide 2 -->
                         <div class="item">
-                            <img src="assets/images/slider2.png" height="400" alt="second">
+                            <img src="/mentoring/mentoring_jsp/assets/images/slider2.png" height="400" alt="second">
                             <div class="carousel-caption">
                                 <h3 class="carousel-title hidden-xs">EASY TO CUSTOMIZE</h3>
                                 <p class="carousel-body">BEAUTIFUL \ CLEAN \ MINIMAL</p>
@@ -85,7 +85,7 @@
 
                         <!-- Begin Slide 3 -->
                         <div class="item">
-                            <img src="assets/images/slider3.png" height="400" alt="third">
+                            <img src="/mentoring/mentoring_jsp/assets/images/slider3.png" height="400" alt="third">
                             <div class="carousel-caption">
                                 <h3 class="carousel-title hidden-xs">MULTI-PURPOSE TEMPLATE</h3>
                                 <p class="carousel-body">PORTFOLIO \ CORPORATE \ CREATIVE</p>
@@ -169,6 +169,6 @@
 <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="assets/js/template.js"></script>
+<script src="/mentoring/mentoring_jsp/assets/js/template.js"></script>
 </body>
 </html> 

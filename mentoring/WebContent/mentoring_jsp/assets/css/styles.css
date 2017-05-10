@@ -6,7 +6,6 @@ html {
 }
 body {
   font-size: 15px;
-  font-size: 0.9375rem;
   font-family: "Open sans", Helvetica, Arial, sans-serif;
   color: #666666;
   padding: 0;
@@ -383,14 +382,14 @@ img {
 }
 .btn-primary {
   color: #fff;
-  background-color: #bd1550;
+  background-color: #505050;
 }
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary.active {
   color: #fff;
-  background-color: #e61f65;
+  background-color: #505050;
 }
 .btn-action {
   font-weight: bold;

@@ -6,7 +6,7 @@ $(function(){
 	    attach: '#login',
 	    title: "Minju's College",
 	    ajax: {
-	    	url:'login.html',
+	    	url:'loginForm.jsp',
 	    	data:'',
 	    	reload: false
 	    }
