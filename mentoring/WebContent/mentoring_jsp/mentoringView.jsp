@@ -70,41 +70,9 @@
 </head>
 <body>
 
-<header id="header">
-
-	<div class="login-join">
-            <ul class="login-join form">
-               <li><a href="index.html">로그인</a></li>
-               <li class="active"><a href="about.html">회원가입</a></li>
-            </ul>
-    </div>
-	<div id="head" class="parallax" parallax-speed="1">
-		<h1 id="logo" class="text-center">
-			<span class="title">Minju's College</span>
-			<span class="tagline">시간과 공간을 초월한 학교<br>
-		</h1>
-	</div>
-
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-			</div>
-			
-			<div class="navbar-collapse collapse">
-				
-				<ul class="nav navbar-nav">
-					<li><a href="#">공지사항</a></li>
-					<li><a href="#">멘토링</li>
-					<li><a href="#">스터디</a></li>
-					<li><a href="#">캘린더</a></li>
-				</ul>
-			
-			</div><!--/.nav-collapse -->			
-		</div>	
-	</nav>
-</header>
+	<header id="header">
+		<jsp:include page="mentoringHeader.jsp"/>
+	</header>
 
 <main id="main">
 
