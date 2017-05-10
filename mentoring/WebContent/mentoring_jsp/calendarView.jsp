@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>캘린더</title>
+<title>일정</title>
 <link rel="shortcut icon" href="assets/images/gt_favicon.png">
    
    <link href="//code.jboxcdn.com/0.4.7/jBox.css" rel="stylesheet">
