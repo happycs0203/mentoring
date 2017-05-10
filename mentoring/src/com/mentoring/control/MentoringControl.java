@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.mentoring.command.Command;
 import com.mentoring.command.CommandException;
 import com.mentoring.command.CommandInput;
+import com.mentoring.command.CommandMentoringView;
 import com.mentoring.command.CommandNull;
 
 /**
@@ -24,7 +25,7 @@ public class MentoringControl extends HttpServlet {
 
 	private HashMap commandMap;
 	//��Ʈ ���ϱ�..!!
-	private String	jspDir = "/05_mvc_class/2_mvcGuest/";
+	private String	jspDir = "/mentoring_jsp/";
 	private String  error = "error.jsp";
 
     public MentoringControl() {
@@ -35,8 +36,9 @@ public class MentoringControl extends HttpServlet {
     private void initCommand(){
 		commandMap = new HashMap();
 		//null�� db�Ȱ��ٿ�
-		commandMap.put("main-page",	new CommandNull("main.jsp") );
-		commandMap.put("input-form", new CommandNull("insertMessage.jsp") );
+		commandMap.put("main-page",	new CommandNull("mainPage.jsp") );
+		commandMap.put("input-form", new CommandInput("mainPage.jsp") );
+		commandMap.put("mentoringView-page", new CommandMentoringView("mentoringView.jsp") );
 
 		
 	}
