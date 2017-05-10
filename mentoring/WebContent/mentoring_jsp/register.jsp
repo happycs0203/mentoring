@@ -65,7 +65,7 @@
 		
 		<div class="inner_wrap">
 			<div id="inner_title" class="inner_title">
-				<span class="it_wa"> 함께 배우고자 하는 사람들이 모여 서로의 가치를 공유하실 수 있습니다 <br/>
+				<span class="it_wa"> 함께 배우고자 하는 사람들이 모여 서로의 가치를 공유하실 수 있습니다. <br/>
 				간단한 절차에 맞게 기본정보를 입력해 주시면 회원가입이 바로 완료됩니다
 				</span>
 			</div>

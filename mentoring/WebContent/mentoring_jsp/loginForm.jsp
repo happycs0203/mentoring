@@ -22,7 +22,7 @@
        <div class="form-input">
        비밀번호 <input type="password" name="password">
        </div>
-       <input type="submit" name="submit" value="LOGIN" class="btn_login">
+       <input type="submit" name="submit" value="로그인" class="btn_login">
        
      </form>
    
