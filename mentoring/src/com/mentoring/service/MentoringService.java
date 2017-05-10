@@ -1,7 +1,10 @@
 package com.mentoring.service;
 
+import java.util.List;
+
 import com.mentoring.model.Image;
 import com.mentoring.model.Project;
+import com.mentoring.model.Prolist;
 import com.mentoring.model.User;
 import com.mentoring.session.MentoringRepository;
 
@@ -31,5 +34,9 @@ public class MentoringService {
 	
 	public User confirmLogin(User user){
 		return repo.confirmLogin(user);
+	}
+	
+	public List<Prolist> searchMentoring(){
+		return repo.searchMentoring();
 	}
 }

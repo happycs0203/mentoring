@@ -2,10 +2,10 @@ package com.mentoring.model;
 
 public class Image {
 	private int iNum;
-	private String fileName;
-	private String realPath;
-	private long fileSize;
-	
+	private int pNum;
+	private String iTitle;
+	private String iPath;
+	private long iSize;
 	
 	public int getiNum() {
 		return iNum;
@@ -13,23 +13,30 @@ public class Image {
 	public void setiNum(int iNum) {
 		this.iNum = iNum;
 	}
-	public String getFileName() {
-		return fileName;
+	public int getpNum() {
+		return pNum;
 	}
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
+	public void setpNum(int pNum) {
+		this.pNum = pNum;
 	}
-	public String getRealPath() {
-		return realPath;
+	public String getiTitle() {
+		return iTitle;
 	}
-	public void setRealPath(String realPath) {
-		this.realPath = realPath;
+	public void setiTitle(String iTitle) {
+		this.iTitle = iTitle;
 	}
-	public long getFileSize() {
-		return fileSize;
+	public String getiPath() {
+		return iPath;
 	}
-	public void setFileSize(long fileSize) {
-		this.fileSize = fileSize;
+	public void setiPath(String iPath) {
+		this.iPath = iPath;
 	}
-
+	public long getiSize() {
+		return iSize;
+	}
+	public void setiSize(long iSize) {
+		this.iSize = iSize;
+	}
+	
+	
 }

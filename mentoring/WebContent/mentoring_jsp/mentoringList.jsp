@@ -1,5 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ page import="com.mentoring.model.*" %>
+<%@ page import="java.util.*" %>
+<%
+	List<Prolist> pList = (List<Prolist>)request.getAttribute("pList");
+	System.out.println(pList.size());
+%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -8,28 +14,28 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="worthy_v.1.0/images/favicon.ico">
+		<link rel="shortcut icon" href="/mentoring/mentoring_jsp/worthy_v.1.0/images/favicon.ico">
 
 		<!-- Web Fonts -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
 
 		<!-- Bootstrap core CSS -->
-		<link href="worthy_v.1.0/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="/mentoring/mentoring_jsp/worthy_v.1.0/bootstrap/css/bootstrap.css" rel="stylesheet">
 
 		<!-- Font Awesome CSS -->
-		<link href="worthy_v.1.0/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+		<link href="/mentoring/mentoring_jsp/worthy_v.1.0/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
 
 		<!-- Plugins -->
-		<link href="worthy_v.1.0/css/animations.css" rel="stylesheet">
+		<link href="/mentoring/mentoring_jsp/worthy_v.1.0/css/animations.css" rel="stylesheet">
 
 		<!-- Worthy core CSS file -->
-		<link href="worthy_v.1.0/css/style.css" rel="stylesheet">
+		<link href="/mentoring/mentoring_jsp/worthy_v.1.0/css/style.css" rel="stylesheet">
 
 		<!-- Custom css --> 
-		<link href="worthy_v.1.0/css/custom.css" rel="stylesheet">
+		<link href="/mentoring/mentoring_jsp/worthy_v.1.0/css/custom.css" rel="stylesheet">
 		
-		   <link rel="shortcut icon" href="assets/images/gt_favicon.png">
+		   <link rel="shortcut icon" href="/mentoring/mentoring_jsp/assets/images/gt_favicon.png">
    
    <!-- Bootstrap -->
    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
@@ -38,7 +44,7 @@
    <!-- Fonts -->
    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
    <!-- Custom styles -->
-   <link rel="stylesheet" href="assets/css/styles.css">
+   <link rel="stylesheet" href="/mentoring/mentoring_jsp/assets/css/styles.css">
 
 
 </head>
@@ -767,31 +773,31 @@
 		<!-- JavaScript files placed at the end of the document so the pages load faster
 		================================================== -->
 		<!-- Jquery and Bootstap core js files -->
-		<script type="text/javascript" src="worthy_v.1.0/plugins/jquery.min.js"></script>
-		<script type="text/javascript" src="worthy_v.1.0/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/mentoring/mentoring_jsp/worthy_v.1.0/plugins/jquery.min.js"></script>
+		<script type="text/javascript" src="/mentoring/mentoring_jsp/worthy_v.1.0/bootstrap/js/bootstrap.min.js"></script>
 
 		<!-- Modernizr javascript -->
-		<script type="text/javascript" src="worthy_v.1.0/plugins/modernizr.js"></script>
+		<script type="text/javascript" src="/mentoring/mentoring_jsp/worthy_v.1.0/plugins/modernizr.js"></script>
 
 		<!-- Isotope javascript -->
-		<script type="text/javascript" src="worthy_v.1.0/plugins/isotope/isotope.pkgd.min.js"></script>
+		<script type="text/javascript" src="/mentoring/mentoring_jsp/worthy_v.1.0/plugins/isotope/isotope.pkgd.min.js"></script>
 		
 		<!-- Backstretch javascript -->
-		<script type="text/javascript" src="worthy_v.1.0/plugins/jquery.backstretch.min.js"></script>
+		<script type="text/javascript" src="/mentoring/mentoring_jsp/worthy_v.1.0/plugins/jquery.backstretch.min.js"></script>
 
 		<!-- Appear javascript -->
-		<script type="text/javascript" src="worthy_v.1.0/plugins/jquery.appear.js"></script>
+		<script type="text/javascript" src="/mentoring/mentoring_jsp/worthy_v.1.0/plugins/jquery.appear.js"></script>
 
 		<!-- Initialization of Plugins -->
-		<script type="text/javascript" src="worthy_v.1.0/js/template.js"></script>
+		<script type="text/javascript" src="/mentoring/mentoring_jsp/worthy_v.1.0/js/template.js"></script>
 
 		<!-- Custom Scripts -->
-		<script type="text/javascript" src="worthy_v.1.0/js/custom.js"></script>
+		<script type="text/javascript" src="/mentoring/mentoring_jsp/worthy_v.1.0/js/custom.js"></script>
 		
 		<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-		<script src="assets/js/template.js"></script>
+		<script src="/mentoring/mentoring_jsp/assets/js/template.js"></script>
 
 
 </body>

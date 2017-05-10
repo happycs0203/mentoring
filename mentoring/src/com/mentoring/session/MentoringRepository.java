@@ -2,6 +2,7 @@ package com.mentoring.session;
 
 
 import java.io.InputStream;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -10,6 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.mentoring.model.Image;
 import com.mentoring.model.Project;
+import com.mentoring.model.Prolist;
 import com.mentoring.model.User;
 
 public class MentoringRepository {
@@ -89,6 +91,15 @@ public class MentoringRepository {
 			sqlSess.close();
 		}
 	   	
+	}
+	
+	public List<Prolist> searchMentoring(){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			return sqlSess.selectList(namespace+".selectProjectList");
+		}finally{
+			sqlSess.close();
+		}
 	}
 	
 }

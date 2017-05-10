@@ -6,6 +6,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="MentoringMapper">
 
+<resultMap type="prolist" id="prolistMap">
+	<result column="i_num" 	property="iNum"/>
+	<result column="i_path"	property="iPath"/>
+	<result column="p_num"	property="pNum"/>
+	<result column="p_div"	property="pDiv"/>
+	<result column="p_title"	property="pTitle"/>
+</resultMap>
+
 <insert id="insertMentoring" parameterType="project">
 	INSERT INTO comment_tab
 	VALUES(#{commentNo}, #{userId}, #{commentContent}, sysdate)
@@ -27,6 +35,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <select id="confirmLogin" parameterType="User" resultType="User">
 	select u_id, u_pass from usermento 
     where u_id = #{uId} AND u_pass = #{uPass}  
+</select>
+
+<select id="selectProjectList" resultMap="prolistMap">
+	SELECT i.i_num i_num, i.i_path i_path, p.p_num p_num, p.p_title p_title, p.p_div p_div
+	FROM projectmento p inner join imagemento i
+	ON p.p_num = i.p_num
 </select>
 
 

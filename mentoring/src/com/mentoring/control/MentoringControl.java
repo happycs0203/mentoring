@@ -14,6 +14,7 @@ import com.mentoring.command.Command;
 import com.mentoring.command.CommandException;
 import com.mentoring.command.CommandInput;
 import com.mentoring.command.CommandLogin;
+import com.mentoring.command.CommandMentoringList;
 import com.mentoring.command.CommandMentoringView;
 import com.mentoring.command.CommandNull;
 
@@ -33,7 +34,7 @@ public class MentoringControl extends HttpServlet {
     	super();       
 		initCommand();
     }
-    
+    //
     private void initCommand(){
 		commandMap = new HashMap();
 		//null�� db�Ȱ��ٿ�
@@ -43,6 +44,8 @@ public class MentoringControl extends HttpServlet {
 		commandMap.put("mentoringView-page", new CommandMentoringView("mentoringView.jsp") );
 		commandMap.put("study-list", new CommandInput("studyList.jsp") );
 		commandMap.put("calendar-view",	new CommandNull("calendarView.jsp") );
+		commandMap.put("register-form", new CommandNull("register.jsp"));//회원가입 폼
+		commandMap.put("mentoring-list", new CommandMentoringList("mentoringList.jsp"));
 		commandMap.put("register-form", new CommandNull("registerSave.jsp"));//회원가입 폼
 	}
 

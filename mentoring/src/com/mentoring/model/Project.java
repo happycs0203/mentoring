@@ -1,18 +1,18 @@
 package com.mentoring.model;
 
 public class Project {
-	int pNum;
-	String uId;
-	String pDiv;
-	String pTitle;
-	String pPlace;
-	int pCost;
-	int pMinmem;
-	int pMaxmem;
-	String pContent;
-	String pTime;
-	String pEnroll;
-	String pConfirm;
+	private int pNum;
+	private String uId;
+	private String pDiv;
+	private String pTitle;
+	private String pPlace;
+	private int pCost;
+	private int pMinmem;
+	private int pMaxmem;
+	private String pContent;
+	private String pTime;
+	private String pEnroll;
+	private String pConfirm;
 	
 	public int getpNum() {
 		return pNum;
