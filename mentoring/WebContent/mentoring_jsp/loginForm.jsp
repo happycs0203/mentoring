@@ -13,7 +13,7 @@
  function Login(){
 	 var frmObj = document.frm;
 	 
-	 frmObj.action = "mento.mento?cmd=main-page";
+	 frmObj.action = "mento.mento?cmd=main-page2";
 	 frmObj.submit();
 	 
  }
@@ -23,11 +23,11 @@
 <div class="login">
      <form name='frm' id='frm' method='post'>
        <div class="form-input">
-                로 그 인 <input type="text" name="username">
+                로 그 인 <input type="text" name="uId">
        </div>
        
        <div class="form-input">
-       비밀번호 <input type="password" name="password">
+       비밀번호 <input type="password" name="uPass">
        </div>
        <input type="button" name="button" value="로그인" class="btn_login" onclick="Javascript:Login()">
        

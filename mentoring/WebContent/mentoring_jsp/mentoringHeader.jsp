@@ -1,9 +1,22 @@
 <%@ page language="java"  contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- 윗단 시작 -->
+<%
+
+	Object uIdObj = session.getAttribute("uId");
+	String uId = "";
+	if( uIdObj != null){
+		uId = (String) uIdObj;
+	}
+%>
 <div class="login-join">
             
             <ul class="login-join form">
+            <%if ( uId.equals("")){ %>
                <li class="active"><a href="#" id='login'>로그인</a></li>
+               <%} else{ %>
+               <li class="active"><a href="#" id='logout'>로그아웃</a></li>
+               <% }%>
+               
                <li class="active"><a href="#" >회원가입</a></li>
             </ul>
          

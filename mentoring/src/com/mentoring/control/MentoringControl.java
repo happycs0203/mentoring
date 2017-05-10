@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.mentoring.command.Command;
 import com.mentoring.command.CommandException;
 import com.mentoring.command.CommandInput;
+import com.mentoring.command.CommandLogin;
 import com.mentoring.command.CommandMentoringView;
 import com.mentoring.command.CommandNull;
 
@@ -37,6 +38,7 @@ public class MentoringControl extends HttpServlet {
 		commandMap = new HashMap();
 		//null�� db�Ȱ��ٿ�
 		commandMap.put("main-page",	new CommandNull("mainPage.jsp") );
+		commandMap.put("main-page2",new CommandLogin("mainPage.jsp") );
 		commandMap.put("input-form", new CommandInput("mainPage.jsp") );//나중에 마이페이지 화면으로 넘겨주기
 		commandMap.put("mentoringView-page", new CommandMentoringView("mentoringView.jsp") );
 		commandMap.put("study-list", new CommandInput("studyList.jsp") );

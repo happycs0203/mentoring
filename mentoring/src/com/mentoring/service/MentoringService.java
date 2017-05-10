@@ -28,4 +28,8 @@ public class MentoringService {
 	public Integer insertUser(User user){
 		return repo.insertUser(user);
 	}
+	
+	public User confirmLogin(User user){
+		return repo.confirmLogin(user);
+	}
 }

@@ -79,4 +79,16 @@ public class MentoringRepository {
 		}
 		return 0;
 	}
+	
+	public User confirmLogin(User user){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			String statement = namespace + ".confirmLogin";
+			return sqlSess.selectOne(statement, user);
+		}finally{
+			sqlSess.close();
+		}
+	   	
+	}
+	
 }

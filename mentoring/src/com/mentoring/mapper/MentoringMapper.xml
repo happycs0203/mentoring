@@ -17,7 +17,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	VALUES(seq_image_num.nextval, seq_project_num.currentval, #{fileName}, #{realPath}, #{fileSize})
 </insert>
 <!-- # : PreparedStateMent형식, $ : Statement형식 -->
-
+<select id="confirmLogin" parameterType="User" resultType="User">
+	select u_id, u_pass from usermento 
+    where u_id = #{uId} AND u_pass = #{uPass}  
+</select>
 
 
 </mapper>
