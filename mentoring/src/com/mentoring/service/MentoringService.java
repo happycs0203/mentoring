@@ -2,12 +2,13 @@ package com.mentoring.service;
 
 import com.mentoring.model.Image;
 import com.mentoring.model.Project;
+import com.mentoring.model.User;
 import com.mentoring.session.MentoringRepository;
 
 public class MentoringService {
 	private static MentoringService service;
 	
-	private MentoringService(){} //´Ù¸¥ Å¬·¡½º new ¸øÇÔ
+	private MentoringService(){} //ï¿½Ù¸ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ new ï¿½ï¿½ï¿½ï¿½
 	
 	public static MentoringService getInstance(){
 		if(service == null) service= new MentoringService();
@@ -23,5 +24,8 @@ public class MentoringService {
 	
 	public Image insertImage(Image img){
 		return repo.insertImage(img);
+	}
+	public Integer insertUser(User user){
+		return repo.insertUser(user);
 	}
 }
