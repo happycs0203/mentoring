@@ -40,7 +40,7 @@ public class MentoringControl extends HttpServlet {
 		commandMap.put("input-form", new CommandInput("mainPage.jsp") );
 		commandMap.put("mentoringView-page", new CommandMentoringView("mentoringView.jsp") );
 		commandMap.put("calendar-view",	new CommandNull("calendarView.jsp") );
-		
+		commandMap.put("register-form", new CommandNull("register.jsp"));//회원가입 폼
 	}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
