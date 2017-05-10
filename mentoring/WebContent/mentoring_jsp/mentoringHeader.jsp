@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java"  contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- 윗단 시작 -->
 <div class="login-join">
             
@@ -28,10 +28,10 @@
          <div class="navbar-collapse collapse">
             
             <ul class="nav navbar-nav">
-               <li><a href="index.html">공지사항</a></li>
+               <li><a href="metorin">공지사항</a></li>
                <li class="active"><a href="about.html">멘토링</a></li>
                <li><a href="blog.html">스터디</a></li>
-               <li><a href="calendarview.jsp">캘린더</a></li>
+               <li><a href="/mentoring/mentoring.mento?cmd=calendar-view">캘린더</a></li>
             </ul>
          
          </div><!--/.nav-collapse -->         

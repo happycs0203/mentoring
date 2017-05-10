@@ -39,7 +39,7 @@ public class MentoringControl extends HttpServlet {
 		commandMap.put("main-page",	new CommandNull("mainPage.jsp") );
 		commandMap.put("input-form", new CommandInput("mainPage.jsp") );
 		commandMap.put("mentoringView-page", new CommandMentoringView("mentoringView.jsp") );
-
+		commandMap.put("calendar-view",	new CommandNull("calendarView.jsp") );
 		
 	}
 

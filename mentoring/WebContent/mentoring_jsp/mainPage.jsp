@@ -10,7 +10,7 @@
    
    <title>멘토링 사이트</title>
    
-   <link rel="shortcut icon" href="assets/images/gt_favicon.png">
+   <link rel="shortcut icon" href="/mentoring/mentoring_jsp/assets/images/gt_favicon.png">
    
    <link href="//code.jboxcdn.com/0.4.7/jBox.css" rel="stylesheet">
    
@@ -21,15 +21,15 @@
    <!-- Fonts -->
    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
    <!-- Custom styles -->
-   <link rel="stylesheet" href="assets/css/styles.css">
+   <link rel="stylesheet" href="/mentoring/mentoring_jsp/assets/css/styles.css">
    
 
    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
    <script src="//code.jboxcdn.com/0.4.7/jBox.min.js"></script>
 
-   <script type="text/javascript" src="assets/js/jquery-ui-1.10.4.custom.min.js"></script> <!-- UI 플러그인 연동 -->
-   <script type="text/javascript" src="assets/js/jquery.cookie.js"></script>  <!-- 쿠키 플러그인 연동 -->
-   <script type="text/javascript" src='assets/js/script.js'></script>
+   <script type="text/javascript" src="/mentoring/mentoring_jsp/assets/js/jquery-ui-1.10.4.custom.min.js"></script> <!-- UI 플러그인 연동 -->
+   <script type="text/javascript" src="/mentoring/mentoring_jsp/assets/js/jquery.cookie.js"></script>  <!-- 쿠키 플러그인 연동 -->
+   <script type="text/javascript" src='/mentoring/mentoring_jsp/assets/js/script.js'></script>
   
 
 </head>
