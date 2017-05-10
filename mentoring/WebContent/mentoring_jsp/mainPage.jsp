@@ -9,8 +9,10 @@
    <meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
    
    <title>멘토링 사이트</title>
-
+   
    <link rel="shortcut icon" href="assets/images/gt_favicon.png">
+   
+   <link href="//code.jboxcdn.com/0.4.7/jBox.css" rel="stylesheet">
    
    <!-- Bootstrap -->
    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
@@ -21,10 +23,15 @@
    <!-- Custom styles -->
    <link rel="stylesheet" href="assets/css/styles.css">
    
-   
-   
 
-   <!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
+   <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+   <script src="//code.jboxcdn.com/0.4.7/jBox.min.js"></script>
+
+   <script type="text/javascript" src="assets/js/jquery-ui-1.10.4.custom.min.js"></script> <!-- UI 플러그인 연동 -->
+   <script type="text/javascript" src="assets/js/jquery.cookie.js"></script>  <!-- 쿠키 플러그인 연동 -->
+   <script type="text/javascript" src='assets/js/script.js'></script>
+  
+
 </head>
 <body>
 
@@ -32,8 +39,8 @@
   <div class="login-join">
             
             <ul class="login-join form">
-               <li><a href="index.html">로그인</a></li>
-               <li class="active"><a href="about.html">회원가입</a></li>
+               <li class="active"><a href="#" id='login'>로그인</a></li>
+               <li class="active"><a href="#" >회원가입</a></li>
             </ul>
          
          </div><!--/.nav-collapse -->
@@ -60,7 +67,7 @@
                <li><a href="index.html">공지사항</a></li>
                <li class="active"><a href="about.html">멘토링</a></li>
                <li><a href="blog.html">스터디</a></li>
-               <li><a href="blog.html">캘린더</a></li>
+               <li><a href="calendarview.jsp">캘린더</a></li>
             </ul>
          
          </div><!--/.nav-collapse -->         
