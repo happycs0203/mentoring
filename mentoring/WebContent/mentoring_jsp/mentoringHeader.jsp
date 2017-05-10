@@ -30,7 +30,7 @@
             <ul class="nav navbar-nav">
                <li><a href="metorin">공지사항</a></li>
                <li class="active"><a href="about.html">멘토링</a></li>
-               <li><a href="blog.html">스터디</a></li>
+               <li><a href="/mentoring/mentoring.mento?cmd=study-list">스터디</a></li>
                <li><a href="/mentoring/mentoring.mento?cmd=calendar-view">캘린더</a></li>
             </ul>
          

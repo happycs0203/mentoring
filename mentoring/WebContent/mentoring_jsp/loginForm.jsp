@@ -10,19 +10,26 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="/mentoring/mentoring_jsp/assets/js/jquery.cookie.js"></script>  <!-- 쿠키 플러그인 연동 -->
 <script type="text/javascript">
+ function Login(){
+	 var frmObj = document.frm;
+	 
+	 frmObj.action = "mento.mento?cmd=main-page";
+	 frmObj.submit();
+	 
+ }
 </script>
 </head>
 <body>
 <div class="login">
-     <form>
+     <form name='frm' id='frm' method='post'>
        <div class="form-input">
-                로 그 인 <input type="text" name="username" >
+                로 그 인 <input type="text" name="username">
        </div>
        
        <div class="form-input">
        비밀번호 <input type="password" name="password">
        </div>
-       <input type="submit" name="submit" value="로그인" class="btn_login">
+       <input type="button" name="button" value="로그인" class="btn_login" onclick="Javascript:Login()">
        
      </form>
    

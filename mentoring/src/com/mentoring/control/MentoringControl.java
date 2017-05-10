@@ -39,6 +39,7 @@ public class MentoringControl extends HttpServlet {
 		commandMap.put("main-page",	new CommandNull("mainPage.jsp") );
 		commandMap.put("input-form", new CommandInput("mainPage.jsp") );//나중에 마이페이지 화면으로 넘겨주기
 		commandMap.put("mentoringView-page", new CommandMentoringView("mentoringView.jsp") );
+		commandMap.put("study-list", new CommandInput("studyList.jsp") );
 		commandMap.put("calendar-view",	new CommandNull("calendarView.jsp") );
 		commandMap.put("register-form", new CommandNull("register.jsp"));//회원가입 폼
 	}
