@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>일정</title>
-<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+<link rel="shortcut icon" href="/mentoring/mentoring_jsp/assets/images/gt_favicon.png">
    
    <link href="//code.jboxcdn.com/0.4.7/jBox.css" rel="stylesheet">
    
