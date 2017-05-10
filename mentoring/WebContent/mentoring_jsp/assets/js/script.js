@@ -4,7 +4,7 @@ $(function(){
 	// 팝업 창 띄우기
 	new jBox('Modal', {	
 	    attach: '#login',
-	    title: '로그인',
+	    title: "Minju's College",
 	    ajax: {
 	    	url:'login.html',
 	    	data:'',
