@@ -14,6 +14,7 @@ import javax.servlet.http.Part;
 
 import com.mentoring.model.Image;
 import com.mentoring.model.Project;
+import com.mentoring.model.User;
 import com.mentoring.service.MentoringService;
 
 public class CommandInput implements Command {
@@ -38,7 +39,17 @@ public class CommandInput implements Command {
 				Image uploadedItem = saveUploadFile(request);
 				request.setAttribute("uploadedItem", uploadedItem);
 			}
-
+			//회원가입 부분 user command 객체 생성 후 command에서 지정
+			User user = new User();
+			user.setuId(request.getParameter("uId"));
+			user.setuPass(request.getParameter("uPass"));
+			user.setuName(request.getParameter("uName"));
+			user.setuPhone(request.getParameter("uPhone"));
+			user.setuAddr(request.getParameter("uAddr"));
+			
+			//Repository를 호출 
+			MentoringService.getInstance().insertUser(user);
+			
 		} catch (Exception ex) {
 			throw new CommandException("CommandInput.java" + ex.toString());
 		}
