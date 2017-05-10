@@ -16,7 +16,7 @@ import com.mentoring.command.CommandInput;
 import com.mentoring.command.CommandNull;
 
 /**
- * Servlet implementation class MentoringControl
+ * Servlet implementation class MentoringControl 
  */
 
 public class MentoringControl extends HttpServlet {
