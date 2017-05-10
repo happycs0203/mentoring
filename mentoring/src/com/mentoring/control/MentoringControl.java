@@ -18,11 +18,12 @@ import com.mentoring.command.CommandNull;
 /**
  * Servlet implementation class MentoringControl
  */
+//fighting
 
 public class MentoringControl extends HttpServlet {
 
 	private HashMap commandMap;
-	//·çÆ® Á¤ÇÏ±â..!!
+	//ï¿½ï¿½Æ® ï¿½ï¿½ï¿½Ï±ï¿½..!!
 	private String	jspDir = "/05_mvc_class/2_mvcGuest/";
 	private String  error = "error.jsp";
 
@@ -33,7 +34,7 @@ public class MentoringControl extends HttpServlet {
     
     private void initCommand(){
 		commandMap = new HashMap();
-		//nullÀº db¾È°¬´Ù¿È
+		//nullï¿½ï¿½ dbï¿½È°ï¿½ï¿½Ù¿ï¿½
 		commandMap.put("main-page",	new CommandNull("main.jsp") );
 		commandMap.put("input-form", new CommandNull("insertMessage.jsp") );
 
@@ -62,11 +63,11 @@ public class MentoringControl extends HttpServlet {
 		Command cmd = null;
 
 		try{
-			//¼Ò¹®ÀÚ¸¸ toLowerCase()
+			//ï¿½Ò¹ï¿½ï¿½Ú¸ï¿½ toLowerCase()
 			if( commandMap.containsKey( cmdKey.toLowerCase() ) ){
 				cmd = (Command)commandMap.get( cmdKey.toLowerCase());
 			}else{
-				throw new CommandException("ÁöÁ¤ÇÒ ¸í·É¾î°¡ Á¸ÀçÇÏÁö ¾ÊÀ½");
+				throw new CommandException("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½É¾î°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 			}
 			//System.out.println(cmd);
 			nextPage = cmd.execute( request );
@@ -75,7 +76,7 @@ public class MentoringControl extends HttpServlet {
 		}catch( CommandException e ){
 			request.setAttribute("javax.servlet.jsp.jspException", e );
 			nextPage = error;
-			System.out.println("¿À·ù : " + e.getMessage() );
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ : " + e.getMessage() );
 		}
 
 		RequestDispatcher reqDp = getServletContext().getRequestDispatcher( jspDir + nextPage );

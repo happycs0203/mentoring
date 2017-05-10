@@ -6,7 +6,7 @@ $(function(){
 	    attach: '#login',
 	    title: 'LOGIN',
 	    ajax: {
-	    	url:'http://192.168.0.115:8080/mentoring/mentoring_jsp/login.html',
+	    	url:'login.html',
 	    	data:'',
 	    	reload: false
 	    }

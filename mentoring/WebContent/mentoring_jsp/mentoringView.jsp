@@ -9,7 +9,7 @@
 	//String pNum = request.getParameter("pNum");
 		String pNum = "1";
 	
-	//Project modelProject;
+	//Project modelProject
 %> 
 
 <!DOCTYPE html>

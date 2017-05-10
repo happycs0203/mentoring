@@ -3,30 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <title>login.html</title>
+<link rel="stylesheet" type="text/css" href="assets/css/styles.css"/>
 <script type="text/javascript" src="assets/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.cookie.js"></script>  <!-- 쿠키 플러그인 연동 -->
 <script type="text/javascript">
-$(function(){
-	
-	
-	$('#popup_check').click(function(){
-		$.cookie('xx','checked',{expires : 1*0.0006*3});
-		$('#jBox1-overlay').hide();
-		$('#jBox1').hide();
-	});
-	
-});
-
-
 </script>
 
 </head>
 <body>
-     
-     <p id='contents'>
-	로그인 팝업아 되라 얍<br/>
-	정말 화가난다 화가나<br/>
-	</p>
-	<input id='popup_check' type='checkbox'/>하루 동안 보지않기
+   <div class="login">
+     <form>
+       <div class="form-input">
+                 I D <input type="text" name="username">
+       </div>
+       
+       <div class="form-input">
+        PASS <input type="password" name="password">
+       </div>
+       <input type="submit" name="submit" value="LOGIN" class="btn_login">
+       
+     </form>
+   
+   </div>
 </body>
 </html>
