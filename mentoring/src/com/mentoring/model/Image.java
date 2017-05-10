@@ -1,16 +1,17 @@
 package com.mentoring.model;
 
 public class Image {
-	private int id;
+	private int iNum;
 	private String fileName;
 	private String realPath;
 	private long fileSize;
 	
-	public int getId() {
-		return id;
+	
+	public int getiNum() {
+		return iNum;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setiNum(int iNum) {
+		this.iNum = iNum;
 	}
 	public String getFileName() {
 		return fileName;

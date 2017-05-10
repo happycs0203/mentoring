@@ -13,8 +13,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- # : PreparedStateMent형식, $ : Statement형식 -->
 
 <insert id="insertImage" parameterType="image">
-	INSERT INTO comment_tab
-	VALUES(#{commentNo}, #{userId}, #{commentContent}, sysdate)
+	INSERT INTO imagemento
+	VALUES(seq_image_num.nextval, seq_project_num.currentval, #{fileName}, #{realPath}, #{fileSize})
 </insert>
 <!-- # : PreparedStateMent형식, $ : Statement형식 -->
 

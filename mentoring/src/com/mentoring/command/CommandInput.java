@@ -37,7 +37,6 @@ public class CommandInput implements Command {
 			if (contentType != null && contentType.toLowerCase().startsWith("multipart/")) {
 				Image uploadedItem = saveUploadFile(request);
 				request.setAttribute("uploadedItem", uploadedItem);
-
 			}
 
 		} catch (Exception ex) {
@@ -51,7 +50,7 @@ public class CommandInput implements Command {
 		String description = readParameterValue(descPart);
 		Part filePart = req.getPart("file");
 		String fileName = getFileName(filePart);
-		String realPath = FileSaveHelper.save("C:\\webproject\\Jsp\\WebContent\\fileupload\\",
+		String realPath = FileSaveHelper.save("D:\\workspace_web_parctice\\mentoring\\WebContent\\imgUpload\\",
 				filePart.getInputStream());
 
 		Image addRequest = new Image();
