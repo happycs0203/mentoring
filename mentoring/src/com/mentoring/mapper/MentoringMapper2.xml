@@ -6,4 +6,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="MentoringMapper2">
 
+
+<select id="dateInput" resultType="project">
+select u_id, p_title, p_enroll 
+from projectmento
+</select>
+
 </mapper>

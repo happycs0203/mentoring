@@ -4,13 +4,14 @@ import java.io.IOException;
 import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
+import javax.servlet.ServletException;  
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletResponse; 
 
 import com.mentoring.command.Command;
+import com.mentoring.command.CommandDateInput;
 import com.mentoring.command.CommandException;
 import com.mentoring.command.CommandInput;
 import com.mentoring.command.CommandLogin;
@@ -38,15 +39,15 @@ public class MentoringControl extends HttpServlet {
     //
     private void initCommand(){
 		commandMap = new HashMap();
-		//null�� db�Ȱ��ٿ�
+		//null占쏙옙 db占싫곤옙占쌕울옙
 		commandMap.put("main-page",	new CommandNull("mainPage.jsp") );
 		commandMap.put("main-page2",new CommandLogin("mainPage.jsp") );
-		commandMap.put("input-form", new CommandInput("mainPage.jsp") );//나중에 마이페이지 화면으로 넘겨주기
+		commandMap.put("input-form", new CommandInput("mainPage.jsp") );//�굹以묒뿉 留덉씠�럹�씠吏� �솕硫댁쑝濡� �꽆寃⑥＜湲�
 		commandMap.put("mentoring-view", new CommandMentoringView("mentoringView.jsp") );
 		commandMap.put("study-list", new CommandInput("studyList.jsp") );
-		commandMap.put("calendar-view",	new CommandNull("calendarView.jsp") );
+		commandMap.put("calendar-view",	new CommandDateInput("calendarView.jsp") );
 		commandMap.put("mentoring-list", new CommandMentoringList("mentoringList.jsp"));
-		commandMap.put("register-form", new CommandUserInput("registerSave.jsp"));//회원가입 폼
+		commandMap.put("register-form", new CommandUserInput("registerSave.jsp"));//�쉶�썝媛��엯 �뤌
 	}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -71,11 +72,11 @@ public class MentoringControl extends HttpServlet {
 		Command cmd = null;
 
 		try{
-			//�ҹ��ڸ� toLowerCase()
+			//占쌀뱄옙占쌘몌옙 toLowerCase()
 			if( commandMap.containsKey( cmdKey.toLowerCase() ) ){
 				cmd = (Command)commandMap.get( cmdKey.toLowerCase());
 			}else{
-				throw new CommandException("������ ��ɾ �������� ����");
+				throw new CommandException("占쏙옙占쏙옙占쏙옙 占쏙옙載� 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙");
 			}
 			//System.out.println(cmd);
 			nextPage = cmd.execute( request );
@@ -84,7 +85,7 @@ public class MentoringControl extends HttpServlet {
 		}catch( CommandException e ){
 			request.setAttribute("javax.servlet.jsp.jspException", e );
 			nextPage = error;
-			System.out.println("���� : " + e.getMessage() );
+			System.out.println("占쏙옙占쏙옙 : " + e.getMessage() );
 		}
 
 		RequestDispatcher reqDp = getServletContext().getRequestDispatcher( jspDir + nextPage );

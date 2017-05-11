@@ -46,6 +46,10 @@ public class MentoringService {
 		return repo.searchMentoring();
 	}
 	
+	public List<Project> dateInput(){
+	      return repo2.dateInput();
+	   }
+	
 	public Project showMentoringView(int pNum){
 		return repo1.showMentoringView(pNum);
 	}

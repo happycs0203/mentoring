@@ -30,5 +30,14 @@ public class MentoringRepository2 {
 		return factory;
 	}
 	
+	public List<Project> dateInput(){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			return sqlSess.selectList(namespace+".dateInput");
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
 
 }

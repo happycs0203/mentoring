@@ -2,10 +2,16 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.util.Calendar"%>
+<%@page import="java.util.*"%>
+<%@page import="com.mentoring.model.Project"%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%
+
+ List<Project> list = (List<Project>)request.getAttribute("pList");
+ System.out.println(list);
+ 
 
 Calendar cal = Calendar.getInstance();
 
@@ -271,15 +277,13 @@ for(int index = 1; index <= endDay; index++)
 
  
 
-      String sUseDate = Integer.toString(year); 
+       String sUseDate = Integer.toString(year); 
        sUseDate += Integer.toString(month+1).length() == 1 ? "0" + Integer.toString(month+1) : Integer.toString(month+1);
        sUseDate += Integer.toString(index).length() == 1 ? "0" + Integer.toString(index) : Integer.toString(index);
 
        int iUseDate = Integer.parseInt(sUseDate);
 
-      
 
-      
 
        String backColor = "#FFF";
        if(iUseDate == intToday ) {
@@ -293,12 +297,32 @@ for(int index = 1; index <= endDay; index++)
              <%=index %>
        </font>
 
- 
+       
 
-       <%    
+       <%   
+       
+       for(Project p : list){
+       
+       String str = p.getpEnroll();
+       StringTokenizer st = new StringTokenizer(str, "/");
+       int yy=0, mm=0, dd=0;
+
+       while(st.hasMoreElements()) {
+           yy = Integer.parseInt((String)st.nextElement());
+           mm = Integer.parseInt((String)st.nextElement());
+           dd = Integer.parseInt((String)st.nextElement());
+         
+       }
+
+       if(index == dd){
+    	   out.println(p.getuId() + "<br>" + p.getpTitle() + "<br>");
+    	   
+       }
+       
+       
+       }
 
        out.println("<BR>");
-       out.println(iUseDate);
        out.println("<BR>");
    
 
