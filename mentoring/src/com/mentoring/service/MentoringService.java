@@ -28,11 +28,11 @@ public class MentoringService {
 	MentoringRepository3 repo3 = new MentoringRepository3();
 	
 	public Integer insertMentoring(Project project){
-		return repo.insertMentoring(project);
+		return repo1.insertMentoring(project);
 	}
 	
 	public Image insertImage(Image img){
-		return repo.insertImage(img);
+		return repo1.insertImage(img);
 	}
 	public Integer insertUser(User user){
 		return repo.insertUser(user);

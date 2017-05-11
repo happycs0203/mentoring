@@ -66,9 +66,9 @@ public class CommandInput implements Command {
 				filePart.getInputStream());
 
 		Image addRequest = new Image();
-		addRequest.setFileName(fileName);
-		addRequest.setFileSize(filePart.getSize());
-		addRequest.setRealPath(realPath);
+		addRequest.setiTitle(fileName);
+		addRequest.setiSize(filePart.getSize());
+		addRequest.setiPath(realPath);
 
 		Image img = MentoringService.getInstance().insertImage(addRequest);
 		return img;
