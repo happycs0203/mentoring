@@ -88,7 +88,7 @@
 						<div class="wrap_inp">
 							<label for="MentoringId" class="MentoringId">아이디</label> 
 							<input
-type="text" id="MentoringId" class="name_info" value
+type="text" id="MentoringId" name="uId" class="name_info" value
 								autocomplete="off" maxlength="30">
 
 						</div>
@@ -104,7 +104,7 @@ type="text" id="MentoringId" class="name_info" value
 							<div class="wrap_inp">
 								<label for="password1" class="txt_placeholder">비밀번호</label>
 								<!-- 텍스트 입력 시 .screen_out  -->
-								<input type="password" id="password1" name="password1"
+								<input type="password" id="password1" name="uPass"
 									class="inp_info_pw" value="" maxlength="30"> <span
 									class="mark_valid" style="display: none;">불가</span>
 							</div>
@@ -123,7 +123,7 @@ type="text" id="MentoringId" class="name_info" value
 							<div class="wrap_inp">
 								<label for="name" class="txt_placeholder ">이름</label>
 								<!-- 텍스트 입력 시 .screen_out  -->
-								<input type="text" id="name" name="name" class="inp_placeholder"
+								<input type="text" id="name" name="uName" class="inp_placeholder"
 									value="" maxlength="30"> <span class="mark_valid"><span
 									class="ico_join ico_valid"></span><span class="screen_out">유효</span></span>
 							</div>
@@ -145,7 +145,7 @@ type="text" id="MentoringId" class="name_info" value
 									id="mobileNationalCode" name="mobileNationalCode" value="KR">
 								<input type="hidden" id="mobileInternationalFormat"
 									name="mobileInternationalFormat" value=""> <input
-									type="text" id="inpPhone" name="inpPhone" class="inp_info"
+									type="text" id="inpPhone" name="uPhone" class="inp_info"
 									autocomplete="off">
 								<button type="button" id="certBtn" class="btn_check disabled">인증</button>
 							</div>
@@ -160,7 +160,7 @@ type="text" id="MentoringId" class="name_info" value
 					<dl class="item_info info_email">
 						<dt>
 							<label for="inpEmail" class="lab_info"> 주소 </label> <input
-								type="text" id="mailId" class="mail_info" value
+								type="text" id="mailId" name="uAddr" class="mail_info" value
 								autocomplete="off" maxlength="30">
 						</dt>
 					</dl>
