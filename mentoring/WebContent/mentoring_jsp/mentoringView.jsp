@@ -89,6 +89,10 @@
 				</header>
 
 		<p ><img src="/mentoring/imageupload/<%=i.getiPath()%>" alt="여기에 포스터 넣어주기"></p>
+		
+		<input type="button" class="btn_login" value="신청" id="assignMentoring" style="position:relative;">
+		<input type="button" class="btn_login" value="공유하기" id="share">
+		<input type="button" class="btn_login" value="찜하기" id="zzim">
 
 			
 	
