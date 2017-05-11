@@ -76,7 +76,7 @@ public class MentoringRepository1 {
 			sqlSess.close();
 		}
 	}
-	
+	//
 	public Image showMentoringImage(int iNum) {
 		
 		SqlSession sqlSess = getSelSessionFactory().openSession();
