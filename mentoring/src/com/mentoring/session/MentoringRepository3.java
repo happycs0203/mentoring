@@ -30,5 +30,27 @@ public class MentoringRepository3 {
 		return factory;
 	}
 	
-
+	public Integer insertUser(User user){
+		//JDBC : Connection, Mybatis : SqlSession 
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			String statment = namespace + ".insertUser";
+			int result = sqlSess.insert(statment, user);
+			if(result > 0){
+				sqlSess.commit();
+			}else{
+				sqlSess.rollback();
+			}
+		}finally{
+			sqlSess.close();
+		}
+		return 0;
+	}
 }
+
+
+
+
+	
+
+
