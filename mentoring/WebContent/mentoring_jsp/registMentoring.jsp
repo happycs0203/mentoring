@@ -68,7 +68,7 @@ $(function () {
 	<jsp:include page="mentoringHeader.jsp"/>
 </header>
 <div class="wrapper">
-    <form method="post" action="xxx.mento?cmd=input-form&uId=<%=uId %>" class="ccform">
+    <form method="post" action="xxx.mento?cmd=input-form&uId=<%=uId %>" class="ccform" enctype = "multipart/form-data">
     
     <div class="ccfield-prepend2">
     <span class="ccform-addon"><i class="fa fa-cloud-upload fa-2x"></i></span>

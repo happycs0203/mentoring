@@ -2,6 +2,7 @@ package com.mentoring.session;
 
 
 import java.io.InputStream;
+import java.util.HashMap;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -63,20 +64,28 @@ public class MentoringRepository1 {
 		}
 		return img;
 	}
-	public Integer insertUser(User user){
-		//JDBC : Connection, Mybatis : SqlSession 
+	
+	public Project showMentoringView(int pNum) {
+		
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{
-			String statment = namespace + ".insertUser";
-			int result = sqlSess.insert(statment, user);
-			if(result > 0){
-				sqlSess.commit();
-			}else{
-				sqlSess.rollback();
-			}
+			HashMap map = new HashMap<>();
+			map.put("pNum", pNum);
+			return sqlSess.selectOne(namespace+".showMentoringView",map);
 		}finally{
 			sqlSess.close();
 		}
-		return 0;
+	}
+	
+	public Image showMentoringImage(int iNum) {
+		
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			HashMap map = new HashMap<>();
+			map.put("iNum", iNum);
+			return sqlSess.selectOne(namespace+".showMentoringImage",map);
+		}finally{
+			sqlSess.close();
+		}
 	}
 }

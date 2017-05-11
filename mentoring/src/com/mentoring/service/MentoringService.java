@@ -46,5 +46,11 @@ public class MentoringService {
 		return repo.searchMentoring();
 	}
 	
+	public Project showMentoringView(int pNum){
+		return repo1.showMentoringView(pNum);
+	}
 	
+	public Image showMentoringImage(int iNum){
+		return repo1.showMentoringImage(iNum);
+	}
 }

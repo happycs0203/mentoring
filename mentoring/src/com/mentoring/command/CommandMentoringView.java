@@ -28,10 +28,14 @@ public class CommandMentoringView implements Command {
 		try {
 
 			Project pro = new Project();
-			//String pNum = request.getParameter("pNum");
-			String pNum = "1";
+			int pNum = Integer.parseInt(request.getParameter("pNum"));
+			int iNum = Integer.parseInt(request.getParameter("iNum"));
 
-			//MentoringService.getInstance().showMentoringView(pNum);
+			Project p = MentoringService.getInstance().showMentoringView(pNum);
+			Image i = MentoringService.getInstance().showMentoringImage(iNum);
+			
+			request.setAttribute("mentoringView", p);
+			request.setAttribute("mentoringImage", i);
 
 		} catch (Exception ex) {
 			throw new CommandException("CommandInput.java" + ex.toString());

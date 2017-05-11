@@ -62,7 +62,7 @@ public class CommandInput implements Command {
 		Part filePart = req.getPart("uploadImage");
 		String fileName = getFileName(filePart);
 		System.out.println(fileName);
-		String realPath = FileSaveHelper.save("D:\\workspace_web_second_project\\mentoring\\WebContent\\imgUpload\\",
+		String realPath = FileSaveHelper.save("D:\\secondProjectImg",
 				filePart.getInputStream());
 
 		Image addRequest = new Image();

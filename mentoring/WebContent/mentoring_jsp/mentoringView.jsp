@@ -1,3 +1,4 @@
+<%@page import="com.mentoring.model.Image"%>
 <%@page import="com.mentoring.model.Project"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -7,9 +8,11 @@
 	// 1. 해당 게시물의 게시글번호값을 얻어온다
 	// 2. Service에 getArticleById() 호출하여 그 게시글번호를 갖는 레코드를 검색한다.
 	//String pNum = request.getParameter("pNum");
-		String pNum = "1";
+		String pNum = "4";
+		String iNum = "2"; 
 	
-	//Project modelProject;
+	Project p = (Project)request.getAttribute("mentoringView");
+	Image i = (Image)request.getAttribute("mentoringImage");
 %> 
 
 <!DOCTYPE html>
@@ -62,7 +65,7 @@
 			}
 		};
 
-		var address = "서울특별시 금천구 가산동";
+		var address = <%=p.getpPlace()%>;
 		geocoder.addr2coord(address, callback);
 </script>
 
@@ -79,41 +82,35 @@
 			
 			<!-- Article main content -->
 				<header class="page-header">
-					<h1 class="page-title">멘토링 제목</h1>
+					<h1 class="page-title"><%=p.getpTitle()%></h1>
 				</header>
 
-		<p ><img src="assets/images/s2.jpg" alt="여기에 포스터 넣어주기"></p>
+		<p ><img src="/mentoring/imageupload/<%=i.getiPath()%>" alt="여기에 포스터 넣어주기"></p>
 
 			
 	
 			
 			<div class="small-title">멘토이름</div>
 			<div class='navbar navbar-default'>
-			방민주
+			<%=p.getuId()%>
 			</div>
 			
 			<div class="small-title">내용</div>
 			<div class='navbar navbar-default'>
-			야호호호호호호호 내용을 어떻게 써야할까 어떻게 써야 잘했다고 할까?????? 아이 젠장
-			야호호호호호호호 내용을 어떻게 써야할까 어떻게 써야 잘했다고 할까?????? 아이 젠장
-			야호호호호호호호 내용을 어떻게 써야할까 어떻게 써야 잘했다고 할까?????? 아이 젠장
-			야호호호호호호호 내용을 어떻게 써야할까 어떻게 써야 잘했다고 할까?????? 아이 젠장
-			야호호호호호호호 내용을 어떻게 써야할까 어떻게 써야 잘했다고 할까?????? 아이 젠장
-			야호호호호호호호 내용을 어떻게 써야할까 어떻게 써야 잘했다고 할까?????? 아이 젠장
+			<%=p.getpContent()%>
 			</div>
 			
 			<div class="small-title">일정</div>
 			<div class='navbar navbar-default'>
-			5월 8일 ~ 5월 17일<br>
-			매주 화요일
+			<%=p.getpTime()%>
 			</div>
 			
 			<div class="small-title">최소인원 / 최대인원</div>
 			<div class='navbar navbar-default'>
-			5명 / 10명
+			<%=p.getpMinmem()%> / <%=p.getpMaxmem()%>
 			</div>
 			
-			<div class="small-title">위치</div>	<br> 서울시 금천구 가산동
+			<div class="small-title">위치</div>	<br> <%=p.getpPlace()%>
 			<div class='navbar navbar-default'>
 				<div id="map" style="width: 100%; height: 300px;"></div>
 			</div>

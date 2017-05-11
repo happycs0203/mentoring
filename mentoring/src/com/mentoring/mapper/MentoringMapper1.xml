@@ -6,17 +6,45 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="MentoringMapper1">
 
-<insert id="insertMentoring" parameterType="project">
-	INSERT INTO projectmento
-	VALUES(seq_project_num.nextval,#{uId}, 'mentoring', #{pTitle}, #{pPlace}, 1000, 5, 10, #{pContent}, #{pTime}, '2017/05/10', 'N', #{pIntroduce})
-</insert>
-<!-- # : PreparedStateMent형식, $ : Statement형식 -->
+	<insert id="insertMentoring" parameterType="project">
+		INSERT INTO projectmento
+		VALUES(seq_project_num.nextval,#{uId}, 'mentoring', #{pTitle}, #{pPlace}, 1000, 5, 10, #{pContent},
+		#{pTime}, '2017/05/10', 'N', #{pIntroduce})
+	</insert>
+	<!-- # : PreparedStateMent형식, $ : Statement형식 -->
 
-<insert id="insertImage" parameterType="image">
-	INSERT INTO imagemento
-	VALUES(seq_image_num.nextval, seq_project_num.currentval, #{fileName}, #{realPath}, #{fileSize})
-</insert>
-<!-- # : PreparedStateMent형식, $ : Statement형식 -->
+	<insert id="insertImage" parameterType="image">
+		<selectKey keyColumn='p_num' keyProperty='pNum' order='BEFORE'
+			resultType='int'>
+			SELECT seq_project_num.nextval FROM dual
+		</selectKey>
+
+		INSERT INTO imagemento
+		VALUES(seq_image_num.nextval,#{pNum} , #{iTitle}, #{iPath}, #{iSize})
+	</insert>
+
+	<select id="showMentoringView" parameterType="hashmap"
+		resultType="project" resultMap="commentMap">
+		select *
+		from projectmento
+		<where>
+			<if test="commentNo != null">
+				p_num = #{pNum}
+			</if>
+		</where>
+	</select>
+	
+	<select id="showMentoringImage" parameterType="hashmap"
+		resultType="image" resultMap="commentMap">
+		select *
+		from imagementoS
+		<where>
+			<if test="commentNo != null">
+				i_num = #{iNum}
+			</if>
+		</where>
+	</select>
+	<!-- # : PreparedStateMent형식, $ : Statement형식 -->
 
 
 
