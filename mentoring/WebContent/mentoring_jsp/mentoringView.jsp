@@ -37,6 +37,13 @@
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
 	
+	<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+   <script src="//code.jboxcdn.com/0.4.7/jBox.min.js"></script>
+
+   <script type="text/javascript" src="/mentoring/mentoring_jsp/assets/js/jquery-ui-1.10.4.custom.min.js"></script> <!-- UI 플러그인 연동 -->
+   <script type="text/javascript" src="/mentoring/mentoring_jsp/assets/js/jquery.cookie.js"></script>  <!-- 쿠키 플러그인 연동 -->
+   <script type="text/javascript" src='/mentoring/mentoring_jsp/assets/js/script.js'></script>
+	
 	<script type="text/javascript"
 	src="//apis.daum.net/maps/maps3.js?apikey=d7cd900845b5f9c431bb5325b827e675&libraries=services"></script>
 	<script>
@@ -69,6 +76,11 @@
 		var address =$("#placeName").val();
 		geocoder.addr2coord(address, callback);
 		
+		
+		$("#zzim").click(function(){
+			
+		});
+		
 	});
 </script>
 
@@ -93,8 +105,6 @@
 		<input type="button" class="btn_login" value="신청" id="assignMentoring" style="position:relative;">
 		<input type="button" class="btn_login" value="공유하기" id="share">
 		<input type="button" class="btn_login" value="찜하기" id="zzim">
-
-			
 	
 			
 			<div class="small-title">멘토이름</div>
