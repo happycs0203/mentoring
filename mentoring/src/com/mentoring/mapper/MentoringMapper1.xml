@@ -6,6 +6,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="MentoringMapper1">
 
+<resultMap type="project" id="mentoringinfoMap">
+	<result column="p_num" 	property="pNum"/>
+	<result column="p_place" 	property="pPlace"/>
+	<result column="p_title" 	property="ptitle"/>
+	<result column="p_uid" 	property="pUid"/>
+	<result column="p_content" 	property="pcontent"/>
+	<result column="p_time" 	property="pTime"/>
+	<result column="p_minmem" 	property="pMinmem"/>
+	<result column="p_maxmem" 	property="pMaxmem"/>
+</resultMap>
+
+<resultMap type="image" id="imageMap">
+	<result column="i_num" 	property="iNum"/>
+	<result column="i_path" 	property="iPath"/>
+	
+</resultMap>
+
 	<insert id="insertMentoring" parameterType="project">
 		INSERT INTO projectmento
 		VALUES(seq_project_num.nextval,#{uId}, 'mentoring', #{pTitle}, #{pPlace}, 1000, 5, 10, #{pContent},
@@ -24,7 +41,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 
 	<select id="showMentoringView" parameterType="hashmap"
-		resultType="project" resultMap="commentMap">
+		resultType="project" resultMap="mentoringinfoMap">
 		select *
 		from projectmento
 		<where>
@@ -35,9 +52,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="showMentoringImage" parameterType="hashmap"
-		resultType="image" resultMap="commentMap">
+		resultType="image" resultMap="imageMap">
 		select *
-		from imagementoS
+		from imagemento
 		<where>
 			<if test="commentNo != null">
 				i_num = #{iNum}

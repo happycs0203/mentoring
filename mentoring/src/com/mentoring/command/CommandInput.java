@@ -32,7 +32,7 @@ public class CommandInput implements Command {
 			pro.setuId(request.getParameter("uId"));
 			pro.setpTitle(request.getParameter("pTitle"));
 			pro.setpPlace(request.getParameter("pPlace"));
-			pro.setpTime(request.getParameter("startDate") +"부터 "+ request.getParameter("endDate") +"까지 "+ request.getParameter("detailDate"));
+			pro.setpTime(request.getParameter("startDate") + "~" + request.getParameter("endDate") +" "+ request.getParameter("detailDate"));
 			pro.setpContent(request.getParameter("pContent"));
 			pro.setpIntroduce(request.getParameter("pIntroduce"));
 

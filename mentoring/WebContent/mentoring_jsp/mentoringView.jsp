@@ -7,9 +7,6 @@
 <%
 	// 1. 해당 게시물의 게시글번호값을 얻어온다
 	// 2. Service에 getArticleById() 호출하여 그 게시글번호를 갖는 레코드를 검색한다.
-	//String pNum = request.getParameter("pNum");
-		String pNum = "4";
-		String iNum = "2"; 
 	
 	Project p = (Project)request.getAttribute("mentoringView");
 	Image i = (Image)request.getAttribute("mentoringImage");
