@@ -26,7 +26,7 @@ import com.mentoring.command.CommandNull;
 public class MentoringControl extends HttpServlet {
 
 	private HashMap commandMap;
-	//��Ʈ ���ϱ�..!!
+
 	private String	jspDir = "/mentoring_jsp/";
 	private String  error = "error.jsp";
 

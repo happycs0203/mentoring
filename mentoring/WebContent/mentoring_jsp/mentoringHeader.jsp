@@ -13,9 +13,9 @@
             <ul class="login-join form">
             <%if ( uId.equals("")){ %>
                <li class="active"><a href="#" id='login'>로그인</a></li>
-               <%} else{ %>
+            <%} else{ %>
                <li class="active"><a href="#" id='logout'>로그아웃</a></li>
-               <% }%>
+            <% }%>
                
                <li class="active"><a href="#" >회원가입</a></li>
             </ul>
