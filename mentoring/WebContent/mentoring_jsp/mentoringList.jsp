@@ -87,7 +87,7 @@
 											<span>Web Design</span>
 										</a>
 									</div>
-									<a class="btn btn-default btn-block" href="/mentoring/mentoring.mento?cmd=mentoring-view&pNum=<%=p.getpNum()%>"><%=p.getpTitle()%></a>
+									<a class="btn btn-default btn-block" href="/mentoring/mentoring.mento?cmd=mentoring-view&pNum=<%=p.getpNum()%>&iNum=<%=p.getiNum()%>"><%=p.getpTitle()%></a>
 								</div>
 								
 							</div>

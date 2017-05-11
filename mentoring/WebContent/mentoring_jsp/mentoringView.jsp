@@ -33,10 +33,14 @@
 	<!-- Custom styles -->
 	<link rel="stylesheet" href="assets/css/styles.css">
 	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+	
 	<script type="text/javascript"
 	src="//apis.daum.net/maps/maps3.js?apikey=d7cd900845b5f9c431bb5325b827e675&libraries=services"></script>
 	<script>
-
+	$(function(){
+		alert($("#placeName").val());
+	});
 		var geocoder = new daum.maps.services.Geocoder();
 
 		var callback = function(status, result) {
@@ -62,7 +66,7 @@
 			}
 		};
 
-		var address = <%=p.getpPlace()%>;
+		var address ="서울시 양천구";
 		geocoder.addr2coord(address, callback);
 </script>
 
@@ -99,7 +103,7 @@
 			
 			<div class="small-title">일정</div>
 			<div class='navbar navbar-default'>
-			<%=p.getpTime()%>
+			<p id="placeName"><%=p.getpTime()%></p>
 			</div>
 			
 			<div class="small-title">최소인원 / 최대인원</div>
@@ -107,7 +111,9 @@
 			<%=p.getpMinmem()%> / <%=p.getpMaxmem()%>
 			</div>
 			
-			<div class="small-title">위치</div>	<br> <%=p.getpPlace()%>
+			<div class="small-title">위치</div>	<br>
+			<%=p.getpPlace()%>
+			<input type="hidden" id="placeName" value="<%=p.getpPlace()%>">
 			<div class='navbar navbar-default'>
 				<div id="map" style="width: 100%; height: 300px;"></div>
 			</div>

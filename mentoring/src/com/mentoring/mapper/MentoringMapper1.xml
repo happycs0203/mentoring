@@ -6,18 +6,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="MentoringMapper1">
 
-<resultMap type="project" id="mentoringinfoMap">
+<resultMap type="com.mentoring.model.Project" id="mentoringinfoMap">
 	<result column="p_num" 	property="pNum"/>
 	<result column="p_place" 	property="pPlace"/>
-	<result column="p_title" 	property="ptitle"/>
+	<result column="p_title" 	property="pTitle"/>
 	<result column="p_uid" 	property="pUid"/>
-	<result column="p_content" 	property="pcontent"/>
+	<result column="p_content" 	property="pContent"/>
 	<result column="p_time" 	property="pTime"/>
 	<result column="p_minmem" 	property="pMinmem"/>
 	<result column="p_maxmem" 	property="pMaxmem"/>
 </resultMap>
 
-<resultMap type="image" id="imageMap">
+<resultMap type="com.mentoring.model.Image" id="imageMap">
 	<result column="i_num" 	property="iNum"/>
 	<result column="i_path" 	property="iPath"/>
 	
@@ -45,7 +45,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select *
 		from projectmento
 		<where>
-			<if test="commentNo != null">
+			<if test="pNum != null">
 				p_num = #{pNum}
 			</if>
 		</where>
@@ -56,7 +56,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select *
 		from imagemento
 		<where>
-			<if test="commentNo != null">
+			<if test="iNum != null">
 				i_num = #{iNum}
 			</if>
 		</where>
