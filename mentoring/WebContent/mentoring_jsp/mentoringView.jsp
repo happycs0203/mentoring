@@ -22,16 +22,18 @@
 	
 	<title>멘토링뷰</title>
 	
-	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
-	
-	<!-- Bootstrap -->
-	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
-	<!-- Icon font -->
-	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-	<!-- Fonts -->
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
-	<!-- Custom styles -->
-	<link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="shortcut icon" href="/mentoring/mentoring_jsp/assets/images/gt_favicon.png">
+   
+   <link href="//code.jboxcdn.com/0.4.7/jBox.css" rel="stylesheet">
+   
+   <!-- Bootstrap -->
+   <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+   <!-- Icon font -->
+   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+   <!-- Fonts -->
+   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+   <!-- Custom styles -->
+   <link rel="stylesheet" href="/mentoring/mentoring_jsp/assets/css/styles.css">
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
 	
@@ -39,8 +41,6 @@
 	src="//apis.daum.net/maps/maps3.js?apikey=d7cd900845b5f9c431bb5325b827e675&libraries=services"></script>
 	<script>
 	$(function(){
-		alert($("#placeName").val());
-	});
 		var geocoder = new daum.maps.services.Geocoder();
 
 		var callback = function(status, result) {
@@ -66,8 +66,10 @@
 			}
 		};
 
-		var address ="서울시 양천구";
+		var address =$("#placeName").val();
 		geocoder.addr2coord(address, callback);
+		
+	});
 </script>
 
 </head>
@@ -103,7 +105,12 @@
 			
 			<div class="small-title">일정</div>
 			<div class='navbar navbar-default'>
-			<p id="placeName"><%=p.getpTime()%></p>
+			<%=p.getpTime()%>
+			</div>
+			
+			<div class="small-title">비용</div>
+			<div class='navbar navbar-default'>
+			<%=p.getpCost()%>
 			</div>
 			
 			<div class="small-title">최소인원 / 최대인원</div>
