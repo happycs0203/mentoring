@@ -31,5 +31,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
  <mappers>
 	<!-- 여러개의 매퍼를 등록 -->
 	<mapper resource="com/mentoring/mapper/MentoringMapper.xml"/>
+	<mapper resource="com/mentoring/mapper/MentoringMapper1.xml"/>
+	<mapper resource="com/mentoring/mapper/MentoringMapper2.xml"/>
+	<mapper resource="com/mentoring/mapper/MentoringMapper3.xml"/>
  </mappers>
 </configuration>

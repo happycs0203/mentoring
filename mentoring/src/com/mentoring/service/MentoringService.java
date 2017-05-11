@@ -7,6 +7,9 @@ import com.mentoring.model.Project;
 import com.mentoring.model.Prolist;
 import com.mentoring.model.User;
 import com.mentoring.session.MentoringRepository;
+import com.mentoring.session.MentoringRepository1;
+import com.mentoring.session.MentoringRepository2;
+import com.mentoring.session.MentoringRepository3;
 
 public class MentoringService {
 	private static MentoringService service;
@@ -20,6 +23,9 @@ public class MentoringService {
 	}
 	
 	MentoringRepository repo = new MentoringRepository();
+	MentoringRepository1 repo1 = new MentoringRepository1();
+	MentoringRepository2 repo2 = new MentoringRepository2();
+	MentoringRepository3 repo3 = new MentoringRepository3();
 	
 	public Integer insertMentoring(Project project){
 		return repo.insertMentoring(project);
@@ -39,4 +45,6 @@ public class MentoringService {
 	public List<Prolist> searchMentoring(){
 		return repo.searchMentoring();
 	}
+	
+	
 }
