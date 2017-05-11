@@ -45,7 +45,7 @@ public class MentoringControl extends HttpServlet {
 		commandMap.put("study-list", new CommandInput("studyList.jsp") );
 		commandMap.put("calendar-view",	new CommandNull("calendarView.jsp") );
 		commandMap.put("mentoring-list", new CommandMentoringList("mentoringList.jsp"));
-		commandMap.put("register-form", new CommandNull("registerSave.jsp"));//회원가입 폼
+		commandMap.put("register-form", new CommandUserInput("registerSave.jsp"));//회원가입 폼
 	}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
