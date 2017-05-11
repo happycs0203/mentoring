@@ -9,24 +9,18 @@
 
 Calendar cal = Calendar.getInstance();
 
- 
-
 String strYear = request.getParameter("year");
-
 String strMonth = request.getParameter("month");
 
  
 
 int year = cal.get(Calendar.YEAR);
-
 int month = cal.get(Calendar.MONTH);
-
 int date = cal.get(Calendar.DATE);
 
  
 
 if(strYear != null)
-
 {
   year = Integer.parseInt(strYear);
   month = Integer.parseInt(strMonth);
@@ -53,7 +47,7 @@ int newLine = 0;
 //오늘 날짜 저장.
 
 Calendar todayCal = Calendar.getInstance();
-SimpleDateFormat sdf = new SimpleDateFormat("yyyMMdd");
+SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 
 
@@ -134,7 +128,7 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 <BODY>
 
 <header id="header">
-	<jsp:include page="mentoringHeader.jsp"/>
+   <jsp:include page="mentoringHeader.jsp"/>
 </header>
 
 <form name="calendarFrm" id="calendarFrm" action="" method="post">
@@ -165,54 +159,35 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 
 <td height="60">
 
- 
-
        <table width="100%" border="0" cellspacing="0" cellpadding="0" >
-
        <tr>
-
              <td height="10">
-
              </td>
-
        </tr>
 
-      
-
        <tr>
-
              <td align="center" >
-
                     <a href="<c:url value='/CalendarExam2.jsp' />?year=<%=year-1%>&amp;month=<%=month%>" target="_self">
-
                            <b>&lt;&lt;</b><!-- 이전해 -->
-
                     </a>
 
                     <% if(month > 0 ){ %>
 
                     <a href="<c:url value='/CalendarExam2.jsp' />?year=<%=year%>&amp;month=<%=month-1%>" target="_self">
-
                            <b>&lt;</b><!-- 이전달 -->
-
                     </a>
 
                     <% } else { %>
-
                            <b>&lt;</b>
-
                     <%} %>
 
-                    &nbsp;&nbsp;
+                   &nbsp;&nbsp;
 
                     <%=year%>년
-
                    
 
                     <%=month+1%>월
-
                     &nbsp;&nbsp;
-
                     <%if(month < 11 ) { %>
 
                     <a href="<c:url value='/CalendarExam2.jsp' />?year=<%=year%>&amp;month=<%=month+1%>" target="_self">
@@ -221,9 +196,7 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
                     </a>
 
                     <% } else { %>
-
-                           <b>&gt;</b>
-
+                          <b>&gt;</b>
                     <% } %>
 
                     <a href="<c:url value='/CalendarExam2.jsp' />?year=<%=year+1%>&amp;month=<%=month%>" target="_self">
@@ -231,9 +204,7 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
                            <!-- 다음해 --><b>&gt;&gt;</b>
 
                     </a>
-
              </td>
-
        </tr>
 
        </table>
@@ -241,45 +212,31 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
  
 
 </td>
-
 </tr>
-
 </table>
-
 <br>
-
 <table width="100%" border="0" border-top="20px" cellspacing="1" cellpadding="1" bgcolor="#FFFFFF" style="position: relative;">
-
 <THEAD>
 
-<TR bgcolor="#CECECE">
+<TR bgcolor="#505050">
 
        <TD width='100px'>
-
        <DIV align="center"><font color="red">일</font></DIV>
-
-       </TD>
-
-       <TD width='100px'>
-
-       <DIV align="center">월</DIV>
-
-       </TD>
-
-       <TD width='100px'>
-
-       <DIV align="center">화</DIV>
-
-       </TD>
-
-       <TD width='100px'>
-       <DIV align="center">수</DIV>
        </TD>
        <TD width='100px'>
-       <DIV align="center">목</DIV>
+       <DIV align="center"><font color="white">월</DIV>
+      </TD>
+       <TD width='100px'>
+       <DIV align="center"><font color="white">화</DIV>
        </TD>
        <TD width='100px'>
-       <DIV align="center">금</DIV>
+       <DIV align="center"><font color="white">수</DIV>
+       </TD>
+       <TD width='100px'>
+       <DIV align="center"><font color="white">목</DIV>
+       </TD>
+       <TD width='100px'>
+       <DIV align="center"><font color="white">금</DIV>
        </TD>
        <TD width='100px'>
        <DIV align="center"><font color="#529dbc">토</font></DIV>
@@ -306,7 +263,6 @@ for(int index = 1; index < start ; index++ )
 
 for(int index = 1; index <= endDay; index++)
 {
-
        String color = "";
 
        if(newLine == 0){          color = "RED";
@@ -325,11 +281,9 @@ for(int index = 1; index <= endDay; index++)
 
       
 
-       String backColor = "#EFEFEF";
-
+       String backColor = "#FFF";
        if(iUseDate == intToday ) {
-             backColor = "#c9c9c9";
-
+             backColor = "#d2d2d2";
        }
        out.println("<TD valign='top' align='left' height='92px' bgcolor='"+backColor+"' nowrap>");
 
@@ -346,10 +300,7 @@ for(int index = 1; index <= endDay; index++)
        out.println("<BR>");
        out.println(iUseDate);
        out.println("<BR>");
-
-      
-
-      
+   
 
        //기능 제거 
 
@@ -359,7 +310,6 @@ for(int index = 1; index <= endDay; index++)
  
 
        if(newLine == 7)
-
        {
          out.println("</TR>");
          if(index <= endDay)
