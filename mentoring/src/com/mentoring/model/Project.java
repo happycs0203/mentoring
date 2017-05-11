@@ -13,7 +13,14 @@ public class Project {
 	private String pTime;
 	private String pEnroll;
 	private String pConfirm;
+	private String pIntroduce;
 	
+	public String getpIntroduce() {
+		return pIntroduce;
+	}
+	public void setpIntroduce(String pIntroduce) {
+		this.pIntroduce = pIntroduce;
+	}
 	public int getpNum() {
 		return pNum;
 	}

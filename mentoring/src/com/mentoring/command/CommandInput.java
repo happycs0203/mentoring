@@ -14,7 +14,6 @@ import javax.servlet.http.Part;
 
 import com.mentoring.model.Image;
 import com.mentoring.model.Project;
-import com.mentoring.model.User;
 import com.mentoring.service.MentoringService;
 
 public class CommandInput implements Command {
@@ -28,28 +27,30 @@ public class CommandInput implements Command {
 	public String execute(HttpServletRequest request) throws CommandException {
 		try {
 
+			//멘토링 등록 정보 가져오기
 			Project pro = new Project();
+			pro.setuId(request.getParameter("uId"));
+			pro.setpTitle(request.getParameter("pTitle"));
+			pro.setpPlace(request.getParameter("pPlace"));
+			pro.setpTime(request.getParameter("startDate") +"부터 "+ request.getParameter("endDate") +"까지 "+ request.getParameter("detailDate"));
+			pro.setpContent(request.getParameter("pContent"));
+			pro.setpIntroduce(request.getParameter("pIntroduce"));
 
+			//DB연결
 			MentoringService.getInstance().insertMentoring(pro);
 
-			Image img = new Image();
+			
+			//이미지 업로드
 
 			String contentType = request.getContentType();
 			if (contentType != null && contentType.toLowerCase().startsWith("multipart/")) {
 				Image uploadedItem = saveUploadFile(request);
 				request.setAttribute("uploadedItem", uploadedItem);
 			}
-			//회원가입 부분 user command 객체 생성 후 command에서 지정
-			User user = new User();
-			user.setuId(request.getParameter("uId"));
-			user.setuPass(request.getParameter("uPass"));
-			user.setuName(request.getParameter("uName"));
-			user.setuPhone(request.getParameter("uPhone"));
-			user.setuAddr(request.getParameter("uAddr"));
-			
-			//Repository를 호출 
-			MentoringService.getInstance().insertUser(user);
-			
+			else{
+				System.out.println("이미지 업로드 실패");
+			}
+
 		} catch (Exception ex) {
 			throw new CommandException("CommandInput.java" + ex.toString());
 		}
@@ -57,11 +58,11 @@ public class CommandInput implements Command {
 	}
 
 	private Image saveUploadFile(HttpServletRequest req) throws IOException, ServletException {
-		Part descPart = req.getPart("description");
-		String description = readParameterValue(descPart);
-		Part filePart = req.getPart("file");
+	
+		Part filePart = req.getPart("uploadImage");
 		String fileName = getFileName(filePart);
-		String realPath = FileSaveHelper.save("D:\\workspace_web_parctice\\mentoring\\WebContent\\imgUpload\\",
+		System.out.println(fileName);
+		String realPath = FileSaveHelper.save("D:\\workspace_web_second_project\\mentoring\\WebContent\\imgUpload\\",
 				filePart.getInputStream());
 
 		Image addRequest = new Image();

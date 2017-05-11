@@ -31,7 +31,7 @@ public class CommandMentoringView implements Command {
 			//String pNum = request.getParameter("pNum");
 			String pNum = "1";
 
-			MentoringService.getInstance().showMentoringView(pNum);
+			//MentoringService.getInstance().showMentoringView(pNum);
 
 		} catch (Exception ex) {
 			throw new CommandException("CommandInput.java" + ex.toString());

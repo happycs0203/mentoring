@@ -1,1 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MentoringMapper">
+
+<insert id="insertMentoring" parameterType="project">
+	INSERT INTO projectmento
+	VALUES(seq_project_num.nextval,#{uId}, 'mentoring', #{pTitle}, #{pPlace}, 1000, 5, 10, #{pContent}, #{pTime}, '2017/05/10', 'N', #{pIntroduce})
+</insert>
+<!-- # : PreparedStateMent형식, $ : Statement형식 -->
+
+<insert id="insertImage" parameterType="image">
+	INSERT INTO imagemento
+	VALUES(seq_image_num.nextval, seq_project_num.currentval, #{fileName}, #{realPath}, #{fileSize})
+</insert>
+<!-- # : PreparedStateMent형식, $ : Statement형식 -->
+
+
+
+</mapper>
