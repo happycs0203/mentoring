@@ -47,9 +47,10 @@ public class MentoringService {
 		return repo.confirmLogin(user);
 	}
 	
-	public List<Prolist> searchMentoring(){
-		return repo.searchMentoring();
+	public List<Prolist> searchMentoring(String project){
+		return repo.searchMentoring(project);
 	}
+
 	
 	public List<Project> dateInput(){
 	      return repo2.dateInput();
@@ -62,4 +63,5 @@ public class MentoringService {
 	public Image showMentoringImage(int iNum){
 		return repo1.showMentoringImage(iNum);
 	}
+	
 }

@@ -37,10 +37,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     where u_id = #{uId} AND u_pass = #{uPass}  
 </select>
 
-<select id="selectProjectList" resultMap="prolistMap">
+<select id="selectProjectList" parameterType="hashmap" resultMap="prolistMap">
 	SELECT i.i_num i_num, i.i_path i_path, p.p_num p_num, p.p_title p_title, p.p_div p_div
 	FROM projectmento p inner join imagemento i
 	ON p.p_num = i.p_num
+	WHERE p_div = #{project}
 </select>
 
 

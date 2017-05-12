@@ -12,7 +12,9 @@
 <title></title>
 		<!-- Mobile Meta   --> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+          
+          <link href="//code.jboxcdn.com/0.4.7/jBox.css" rel="stylesheet">
+         
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="/mentoring/mentoring_jsp/worthy_v.1.0/images/favicon.ico">
 
@@ -35,7 +37,7 @@
 		<!-- Custom css --> 
 		<link href="/mentoring/mentoring_jsp/worthy_v.1.0/css/custom.css" rel="stylesheet">
 		
-		   <link rel="shortcut icon" href="/mentoring/mentoring_jsp/assets/images/gt_favicon.png">
+		<link rel="shortcut icon" href="/mentoring/mentoring_jsp/assets/images/gt_favicon.png">
    
    <!-- Bootstrap -->
    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">

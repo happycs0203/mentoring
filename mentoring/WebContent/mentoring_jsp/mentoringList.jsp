@@ -13,6 +13,7 @@
 		<!-- Mobile Meta   --> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <link href="//code.jboxcdn.com/0.4.7/jBox.css" rel="stylesheet">
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="/mentoring/mentoring_jsp/worthy_v.1.0/images/favicon.ico">
 
@@ -52,7 +53,38 @@
    <script type="text/javascript" src="/mentoring/mentoring_jsp/assets/js/jquery-ui-1.10.4.custom.min.js"></script> <!-- UI 플러그인 연동 -->
    <script type="text/javascript" src="/mentoring/mentoring_jsp/assets/js/jquery.cookie.js"></script>  <!-- 쿠키 플러그인 연동 -->
    <script type="text/javascript" src='/mentoring/mentoring_jsp/assets/js/script.js'></script>
-
+    <script type="text/javascript">
+   $(function(){
+	    var $win = $(window);
+	    var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
+	 
+	    /*사용자 설정 값 시작*/
+	    var speed          = 500;     // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec)
+	    var easing         = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing
+	    var $layer         = $('.float_sidebar'); // 레이어 셀렉팅
+	    var layerTopOffset = 0;   // 레이어 높이 상한선, 단위:px
+	    $layer.css('position', 'absolute').css('right','20px').css('z-index', '1');
+	    /*사용자 설정 값 끝*/
+	 
+	    // 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해
+	    if (top > 0 )
+	        $win.scrollTop(layerTopOffset+top);
+	    else
+	        $win.scrollTop(0);
+	 
+	    //스크롤이벤트가 발생하면
+	    $(window).scroll(function(){
+	        yPosition = $win.scrollTop() + 250; //이부분을 조정해서 화면에 보이도록 맞추세요
+	        if (yPosition < 0)
+	        {
+	            yPosition = 0;
+	        }
+	        $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false});
+	    });
+	});
+   
+   
+   </script>
 
 </head>
 <body class="no-trans">
@@ -64,6 +96,13 @@
 
 <!-- section start -->
 		<!-- ================ -->
+		
+		   <!-- sidebar start -->
+                         <div  class="float_sidebar">
+                            <input type="button" class="sidebar" value="찜한 목록"><br>
+                            <input type="button" class="sidebar" value="멘토링 개설하기">
+                         </div> 
+                         
 		<div class="section">
 			<div class="container">
 				

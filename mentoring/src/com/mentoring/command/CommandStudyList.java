@@ -8,10 +8,10 @@ import com.mentoring.model.Project;
 import com.mentoring.model.Prolist;
 import com.mentoring.service.MentoringService;
 
-public class CommandMentoringList implements Command {
+public class CommandStudyList implements Command {
 	private String next;
 	
-	public CommandMentoringList(String _next) {
+	public CommandStudyList(String _next) {
 		next = _next;
 	}
 
@@ -19,7 +19,7 @@ public class CommandMentoringList implements Command {
 	public String execute(HttpServletRequest request) throws CommandException {
 		try {
              
-			String project = "mentoring";
+			String project = "study";
 			List<Prolist> pList= MentoringService.getInstance().searchMentoring(project);
 			
 			request.setAttribute("pList", pList);

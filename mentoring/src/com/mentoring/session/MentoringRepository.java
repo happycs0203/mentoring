@@ -2,6 +2,7 @@ package com.mentoring.session;
 
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -58,10 +59,12 @@ public class MentoringRepository {
 	   	
 	}
 	
-	public List<Prolist> searchMentoring(){
+	public List<Prolist> searchMentoring(String project){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{
-			return sqlSess.selectList(namespace+".selectProjectList");
+			HashMap map = new HashMap<>();
+			map.put("project", project);
+			return sqlSess.selectList(namespace+".selectProjectList", map);
 		}finally{
 			sqlSess.close();
 		}
