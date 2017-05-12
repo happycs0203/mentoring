@@ -36,16 +36,13 @@ public class CommandInput implements Command {
 			pro.setpContent(request.getParameter("pContent"));
 			pro.setpIntroduce(request.getParameter("pIntroduce"));
 
-			//DB연결
-			MentoringService.getInstance().insertMentoring(pro);
-
-			
 			//이미지 업로드
 
 			String contentType = request.getContentType();
 			if (contentType != null && contentType.toLowerCase().startsWith("multipart/")) {
-				Image uploadedItem = saveUploadFile(request);
-				request.setAttribute("uploadedItem", uploadedItem);
+//				Image uploadedItem = saveUploadFile(request, pro);
+//				request.setAttribute("uploadedItem", uploadedItem);
+				saveUploadFile(request, pro);
 			}
 			else{
 				System.out.println("이미지 업로드 실패");
@@ -57,21 +54,20 @@ public class CommandInput implements Command {
 		return next;
 	}
 
-	private Image saveUploadFile(HttpServletRequest req) throws IOException, ServletException {
+	private Integer saveUploadFile(HttpServletRequest req, Project pro) throws IOException, ServletException {
 	
 		Part filePart = req.getPart("uploadImage");
 		String fileName = getFileName(filePart);
 		System.out.println(fileName);
-		String realPath = FileSaveHelper.save("C:\\Users\\maro4\\git\\mentoring\\mentoring\\WebContent\\imageupload\\",
+		String realPath = FileSaveHelper.save("C:\\Users\\ksota\\git\\mentoring\\mentoring\\WebContent\\imageupload\\",
 				filePart.getInputStream());
 
 		Image addRequest = new Image();
 		addRequest.setiTitle(fileName);
 		addRequest.setiSize(filePart.getSize());
 		addRequest.setiPath(realPath);
-
-		Image img = MentoringService.getInstance().insertImage(addRequest);
-		return img;
+		MentoringService.getInstance().insertMentoring(pro, addRequest);
+		return 0;
 	}
 
 	private String getFileName(Part part) throws UnsupportedEncodingException {

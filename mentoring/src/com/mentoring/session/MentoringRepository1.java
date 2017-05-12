@@ -29,13 +29,15 @@ public class MentoringRepository1 {
 		return factory;
 	}
 	
-	public Integer insertMentoring( Project p){
+	public Integer insertMentoring( Project p, Image img){
 		//JDBC : Connection, Mybatis : SqlSession
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{
 			String statment = namespace + ".insertMentoring";
 			int result = sqlSess.insert(statment, p);
-			if(result > 0){
+			String statment1 = namespace + ".insertImage";
+			result += sqlSess.insert(statment1, img);
+			if(result > 1){
 				sqlSess.commit();
 				//JDBC : auto-commit, Mybatis : �ƴ�
 			}else{
@@ -47,23 +49,23 @@ public class MentoringRepository1 {
 		return 0;
 	}
 	
-	public Image insertImage(Image img){
-		//JDBC : Connection, Mybatis : SqlSession
-		SqlSession sqlSess = getSelSessionFactory().openSession();
-		try{
-			String statment = namespace + ".insertImage";
-			int result = sqlSess.insert(statment, img);
-			if(result == -1){
-				sqlSess.rollback();
-				//JDBC : auto-commit, Mybatis : �ƴ�
-			}else{
-				sqlSess.commit();
-			}
-		}finally{
-			sqlSess.close();
-		}
-		return img;
-	}
+//	public Image insertImage(Image img){
+//		//JDBC : Connection, Mybatis : SqlSession
+//		SqlSession sqlSess = getSelSessionFactory().openSession();
+//		try{
+//			String statment = namespace + ".insertImage";
+//			int result = sqlSess.insert(statment, img);
+//			if(result == -1){
+//				sqlSess.rollback();
+//				//JDBC : auto-commit, Mybatis : �ƴ�
+//			}else{
+//				sqlSess.commit();
+//			}
+//		}finally{
+//			sqlSess.close();
+//		}
+//		return img;
+//	}
 	
 	public Project showMentoringView(int pNum) {
 		

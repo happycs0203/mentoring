@@ -21,20 +21,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <resultMap type="com.mentoring.model.Image" id="imageMap">
 	<result column="i_num" 	property="iNum"/>
 	<result column="i_path" 	property="iPath"/>
-	
 </resultMap>
 
 	<insert id="insertMentoring" parameterType="project">
 		INSERT INTO projectmento
 		VALUES(seq_project_num.nextval,#{uId}, 'mentoring', #{pTitle}, #{pPlace}, 1000, 5, 10, #{pContent},
 		#{pTime}, '2017/05/10', 'N', #{pIntroduce})
+		
+		
 	</insert>
 	<!-- # : PreparedStateMent형식, $ : Statement형식 -->
 
 	<insert id="insertImage" parameterType="image">
 		<selectKey keyColumn='p_num' keyProperty='pNum' order='BEFORE'
 			resultType='int'>
-			SELECT seq_project_num.nextval FROM dual
+			SELECT seq_project_num.currval FROM dual
 		</selectKey>
 
 		INSERT INTO imagemento
