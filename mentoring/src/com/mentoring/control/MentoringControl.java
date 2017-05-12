@@ -76,7 +76,7 @@ public class MentoringControl extends HttpServlet {
 			if( commandMap.containsKey( cmdKey.toLowerCase() ) ){
 				cmd = (Command)commandMap.get( cmdKey.toLowerCase());
 			}else{
-				throw new CommandException("占쏙옙占쏙옙占쏙옙 占쏙옙載� 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙");
+				throw new CommandException("mentoring : 지정할 명령어가 존재하지 않음");
 			}
 			//System.out.println(cmd);
 			nextPage = cmd.execute( request );
@@ -85,7 +85,7 @@ public class MentoringControl extends HttpServlet {
 		}catch( CommandException e ){
 			request.setAttribute("javax.servlet.jsp.jspException", e );
 			nextPage = error;
-			System.out.println("占쏙옙占쏙옙 : " + e.getMessage() );
+			System.out.println("에러 : " + e.getMessage() );
 		}
 
 		RequestDispatcher reqDp = getServletContext().getRequestDispatcher( jspDir + nextPage );

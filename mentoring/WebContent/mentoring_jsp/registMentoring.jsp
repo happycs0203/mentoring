@@ -3,7 +3,7 @@
     
 
 <%
-	String uId = "hcs";	//나중에 쿠키로 바꾸기
+	String uId = "hcs";	//나중에 쿠키나 세션으로 바꾸기
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
