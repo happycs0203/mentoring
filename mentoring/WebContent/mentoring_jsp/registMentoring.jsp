@@ -58,7 +58,6 @@ function readURL(input) {
 $(function () {
     $("#startDate").datepicker();
     $("#endDate").datepicker();
-
 });
 </script>
 </head>

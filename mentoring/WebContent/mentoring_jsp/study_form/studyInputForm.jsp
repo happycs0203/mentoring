@@ -2,13 +2,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
- <script type="text/javascript" src="/mentoring/mentoring_jsp/filestyle/js/bootstrap-filestyle.min.js"> </script>
- 
+<script type="text/javascript" src="/mentoring/mentoring_jsp/filestyle/js/bootstrap-filestyle.min.js"> </script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" />
 <style>
 .inputstl { 
     padding: 9px; 
@@ -27,6 +30,25 @@
 <title></title>
 
 <script type="text/javascript">
+$.datepicker.setDefaults({
+    dateFormat: 'yy-mm-dd',
+    prevText: '이전 달',
+    nextText: '다음 달',
+    monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+    monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+    dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+    dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+    dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+    showMonthAfterYear: true,
+    yearSuffix: '년'
+  });
+
+
+
+$(function () {
+    $("#startDate").datepicker();
+    $("#endDate").datepicker();
+});
 
 function readURL(input) {
     if (input.files && input.files[0]) {
@@ -40,70 +62,105 @@ function readURL(input) {
 </script>
 </head>
 <body>
+
+
 <!-- <form action="/mentoring/mentoring.mento?cmd=study-inputdo" method="post" enctype="multipart/form-data"> -->
 <!-- <img class="ccformfield" id="UploadedImg" src="http://arweb.sdsu.edu/es/virtual/images/placeholder.png" /> -->
 <!-- 파일: <input type="file" name="file" onchange="readURL(this)" id="uploadImage" name="uploadImage"/> <br/> -->
 <!-- <input type="submit" value="업로드" /> -->
 <!-- </form> -->
+
+<header id="header">
+		<jsp:include page="../mentoringHeader.jsp"/>
+</header>
+
 <div class="container">
 <h1>Bootstrap Upload Form demo</h1>
     <form class="form-horizontal" role="form" action="/mentoring/mentoring.mento?cmd=study-inputdo" method="post" enctype="multipart/form-data">
-      	<img class="ccformfield" id="UploadedImg" src="http://arweb.sdsu.edu/es/virtual/images/placeholder.png" width="960"  height="450" />
-      	<br/>
+      <img class="ccformfield" id="UploadedImg" src="http://arweb.sdsu.edu/es/virtual/images/placeholder.png" width="960"  height="450" />
+      </br></br>
       <div class="form-group">
-        <label for="selphoto" class="col-sm-2 control-label">Select a File to upload:</label>
+        <label for="selphoto" class="col-sm-2 control-label">포스터 이미지 등록:</label>
         <div class="col-sm-5">
-          <input type="file" class="inputstl" id="selphoto" name="sentfile" onchange="readURL(this)">
+          <input type="file" class="inputstl" id="uploadImage" name="uploadImage" onchange="readURL(this)">
         </div>
       </div>
       
       
       <div class="form-group">
-        <label for="name1" class="col-sm-2 control-label">Name:</label>
+        <label for="pTitle" class="col-sm-2 control-label">스터디 제목:</label>
         <div class="col-sm-4">
-          <input type="email" class="form-control inputstl" id="name1" placeholder="Enter Your Full Name">
+          <input type="text" class="form-control inputstl" id="pTitle" name="pTitle" placeholder="Enter Your Full Title">
         </div>
       </div>
+      
+       <div class="form-group">
+        <label for="pPlace" class="col-sm-2 control-label">스터디 장소:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control inputstl" id="pPlace" name="pPlace" placeholder="Enter Your Full Place">
+        </div>
+      </div>
+      
       <div class="form-group">
-        <label for="gender1" class="col-sm-2 control-label">Gender:</label>
-        <div class="col-sm-2">
-        <select class="form-control inputstl" id="gender1">
-          <option>Male</option>
-          <option>Female</option>
-        </select>          
-          
+      	<label for="startDate" class="col-sm-2 control-label">시작 날짜:</label>
+        <div class="col-sm-3">
+          <input id="startDate" name="startDate" type="text" placeholder="시작날짜" required class="form-control inputstl">
+        </div>
+        <label for="endDate" class="col-sm-2 control-label">종료 날짜:</label>
+        <div class="col-sm-3">
+          <input id="endDate" name="endDate" type="text" placeholder="종료날짜" required class="form-control inputstl">
+        </div>
+      </div>
+      
+      
+       <div class="form-group">
+        <label for="detailDate" class="col-sm-2 control-label">요일:</label>
+        <div class="col-sm-4">
+          <input id="detailDate" name="detailDate" type="text" placeholder="ex>매주 월요일" required class="form-control inputstl"/>
+        </div>
+      </div>
+      
+      
+      <div class="form-group">
+        <label for="minMem" class="col-sm-2 control-label">최소 인원:</label>
+        <div class="col-sm-3">
+        <select class="form-control inputstl" id="minMem" name="minMem">
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+        </select>
+        </div>
+        <label for="maxMem" class="col-sm-2 control-label">최대 인원:</label>
+        <div class="col-sm-3">
+        <select class="form-control inputstl" id="maxMem"  name="maxMem">
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+          <option>13</option>
+          <option>14</option>
+          <option>15</option>
+          <option>16</option>
+        </select>         
         </div>
       </div>      
       <div class="form-group">
-        <label for="email1" class="col-sm-2 control-label">Email:</label>
-        <div class="col-sm-5">
-          <input type="email" class="form-control inputstl" id="email1" placeholder="Enter Email">
+        <label for="pContent" class="col-sm-2 control-label">Email:</label>
+        <div class="col-sm-8">
+          <textarea class="form-control inputstl" id="pContent" name="pContent" placeholder="Enter Email" rows="4"></textarea>
         </div>
       </div>
       <div class="form-group">
-        <label for="password1" class="col-sm-2 control-label">Password:</label>
-        <div class="col-sm-3">
-          <input type="password" class="form-control inputstl" id="password1" placeholder="Password here">
+        <label for="pIntroduce" class="col-sm-2 control-label">Email:</label>
+        <div class="col-sm-8">
+          <textarea class="form-control inputstl" id="pIntroduce" name="pIntroduce" placeholder="Enter Email" rows="4"></textarea>
         </div>
       </div>
-      <div class="form-group">
-        <label for="address1" class="col-sm-2 control-label">Address:</label>
-        <div class="col-sm-5">
-          <input type="email" class="form-control inputstl" id="address1" placeholder="Full Address">
-        </div>
-      </div>            
 
       
-      
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" class="inputstl"> Remember me
-            </label>
-          </div>
-        </div>
-      </div>
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-4">
           <button type="submit" class="btn btn-lg btn-block btn-primary">Create Account</button>
@@ -112,7 +169,7 @@ function readURL(input) {
     </form>
    </div>
 <script>
-			$('#selphoto').filestyle({
+			$('#uploadImage').filestyle({
 				buttonName : 'btn-primary',
                 buttonText : ' Upload an Image',
                 iconName : 'glyphicon glyphicon-upload'
