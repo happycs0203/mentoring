@@ -38,7 +38,7 @@ $(function(){
 <div class="login-page">
   <div class="form">
     <form class="login-form" action="#">
-    <input type="hidden" name="cmd" value="show-noticelist">
+    	<input type="hidden" name="cmd" value="show-noticelist">
       <input type="text" id="adminId" placeholder="adminID"/>
       <input type="password" id="adminPass" placeholder="password"/>
       <button id="adminLoginBtn">login</button>

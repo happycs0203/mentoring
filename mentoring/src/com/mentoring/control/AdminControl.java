@@ -17,6 +17,7 @@ import com.mentoring.command.CommandInput;
 import com.mentoring.command.CommandLogin;
 import com.mentoring.command.CommandMentoringList;
 import com.mentoring.command.CommandMentoringView;
+import com.mentoring.command.CommandNoticeList;
 import com.mentoring.command.CommandNull;
 import com.mentoring.command.CommandUserInput;
 
@@ -40,7 +41,7 @@ public class AdminControl extends HttpServlet {
     private void initCommand(){
 		commandMap = new HashMap();
 		//null占쏙옙 db占싫곤옙占쌕울옙
-		commandMap.put("show-noticelist",	new CommandNull("AdminNoticeList.jsp") );
+		commandMap.put("show-noticelist",	new CommandNoticeList("AdminNoticeList.jsp") );
 		commandMap.put("regist-notice",	new CommandNull("registNotice.jsp") );
 	}
 

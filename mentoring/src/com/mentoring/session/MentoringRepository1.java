@@ -3,6 +3,7 @@ package com.mentoring.session;
 
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -10,6 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.mentoring.model.Image;
+import com.mentoring.model.Notice;
 import com.mentoring.model.Project;
 import com.mentoring.model.User;
 
@@ -49,6 +51,15 @@ public class MentoringRepository1 {
 		return 0;
 	}
 	
+	public List<Notice> showNoticeList() {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			return sqlSess.selectList(namespace+".showNoticeList");
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
 //	public Image insertImage(Image img){
 //		//JDBC : Connection, Mybatis : SqlSession
 //		SqlSession sqlSess = getSelSessionFactory().openSession();
@@ -78,7 +89,7 @@ public class MentoringRepository1 {
 			sqlSess.close();
 		}
 	}
-	//
+	
 	public Image showMentoringImage(int iNum) {
 		
 		SqlSession sqlSess = getSelSessionFactory().openSession();

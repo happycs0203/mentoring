@@ -3,6 +3,7 @@ package com.mentoring.service;
 import java.util.List;
 
 import com.mentoring.model.Image;
+import com.mentoring.model.Notice;
 import com.mentoring.model.Project;
 import com.mentoring.model.Prolist;
 import com.mentoring.model.User;
@@ -29,6 +30,10 @@ public class MentoringService {
 	
 	public Integer insertMentoring(Project project, Image image){
 		return repo1.insertMentoring(project, image);
+	}
+	
+	public List showNoticeList(){
+		return repo1.showNoticeList();
 	}
 	
 //	public Image insertImage(Image img){
