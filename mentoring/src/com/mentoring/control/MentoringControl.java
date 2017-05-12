@@ -44,7 +44,7 @@ public class MentoringControl extends HttpServlet {
 		commandMap.put("main-page2",new CommandLogin("mainPage.jsp") );
 		commandMap.put("input-form", new CommandInput("mainPage.jsp") );//�굹以묒뿉 留덉씠�럹�씠吏� �솕硫댁쑝濡� �꽆寃⑥＜湲�
 		commandMap.put("mentoring-view", new CommandMentoringView("mentoringView.jsp") );
-		commandMap.put("study-list", new CommandInput("studyList.jsp") );
+		commandMap.put("study-list", new CommandMentoringList("studyList.jsp") );
 		commandMap.put("calendar-view",	new CommandDateInput("calendarView.jsp") );
 		commandMap.put("mentoring-list", new CommandMentoringList("mentoringList.jsp"));
 		commandMap.put("register-form", new CommandUserInput("registerSave.jsp"));//�쉶�썝媛��엯 �뤌
