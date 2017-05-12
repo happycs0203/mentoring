@@ -19,6 +19,7 @@ import com.mentoring.command.CommandMentoringList;
 import com.mentoring.command.CommandMentoringView;
 import com.mentoring.command.CommandNoticeList;
 import com.mentoring.command.CommandNull;
+import com.mentoring.command.CommandConfirmedMentoringList;
 import com.mentoring.command.CommandUserInput;
 
 /**
@@ -43,6 +44,8 @@ public class AdminControl extends HttpServlet {
 		//null占쏙옙 db占싫곤옙占쌕울옙
 		commandMap.put("show-noticelist",	new CommandNoticeList("AdminNoticeList.jsp") );
 		commandMap.put("regist-notice",	new CommandNull("registNotice.jsp") );
+		//commandMap.put("confirm-mentoringlist",	new CommandConfirmedMentoringList("ConfirmedMentoringList.jsp") );
+		commandMap.put("confirm-mentoringlist",	new CommandNull("ConfirmedMentoringList.jsp") );
 	}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

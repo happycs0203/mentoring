@@ -81,6 +81,27 @@
 	        }
 	        $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false});
 	    });
+	    
+	    
+	    var listcount = 0;
+		   
+	    $('#addlist').click(function(){
+	    	 alert('dd');
+	    	
+// 	       	listcount += 3;
+// 	    	$.post("/mentoring/mentoring_jsp/studyList.jsp", { "count: listcount"}, function(data){
+	    		
+// 	    		 var oldlist = $('#listbody').html();
+// 	    		 $('#listbody').html(oldlist+data);
+	    		
+// 	    	});
+	    	
+	    	
+	    	
+	    });
+	    
+	    
+	    
 	});
    
    
@@ -124,7 +145,7 @@
 						<!-- portfolio items start -->
 						<div class="isotope-container row grid-space-20">
 							<%for(Prolist p: pList) {%>
-							<div class="col-sm-6 col-md-3 isotope-item web-design">
+							<div class="col-sm-6 col-md-3 isotope-item web-design" id='listbody'>
 								<div class="image-box">
 									<div class="overlay-container">
 										<img src="/mentoring/imageupload/<%=p.getiPath()%>" alt="">
@@ -141,7 +162,7 @@
 							
 						</div>
 						<!-- portfolio items end -->
-					
+					 <div id='addlist' style='cursor:pointer; font-size:18px; position:relative; left:630px'> + 더보기 </div>
 					</div>
 				</div>
 			</div>
