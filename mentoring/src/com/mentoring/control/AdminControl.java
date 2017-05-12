@@ -40,6 +40,7 @@ public class AdminControl extends HttpServlet {
     private void initCommand(){
 		commandMap = new HashMap();
 		//null占쏙옙 db占싫곤옙占쌕울옙
+		commandMap.put("show-noticelist",	new CommandNull("AdminNoticeList.jsp") );
 		commandMap.put("regist-notice",	new CommandNull("registNotice.jsp") );
 	}
 
@@ -57,8 +58,9 @@ public class AdminControl extends HttpServlet {
 
 		String nextPage = "";
 		String cmdKey	= request.getParameter("cmd");
+		System.out.println("cmdKey : " + cmdKey);
 		if( cmdKey == null ){
-			cmdKey = "regist-notice";
+			cmdKey = "show-noticelist";
 		}
 
 		
@@ -71,9 +73,9 @@ public class AdminControl extends HttpServlet {
 			}else{
 				throw new CommandException("admin : 지정할 명령어가 존재하지 않음");
 			}
-			//System.out.println(cmd);
+			//System.out.println("cmd : " + cmd);
 			nextPage = cmd.execute( request );
-			//System.out.println(nextPage);
+			//System.out.println("nextPage : " + nextPage);
 
 		}catch( CommandException e ){
 			request.setAttribute("javax.servlet.jsp.jspException", e );

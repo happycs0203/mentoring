@@ -28,7 +28,6 @@
          <div class="navbar-collapse collapse">
             
             <ul class="nav navbar-nav">
-               <li><a href="#">공지사항</a></li>
                <li><a href="#">개설된 멘토링 목록</a></li>
                <li><a href="#">멘토링 개설 요청</a></li>
                <li><a href="#">회원목록</a></li>

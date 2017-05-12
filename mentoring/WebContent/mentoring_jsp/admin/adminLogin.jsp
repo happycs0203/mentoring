@@ -23,10 +23,12 @@ $(function(){
 	
 	$("#adminLoginBtn").click(function(){
 		if($("#adminId").val() == "admin" && $("#adminPass").val() == "admin"){
+			$(".login-form").attr("action","xxx.admin");
 			$(".login-form").submit();
 		}
 		else{
 			alert("아이디와 비밀번호가 일치하지 않습니다");
+			$(".login-form").attr("action","#");
 		}
 	});
 });
@@ -35,7 +37,8 @@ $(function(){
 <body>
 <div class="login-page">
   <div class="form">
-    <form class="login-form" action="xxx.admin?cmd=regist-notice">
+    <form class="login-form" action="#">
+    <input type="hidden" name="cmd" value="show-noticelist">
       <input type="text" id="adminId" placeholder="adminID"/>
       <input type="password" id="adminPass" placeholder="password"/>
       <button id="adminLoginBtn">login</button>
