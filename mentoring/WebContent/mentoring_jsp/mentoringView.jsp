@@ -78,7 +78,19 @@
 		
 		
 		$("#zzim").click(function(){
+			<%	
+			// 1. Cookie 객체 생성
+			Cookie c = new Cookie("temp", String.valueOf(p.getpNum()));
 			
+			// 2. 속성 부여
+			//속성업을때 브라우저 닫을때까지만 살아있다.
+			//속성있으면 2분정도 살아있다.
+			c.setMaxAge(1*60*2);
+			
+			// 3. 클라이언트에 쿠키 전송
+			response.addCookie(c);
+			
+		%>
 		});
 		
 	});

@@ -18,5 +18,16 @@
     <url-pattern>/mento</url-pattern>
     <url-pattern>*.mento</url-pattern>
   </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>AdminControl</servlet-name>
+    <servlet-class>com.mentoring.control.AdminControl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminControl</servlet-name>
+    <url-pattern>/admin</url-pattern>
+    <url-pattern>*.admin</url-pattern>
+  </servlet-mapping>
     
 </web-app>
