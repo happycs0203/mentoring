@@ -59,7 +59,7 @@ public class AdminControl extends HttpServlet {
 
 		String nextPage = "";
 		String cmdKey	= request.getParameter("cmd");
-		System.out.println("cmdKey : " + cmdKey);
+		//System.out.println("cmdKey : " + cmdKey);
 		if( cmdKey == null ){
 			cmdKey = "show-noticelist";
 		}

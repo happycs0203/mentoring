@@ -18,7 +18,6 @@ public class CommandNoticeList implements Command {
 	public String execute(HttpServletRequest request) throws CommandException {
 		try {
 
-			int nNum = Integer.parseInt(request.getParameter("nNum"));
 			List<Notice> nList= MentoringService.getInstance().showNoticeList();
 			
 			request.setAttribute("nList", nList);
@@ -27,6 +26,5 @@ public class CommandNoticeList implements Command {
 			throw new CommandException("CommandInput.java" + ex.toString());
 		}
 		return next;
-		//
 	}
 }

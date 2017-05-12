@@ -64,6 +64,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</where>
 	</select>
 	<!-- # : PreparedStateMent형식, $ : Statement형식 -->
+	
+	<select id="showNoticeList" resultType="notice">
+		select * 
+		from noticemento
+	</select>
 
 
 
