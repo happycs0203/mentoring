@@ -11,14 +11,14 @@
 %>
 
 <%
-	
+	List<Notice> nList = (List<Notice>)request.getAttribute("nList");
 %>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ConfirmedMentoringList</title>
+<title>AdminNoticeList</title>
 
 <!-- Bootstrap -->
    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
@@ -41,4 +41,32 @@
 
 </body>
 
+<table>
+	<tr>
+		<td>글번호</td>
+		<td>제 목</td>
+		<td>작성일</td>
+		<td>조회수</td>
+	</tr>
+	
+	<% if( nList.isEmpty() ) { %>
+		<tr><td colspan="5"> 등록된 게시물이 없습니다. </td></tr>
+	<% } else { %>
+	
+		<% for(Notice rec : nList) {%>
+		<tr>
+			<td><%= rec.getnNum() %></td>
+			<td>
+			<a href="xxxx.board?cmd=boardview-page&bId=<%=rec.getnNum()%>">
+			<%= rec.getnTitle()%></a>
+			</td>
+			<td><%= rec.getnDate() %></td>		
+			<td><%= rec.getnHits() %></td>
+		</tr>
+		<%}//end of for %>
+
+	<% } // end else %>
+</table>
+
+<a href="xxx.admin?cmd=regist-notice">등록</a>
 </html>
