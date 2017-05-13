@@ -1,8 +1,15 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+
+	Object uIdObj = session.getAttribute("uId");
+	String uId = "";
+	if( uIdObj != null){
+		uId = (String) uIdObj;
+	}
+%>
 <!DOCTYPE html>
 <html>
 <head>
-
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -76,6 +83,7 @@ function readURL(input) {
 
 <div class="container">
     <form class="form-horizontal" role="form" action="/mentoring/mentoring.mento?cmd=study-inputdo" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="uId" value="<%=uIdObj%>"/>
       <img class="ccformfield" id="UploadedImg" src="http://arweb.sdsu.edu/es/virtual/images/placeholder.png" width="960"  height="450" />
       </br></br>
       <div class="form-group">
