@@ -30,6 +30,7 @@ public class CommandStudyInput implements Command {
 			//멘토링 등록 정보 가져오기
 			Project pro = new Project();
 			pro.setuId(request.getParameter("uId"));
+			pro.setpDiv("study");
 			pro.setpTitle(request.getParameter("pTitle"));
 			pro.setpPlace(request.getParameter("pPlace"));
 			pro.setpTime(request.getParameter("startDate") + "~" + request.getParameter("endDate") +" "+ request.getParameter("detailDate"));
