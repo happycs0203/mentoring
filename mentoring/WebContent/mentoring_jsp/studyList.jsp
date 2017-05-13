@@ -96,12 +96,11 @@
 // 	    		 $('#listbody').html(oldlist+data);
 	    		
 // 	    	});
-	    	
-	    	
-	    	
 	    });
 	    
-	    		
+	    $('#registStudy').click(function(){
+	    	location.href="/mentoring/mentoring.mento?cmd=study-input"
+	    });
 	 
 	  
 	    
@@ -124,7 +123,7 @@
 		   <!-- sidebar start -->
                          <div  class="float_sidebar">
                             <input type="button" class="sidebar" value="찜한 목록"><br>
-                            <input type="button" class="sidebar" value="스터디 개설하기">
+                            <input type="button" class="sidebar" id="registStudy" value="스터디 개설하기">
                          </div> 
 		
 		<div class="section">

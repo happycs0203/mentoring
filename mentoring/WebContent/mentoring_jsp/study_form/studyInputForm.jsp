@@ -31,7 +31,7 @@
 
 <script type="text/javascript">
 $.datepicker.setDefaults({
-    dateFormat: 'yy-mm-dd',
+    dateFormat: 'yy/mm/dd',
     prevText: '이전 달',
     nextText: '다음 달',
     monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
@@ -41,7 +41,7 @@ $.datepicker.setDefaults({
     dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
     showMonthAfterYear: true,
     yearSuffix: '년'
-  });
+});
 
 
 
@@ -75,7 +75,6 @@ function readURL(input) {
 </header>
 
 <div class="container">
-<h1>Bootstrap Upload Form demo</h1>
     <form class="form-horizontal" role="form" action="/mentoring/mentoring.mento?cmd=study-inputdo" method="post" enctype="multipart/form-data">
       <img class="ccformfield" id="UploadedImg" src="http://arweb.sdsu.edu/es/virtual/images/placeholder.png" width="960"  height="450" />
       </br></br>
@@ -148,13 +147,13 @@ function readURL(input) {
         </div>
       </div>      
       <div class="form-group">
-        <label for="pContent" class="col-sm-2 control-label">Email:</label>
+        <label for="pContent" class="col-sm-2 control-label">스터디 내용:</label>
         <div class="col-sm-8">
           <textarea class="form-control inputstl" id="pContent" name="pContent" placeholder="Enter Email" rows="4"></textarea>
         </div>
       </div>
       <div class="form-group">
-        <label for="pIntroduce" class="col-sm-2 control-label">Email:</label>
+        <label for="pIntroduce" class="col-sm-2 control-label">자기 소개:</label>
         <div class="col-sm-8">
           <textarea class="form-control inputstl" id="pIntroduce" name="pIntroduce" placeholder="Enter Email" rows="4"></textarea>
         </div>

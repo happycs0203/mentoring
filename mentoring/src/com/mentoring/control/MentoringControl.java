@@ -48,6 +48,9 @@ public class MentoringControl extends HttpServlet {
 		commandMap.put("study-list", new CommandStudyList("studyList.jsp") );
 		commandMap.put("calendar-view",	new CommandDateInput("calendarView.jsp") );
 		commandMap.put("mentoring-list", new CommandMentoringList("mentoringList.jsp"));
+
+		commandMap.put("study-input", new CommandNull("study_form/studyInputForm.jsp"));
+		commandMap.put("study-inputdo", new CommandStudyInput("study_form/studyViewjsp"));
 		commandMap.put("register-form", new CommandUserInput("registerSave.jsp"));//�쉶�썝媛��엯 �뤌
 	}
 
