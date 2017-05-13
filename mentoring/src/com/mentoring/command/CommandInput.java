@@ -33,6 +33,9 @@ public class CommandInput implements Command {
 			pro.setpDiv("mentoring");
 			pro.setpTitle(request.getParameter("pTitle"));
 			pro.setpPlace(request.getParameter("pPlace"));
+			pro.setpCost(Integer.parseInt(request.getParameter("pCost")));
+			pro.setpMinmem(Integer.parseInt(request.getParameter("pMinmem")));
+			pro.setpMaxmem(Integer.parseInt(request.getParameter("pMaxmem")));
 			pro.setpTime(request.getParameter("startDate") + "~" + request.getParameter("endDate") +" "+ request.getParameter("detailDate"));
 			pro.setpContent(request.getParameter("pContent"));
 			pro.setpIntroduce(request.getParameter("pIntroduce"));

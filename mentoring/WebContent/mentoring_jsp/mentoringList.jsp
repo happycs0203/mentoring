@@ -95,9 +95,10 @@
 // 	    		 $('#listbody').html(oldlist+data);
 	    		
 // 	    	});
-	    	
-	    	
-	    	
+
+	    });
+	    $('#registMentoring').click(function(){
+	    	location.href="/mentoring/mentoring.mento?cmd=mentoring-input"
 	    });
 	    
 	    
@@ -121,7 +122,7 @@
 		   <!-- sidebar start -->
                          <div  class="float_sidebar">
                             <input type="button" class="sidebar" value="찜한 목록"><br>
-                            <input type="button" class="sidebar" value="멘토링 개설하기">
+                            <input type="button" class="sidebar" id="registMentoring" name="registMentoring" value="멘토링 개설하기">
                          </div> 
                          
 		<div class="section">

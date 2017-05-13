@@ -1,110 +1,194 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	String uId = "hcs";	//나중에 쿠키나 세션으로 바꾸기
+
+	Object uIdObj = session.getAttribute("uId");
+	String uId = "";
+	if( uIdObj != null){
+		uId = (String) uIdObj;
+	}
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>registMentoring</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
-<link rel="stylesheet" href="assets/css/input.css">
-
-<link rel="shortcut icon" href="/mentoring/mentoring_jsp/assets/images/gt_favicon.png">
-   
-   <link href="//code.jboxcdn.com/0.4.7/jBox.css" rel="stylesheet">
-   
-   <!-- Bootstrap -->
-   <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
-   <!-- Icon font -->
-   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-   <!-- Fonts -->
-   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
-   <!-- Custom styles -->
-   <link rel="stylesheet" href="/mentoring/mentoring_jsp/assets/css/styles.css">
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="/mentoring/mentoring_jsp/filestyle/js/bootstrap-filestyle.min.js"> </script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" />
+<style>
+.inputstl { 
+    padding: 9px; 
+    border: solid 1px #173955; 
+    outline: 0; 
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #AACCE8), to(#FFFFFF)); 
+    background: -moz-linear-gradient(top, #FFFFFF, #AACCE8 1px, #FFFFFF 25px); 
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+
+    } 
+   
+</style>
+ 
+<title></title>
+
 <script type="text/javascript">
+$.datepicker.setDefaults({
+    dateFormat: 'yy/mm/dd',
+    prevText: '이전 달',
+    nextText: '다음 달',
+    monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+    monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+    dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+    dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+    dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+    showMonthAfterYear: true,
+    yearSuffix: '년'
+});
 
 
-function readURL(input) {
-
-    if (input.files && input.files[0]) {
-
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-
-            $('#UploadedImg').attr('src', e.target.result);
-
-        }
-
-        reader.readAsDataURL(input.files[0]);
-
-    }
-
-}
 
 $(function () {
     $("#startDate").datepicker();
     $("#endDate").datepicker();
 });
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('#UploadedImg').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 </script>
 </head>
 <body>
 
+
+<!-- <form action="/mentoring/mentoring.mento?cmd=study-inputdo" method="post" enctype="multipart/form-data"> -->
+<!-- <img class="ccformfield" id="UploadedImg" src="http://arweb.sdsu.edu/es/virtual/images/placeholder.png" /> -->
+<!-- 파일: <input type="file" name="file" onchange="readURL(this)" id="uploadImage" name="uploadImage"/> <br/> -->
+<!-- <input type="submit" value="업로드" /> -->
+<!-- </form> -->
+
 <header id="header">
-	<jsp:include page="mentoringHeader.jsp"/>
+		<jsp:include page="mentoringHeader.jsp"/>
 </header>
-<div class="wrapper">
-    <form method="post" action="xxx.mento?cmd=input-form&uId=<%=uId %>" class="ccform" enctype = "multipart/form-data">
-    
-    <div class="ccfield-prepend2">
-    <span class="ccform-addon"><i class="fa fa-cloud-upload fa-2x"></i></span>
-        <img class="ccformfield" id="UploadedImg" src="/mentoring/mentoring_jsp/assets/images/beforeUpload.JPG" width="85" height="111">
-        <input type="file" value="포스터 등록" class="ccbtn"  onchange="readURL(this)" id="uploadImage" name="uploadImage">
-    </div>
-    <div class="ccfield-prepend">
-        <span class="ccform-addon"><i class="fa fa-bookmark fa-2x"></i></span>
-        <input class="ccformfield" name="pTitle" type="text" pla4ceholder="멘토링 제목" required>
-    </div>
-    <div class="ccfield-prepend">
-        <span class="ccform-addon"><i class="fa fa-map-marker fa-2x"></i></span>
-        <input class="ccformfield" name="pPlace" type="text" placeholder="멘토링 장소" required>
-    </div>
-    <div class="ccfield-prepend">
-        <span class="ccform-addon"><i class="fa fa-calendar fa-2x"></i></span>
-        <input id="startDate" name="startDate" type="text" placeholder="시작날짜" required class="ccformfield">
-        <br>
-        <input id="endDate" name="endDate" type="text" placeholder="종료날짜" required class="ccformfield">
-        <br>
-        <input id="detailDate" name="detailDate" type="text" placeholder="ex>매주 월요일" required class="ccformfield"/>
-    </div>
-   
-    
-    <div class="ccfield-prepend">
-        <span class="ccform-addon"><i class="fa fa-book fa-2x"></i></span>
-        <textarea class="ccformfield" name="pContent" rows="8" placeholder="멘토링 내용" required></textarea>
-    </div>
-    <div class="ccfield-prepend">
-        <span class="ccform-addon"><i class="fa fa-comment fa-2x"></i></span>
-        <textarea class="ccformfield" name="pIntroduce" rows="8" placeholder="자기소개" required></textarea>
-    </div>
-    <div class="ccfield-prepend">
-        <input class="replace" type="submit" value="등록" id="registerMentoringBtn">
-    </div>
+
+<div class="container">
+    <form class="form-horizontal" role="form" action="/mentoring/mentoring.mento?cmd=mentoring-inputdo" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="uId" value="<%=uIdObj%>"/>
+      <img class="ccformfield" id="UploadedImg" src="http://arweb.sdsu.edu/es/virtual/images/placeholder.png" width="960"  height="450" />
+      </br></br>
+      <div class="form-group">
+        <label for="selphoto" class="col-sm-2 control-label">포스터 이미지 등록:</label>
+        <div class="col-sm-5">
+          <input type="file" class="inputstl" id="uploadImage" name="uploadImage" onchange="readURL(this)">
+        </div>
+      </div>
+      
+      
+      <div class="form-group">
+        <label for="pTitle" class="col-sm-2 control-label">멘토링 제목:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control inputstl" id="pTitle" name="pTitle" placeholder="Enter Your Full Title">
+        </div>
+      </div>
+      
+       <div class="form-group">
+        <label for="pPlace" class="col-sm-2 control-label">멘토링 장소:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control inputstl" id="pPlace" name="pPlace" placeholder="Enter Your Full Place">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="pPlace" class="col-sm-2 control-label">가격:</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control inputstl" id="pCost" name="pCost" placeholder="Enter Your Full Cost">
+        </div>
+      </div>
+      
+      <div class="form-group">
+      	<label for="startDate" class="col-sm-2 control-label">시작 날짜:</label>
+        <div class="col-sm-3">
+          <input id="startDate" name="startDate" type="text" placeholder="시작날짜" required class="form-control inputstl">
+        </div>
+        <label for="endDate" class="col-sm-2 control-label">종료 날짜:</label>
+        <div class="col-sm-3">
+          <input id="endDate" name="endDate" type="text" placeholder="종료날짜" required class="form-control inputstl">
+        </div>
+      </div>
+      
+      
+       <div class="form-group">
+        <label for="detailDate" class="col-sm-2 control-label">요일:</label>
+        <div class="col-sm-4">
+          <input id="detailDate" name="detailDate" type="text" placeholder="ex>매주 월요일" required class="form-control inputstl"/>
+        </div>
+      </div>
+      
+      
+      <div class="form-group">
+        <label for="minMem" class="col-sm-2 control-label">최소 인원:</label>
+        <div class="col-sm-3">
+        <select class="form-control inputstl" id="pMinmem" name="pMinmem">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+        </div>
+        <label for="maxMem" class="col-sm-2 control-label">최대 인원:</label>
+        <div class="col-sm-3">
+        <select class="form-control inputstl" id="pMaxmem"  name="pMaxmem">
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+        </select>         
+        </div>
+      </div>      
+      <div class="form-group">
+        <label for="pContent" class="col-sm-2 control-label">멘토링 내용:</label>
+        <div class="col-sm-8">
+          <textarea class="form-control inputstl" id="pContent" name="pContent" placeholder="Enter Content" rows="4"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pIntroduce" class="col-sm-2 control-label">자기 소개:</label>
+        <div class="col-sm-8">
+          <textarea class="form-control inputstl" id="pIntroduce" name="pIntroduce" placeholder="Enter Introduce" rows="4"></textarea>
+        </div>
+      </div>
+
+      
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-4">
+          <button type="submit" class="btn btn-lg btn-block btn-primary">Create Account</button>
+        </div>
+      </div>
     </form>
-</div>
+   </div>
+<script>
+			$('#uploadImage').filestyle({
+				buttonName : 'btn-primary',
+                buttonText : ' Upload an Image',
+                iconName : 'glyphicon glyphicon-upload'
+			});
+</script>   
 
 </body>
 </html>

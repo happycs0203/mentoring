@@ -33,6 +33,9 @@ public class CommandStudyInput implements Command {
 			pro.setpDiv("study");
 			pro.setpTitle(request.getParameter("pTitle"));
 			pro.setpPlace(request.getParameter("pPlace"));
+			pro.setpCost(0);
+			pro.setpMinmem(Integer.parseInt(request.getParameter("pMinmem")));
+			pro.setpMaxmem(Integer.parseInt(request.getParameter("pMaxmem")));
 			pro.setpTime(request.getParameter("startDate") + "~" + request.getParameter("endDate") +" "+ request.getParameter("detailDate"));
 			pro.setpContent(request.getParameter("pContent"));
 			pro.setpIntroduce(request.getParameter("pIntroduce"));

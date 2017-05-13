@@ -25,10 +25,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<insert id="insertMentoring" parameterType="project">
 		INSERT INTO projectmento
-		VALUES(seq_project_num.nextval,#{uId}, #{pDiv} , #{pTitle}, #{pPlace}, 1000, 5, 10, #{pContent},
-		#{pTime}, '2017/05/10', 'N', #{pIntroduce})
-		
-		
+		VALUES(seq_project_num.nextval,#{uId}, #{pDiv} , #{pTitle}, #{pPlace}, #{pCost}, #{pMinmem}, #{pMaxmem}, #{pContent},
+		#{pTime}, '2017/05/10', 'N', #{pIntroduce})		
 	</insert>
 	<!-- # : PreparedStateMent형식, $ : Statement형식 -->
 

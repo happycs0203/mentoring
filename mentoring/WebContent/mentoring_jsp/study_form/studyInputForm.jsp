@@ -108,6 +108,7 @@ function readURL(input) {
         </div>
       </div>
       
+      
       <div class="form-group">
       	<label for="startDate" class="col-sm-2 control-label">시작 날짜:</label>
         <div class="col-sm-3">
@@ -131,7 +132,7 @@ function readURL(input) {
       <div class="form-group">
         <label for="minMem" class="col-sm-2 control-label">최소 인원:</label>
         <div class="col-sm-3">
-        <select class="form-control inputstl" id="minMem" name="minMem">
+        <select class="form-control inputstl" id="pMinmem" name="pMinmem">
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
@@ -143,7 +144,7 @@ function readURL(input) {
         </div>
         <label for="maxMem" class="col-sm-2 control-label">최대 인원:</label>
         <div class="col-sm-3">
-        <select class="form-control inputstl" id="maxMem"  name="maxMem">
+        <select class="form-control inputstl" id="pMaxmem"  name="pMaxmem">
           <option value="10">10</option>
           <option value="11">11</option>
           <option value="12">12</option>
@@ -157,13 +158,13 @@ function readURL(input) {
       <div class="form-group">
         <label for="pContent" class="col-sm-2 control-label">스터디 내용:</label>
         <div class="col-sm-8">
-          <textarea class="form-control inputstl" id="pContent" name="pContent" placeholder="Enter Email" rows="4"></textarea>
+          <textarea class="form-control inputstl" id="pContent" name="pContent" placeholder="Enter Content" rows="4"></textarea>
         </div>
       </div>
       <div class="form-group">
         <label for="pIntroduce" class="col-sm-2 control-label">자기 소개:</label>
         <div class="col-sm-8">
-          <textarea class="form-control inputstl" id="pIntroduce" name="pIntroduce" placeholder="Enter Email" rows="4"></textarea>
+          <textarea class="form-control inputstl" id="pIntroduce" name="pIntroduce" placeholder="Enter Introduce" rows="4"></textarea>
         </div>
       </div>
 
