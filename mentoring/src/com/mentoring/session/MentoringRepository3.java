@@ -12,6 +12,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import com.mentoring.model.Image;
 import com.mentoring.model.Project;
 import com.mentoring.model.Prolist;
+import com.mentoring.model.StudyContentList;
 import com.mentoring.model.User;
 
 public class MentoringRepository3 {
@@ -45,6 +46,15 @@ public class MentoringRepository3 {
 			sqlSess.close();
 		}
 		return 0;
+	}
+	public List<StudyContentList> searchStudy(){
+		//JDBC : Connection, Mybatis : SqlSession 
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			return sqlSess.selectList(namespace+".selectStudyContentList");
+		}finally{
+			sqlSess.close();
+		}
 	}
 }
 

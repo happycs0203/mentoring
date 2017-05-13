@@ -6,6 +6,7 @@ import com.mentoring.model.Image;
 import com.mentoring.model.Notice;
 import com.mentoring.model.Project;
 import com.mentoring.model.Prolist;
+import com.mentoring.model.StudyContentList;
 import com.mentoring.model.User;
 import com.mentoring.session.MentoringRepository;
 import com.mentoring.session.MentoringRepository1;
@@ -40,11 +41,14 @@ public class MentoringService {
 //		return repo1.insertImage(img);
 //	}
 	public Integer insertUser(User user){
-		return repo.insertUser(user);
+		return repo3.insertUser(user);
 	}
 	
 	public User confirmLogin(User user){
 		return repo.confirmLogin(user);
+	}
+	public List<StudyContentList> searchStudy(){
+		return repo3.searchStudy();
 	}
 	
 	public List<Prolist> searchMentoring(String project){
