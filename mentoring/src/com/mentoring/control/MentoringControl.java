@@ -15,6 +15,7 @@ import com.mentoring.command.CommandDateInput;
 import com.mentoring.command.CommandException;
 import com.mentoring.command.CommandInput;
 import com.mentoring.command.CommandLogin;
+import com.mentoring.command.CommandLogout;
 import com.mentoring.command.CommandMentoringList;
 import com.mentoring.command.CommandMentoringView;
 import com.mentoring.command.CommandNull;
@@ -53,6 +54,7 @@ public class MentoringControl extends HttpServlet {
 		commandMap.put("study-input", new CommandNull("study_form/studyInputForm.jsp"));
 		commandMap.put("study-inputdo", new CommandStudyInput("study_form/studyViewjsp"));
 		commandMap.put("register-form", new CommandUserInput("registerSave.jsp"));//�쉶�썝媛��엯 �뤌
+		commandMap.put("logout", new CommandLogout("mainPage.jsp"));
 	}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
