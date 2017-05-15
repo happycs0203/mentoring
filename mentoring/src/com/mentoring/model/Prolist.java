@@ -6,6 +6,7 @@ public class Prolist {
 	private int pNum;
 	private String pDiv;
 	private String pTitle;
+	private String pContent;
 	
 	public int getiNum() {
 		return iNum;
@@ -36,5 +37,11 @@ public class Prolist {
 	}
 	public void setpTitle(String pTitle) {
 		this.pTitle = pTitle;
+	}
+	public String getpContent() {
+		return pContent;
+	}
+	public void setpContent(String pContent) {
+		this.pContent = pContent;
 	}
 }

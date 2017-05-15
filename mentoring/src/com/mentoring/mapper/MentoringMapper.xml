@@ -12,6 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<result column="p_num"	property="pNum"/>
 	<result column="p_div"	property="pDiv"/>
 	<result column="p_title"	property="pTitle"/>
+	<result column="p_content"	property="pContent"/>
 </resultMap>
 
 
@@ -39,10 +40,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </select>
 
 <select id="selectProjectList" parameterType="hashmap" resultMap="prolistMap">
-	SELECT i.i_num i_num, i.i_path i_path, p.p_num p_num, p.p_title p_title, p.p_div p_div
+	SELECT i.i_num i_num, i.i_path i_path, p.p_num p_num, p.p_title p_title, p.p_div p_div, p.p_content p_content
 	FROM projectmento p inner join imagemento i
 	ON p.p_num = i.p_num
-	WHERE p_div = #{project}
+	<where>
+		<if test="pDiv != null ">
+			 p_div = #{pDiv}
+		</if>
+	</where>
 </select>
 
 

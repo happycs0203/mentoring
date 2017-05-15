@@ -63,7 +63,7 @@ public class MentoringRepository {
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{
 			HashMap map = new HashMap<>();
-			map.put("project", project);
+			map.put("pDiv", project);
 			return sqlSess.selectList(namespace+".selectProjectList", map);
 		}finally{
 			sqlSess.close();

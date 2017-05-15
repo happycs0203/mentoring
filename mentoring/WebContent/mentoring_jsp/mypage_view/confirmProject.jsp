@@ -29,10 +29,10 @@
                     <a href="#">내정보</a>
                 </li>
                 <li>
-                    <a href="/mentoring/mentoring.mento?cmd=now-project">신청현황</a>
+                    <a href="/mentoring/mentoring.mento?cmd=show-project">신청현황</a>
                 </li>
                 <li>
-                    <a href="/mentoring/mentoring.mento?cmd=show-project">프로젝트 개설 여부</a>
+                    <a href="/mentoring/mentoring.mento?cmd=now-project">프로젝트 개설 여부</a>
                 </li>
 <!--                 <li> -->
 <!--                     <a href="#">Team</a> -->
