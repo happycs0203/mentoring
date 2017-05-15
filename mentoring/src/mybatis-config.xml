@@ -17,7 +17,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAlias type="com.mentoring.model.Project" alias='project'/>
 	<typeAlias type="com.mentoring.model.Image" alias='image'/>
 	<typeAlias type="com.mentoring.model.Notice" alias='notice'/>
-	<typeAlias type="com.mentoring.model.Callist" alias='callist'/>
+	<typeAlias type="com.mentoring.model.Callist" alias='calendarlist'/>
  </typeAliases>
  <environments default="development">
 	<environment id="development">

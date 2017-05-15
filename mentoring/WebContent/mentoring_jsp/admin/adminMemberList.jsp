@@ -11,6 +11,7 @@
 %>
 
 <%
+   
     List<User> uList = (List<User>)request.getAttribute("uList");
 %>
     
@@ -35,7 +36,7 @@
    
      .top_board {
           background-color: #64CD3C; 
-          padding: 8px;
+          padding: 9px;
           align: center;
      }
      

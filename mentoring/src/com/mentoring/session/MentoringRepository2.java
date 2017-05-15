@@ -31,6 +31,7 @@ public class MentoringRepository2 {
 		return factory;
 	}
 	
+	//캘린더 일정
 	public List<Callist> dateInput(){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{

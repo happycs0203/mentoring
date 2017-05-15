@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="MentoringMapper2">
 
-<resultMap type="callist" id="callistMap">
+<resultMap type="calendarlist" id="callistMap">
 	<result column="i_num" 	property="iNum"/>
 	<result column="p_num" 	property="pNum"/>
 	<result column="u_id" 	property="uId"/>

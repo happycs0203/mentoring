@@ -19,7 +19,7 @@ public class CommandDateInput implements Command{
 	public String execute( HttpServletRequest request ) throws CommandException{
 		try{
 			
-			
+		//캘린더	
 		List<Callist> cList = MentoringService.getInstance().dateInput();
 		
 		request.setAttribute("cList", cList);

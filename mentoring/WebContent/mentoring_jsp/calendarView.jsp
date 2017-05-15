@@ -313,7 +313,9 @@ for(int index = 1; index <= endDay; index++)
            dd = Integer.parseInt((String)st.nextElement());
          
        }
-
+       
+       
+       //태그달기
        if(index == dd){
     	   out.println("<a href='/mentoring/mentoring.mento?cmd=mentoring-view&pNum="+c.getpNum()+"&iNum="+c.getiNum()+"'>");
     	   out.println("<br>" + c.getuName() + "<br>" + c.getpTitle());

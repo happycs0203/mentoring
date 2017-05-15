@@ -13,7 +13,7 @@ public class CommandMemberList implements Command {
 	public CommandMemberList(String _next) {
 		next = _next;
 	}
-
+    
 	@Override
 	public String execute(HttpServletRequest request) throws CommandException {
 		try {

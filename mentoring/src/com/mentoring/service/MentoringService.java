@@ -85,7 +85,7 @@ public class MentoringService {
 		return repo.searchMentoring(project);
 	}
 
-	
+	//캘린더에 일정 올리기
 	public List<Callist> dateInput(){
 	      return repo2.dateInput();
 	   }
