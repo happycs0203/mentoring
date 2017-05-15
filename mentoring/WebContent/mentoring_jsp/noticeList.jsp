@@ -68,7 +68,12 @@
 			<td><%= rec.getnNum() %></td>
 			<td>
 			<a href="xxxx.mento?cmd=noticeview-page&nNum=<%=rec.getnNum()%>">
-			<%= rec.getnTitle()%></a>
+			<%= rec.getnTitle()%></a><br>
+			<%String content = rec.getnContent();
+			  if(rec.getnContent().length()>20){
+					content = rec.getnContent().substring(0,15)+"....";
+			  };%>
+			<pre><%=content%></pre>
 			</td>
 			<td><%= rec.getnDate() %></td>		
 			<td><%= rec.getnHits() %></td>
