@@ -59,9 +59,9 @@
 </header>
 
 <form class='form'>
-	<a style="font-size:40px; font-family:bold; ">개설된 멘토링 목록</a>
+	<a style="font-size:40px; font-family:bold; ">멘토링 개설 요청</a>
 	<marquee behavior="alternate" scrolldelay="100" direction="right">
-	    개설된 멘토링목록입니다.</marquee>
+	    멘토링 개설 요청 페이지입니다.</marquee>
 	<table class="bbs"  width="1000" height="150" border="1" align="center">
 	
 		<colgroup>
@@ -80,7 +80,7 @@
 				<th class='top_board'>번 호</th>
 				<th class='top_board'>제 목</th>
 				<th class='top_board'>작성자</th>
-				<th class='top_board'>작성일</th>
+				<th class='top_board'>멘토링 등록일</th>
 			</tr>
 		</thead>
 		<tbody>

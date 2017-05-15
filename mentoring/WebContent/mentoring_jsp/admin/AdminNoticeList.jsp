@@ -49,7 +49,10 @@
 	<jsp:include page="adminHeader.jsp"/>
 </header>
 
+
 </body>
+
+<a style="font-size:40px; font-family:bold; ">공지사항</a>
 
 <table class="login-form">
 	<tr>

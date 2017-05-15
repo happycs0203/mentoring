@@ -14,6 +14,7 @@ import com.mentoring.command.CommandConfirmRequest;
 import com.mentoring.command.CommandDeleteNotice;
 import com.mentoring.command.CommandException;
 import com.mentoring.command.CommandInsertNotice;
+import com.mentoring.command.CommandMemberList;
 import com.mentoring.command.CommandModifyNotice;
 import com.mentoring.command.CommandNoticeList;
 import com.mentoring.command.CommandNoticeView;
@@ -40,6 +41,7 @@ public class AdminControl extends HttpServlet {
 		commandMap = new HashMap();
 		//null占쏙옙 db占싫곤옙占쌕울옙
 		commandMap.put("show-noticelist",	new CommandNoticeList("AdminNoticeList.jsp") );
+		commandMap.put("member-list",	new CommandMemberList("adminMemberList.jsp") );
 		commandMap.put("regist-notice",	new CommandNull("registNotice.jsp"));
 		commandMap.put("confirm-requestlist",	new CommandConfirmRequest("ConfirmRequestList.jsp") );
 		commandMap.put("insert-notice",	new CommandInsertNotice("adminPreview.jsp") );

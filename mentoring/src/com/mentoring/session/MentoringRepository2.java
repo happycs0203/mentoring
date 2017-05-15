@@ -47,5 +47,14 @@ public class MentoringRepository2 {
 			sqlSess.close();
 		}
 	}
+	
+	public List<User> adminMemberList(){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			return sqlSess.selectList(namespace+".adminMemberList");
+		}finally{
+			sqlSess.close();
+		}
+	}
 
 }

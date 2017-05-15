@@ -58,6 +58,10 @@ public class MentoringService {
 		return repo1.showNoticeList();
 	}
 	
+	public List<User> adminMemberList(){
+	   return repo2.adminMemberList();	
+	}
+	
 	public List<Project> confirmRequestList(){
 		return repo2.confirmRequestList();
 	}
