@@ -70,4 +70,15 @@ public class MentoringRepository {
 		}
 	}
 	
+	public List<Project> showMyRegisterPro(String uId){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			HashMap map = new HashMap<>();
+			map.put("uId", uId);
+			return sqlSess.selectList(namespace+".selectMyProject", map);
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
 }

@@ -15,11 +15,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<result column="p_content"	property="pContent"/>
 </resultMap>
 
-
-<insert id="insertMentoring" parameterType="project">
-	INSERT INTO comment_tab
-	VALUES(#{commentNo}, #{userId}, #{commentContent}, sysdate)
-</insert>
 <!-- # : PreparedStateMent형식, $ : Statement형식 -->
 
 <insert id="insertImage" parameterType="image">
@@ -40,15 +35,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </select>
 
 <select id="selectProjectList" parameterType="hashmap" resultMap="prolistMap">
-	SELECT i.i_num i_num, i.i_path i_path, p.p_num p_num, p.p_title p_title, p.p_div p_div, p.p_content p_content
-	FROM projectmento p inner join imagemento i
-	ON p.p_num = i.p_num
+   SELECT i.i_num i_num, i.i_path i_path, p.p_num p_num, p.p_title p_title, p.p_div p_div, p.p_content p_content
+   FROM projectmento p inner join imagemento i
+   ON p.p_num = i.p_num
+   <where>
+      <if test="pDiv != null ">
+          p_div = #{pDiv}
+      </if>
+   </where>
+</select>
+
+
+<select id="selectMyProject" parameterType="hashmap" resultType="project">
+	SELECT *
+	FROM projectmento
 	<where>
-		<if test="pDiv != null ">
-			 p_div = #{pDiv}
+		<if test="uId != null">
+			 u_id = #{uId}
 		</if>
 	</where>
 </select>
+
+
 
 
 </mapper>

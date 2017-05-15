@@ -108,6 +108,10 @@ public class MentoringService {
 		return repo1.showMentoringImage(iNum);
 	}
 	
+	public List<Project> showMyRegisterPro(String uId){
+		return repo.showMyRegisterPro(uId);
+	}
+	
 
 	
 }

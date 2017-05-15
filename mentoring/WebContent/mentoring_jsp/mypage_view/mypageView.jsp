@@ -1,5 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.mentoring.model.*" %>
+<%@ page import="java.util.*" %>
+<%
+	List<Project> proList  = (List<Project>)request.getAttribute("proList");
+	int i = 0;
+%>
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -8,7 +15,12 @@
 <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="/mentoring/mentoring_jsp/mypage/js/bootstrap.js"></script>
 <script type="text/javascript" src="/mentoring/mentoring_jsp/mypage/js/mypage.js"></script>
+<style type="text/css">
+.startdate{
+	width: 20px,
+}
 
+</style>
 <title></title>
 </head>
 <body>
@@ -60,52 +72,53 @@
                 </div><!-- /.box-header -->
                 <div class="box-body no-padding">
                   <table class="table table-striped">
+                  	           
                     <tr>
-                      <th style="width: 10px">#</th>
+                      <th>#</th>
                       <th>Task</th>
+                      <th style="text-align:right">시작날짜</th>
                       <th>Progress</th>
-                      <th style="width: 40px">Label</th>
+                      <th>종료날짜</th>
+                      <th>Label</th>
                     </tr>
+                    <%for(Project p : proList) {
+						String fullTime = p.getpTime();
+                    	StringTokenizer st = new StringTokenizer(fullTime, "~, ");
+                    	String startDate = new String();
+                    	String endDate = new String();
+                        startDate = st.nextToken();
+                        endDate = st.nextToken();
+                        int startNum= 0;
+                        int endNum= 0;
+                        
+                        StringTokenizer st1 = new StringTokenizer(startDate, "/");
+                        st1.nextToken();
+                        startNum = startNum + (30 * Integer.parseInt(st1.nextToken()));
+                        startNum += Integer.parseInt(st1.nextToken());
+                        
+                        StringTokenizer st2 = new StringTokenizer(endDate, "/");
+                        st2.nextToken();
+                        endNum = endNum + (30 *Integer.parseInt(st2.nextToken()));
+                        endNum += Integer.parseInt(st2.nextToken());
+                        System.out.println(endNum-startNum);
+                    %>   
                     <tr>
-                      <td>1.</td>
-                      <td>Update software</td>
+                      <td><%=i+1 %></td>
+                      <td><%=p.getpTitle() %></td>
+                      <td style="text-align:right">
+                      	<label><%=startDate %></label>
+                      </td>
                       <td>
                         <div class="progress progress-xs">
                           <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
                         </div>
+                        </td>
+                        <td>
+                       <label><%=endDate %></label>
                       </td>
                       <td><span class="badge bg-red">55%</span></td>
                     </tr>
-                    <tr>
-                      <td>2.</td>
-                      <td>Clean database</td>
-                      <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-yellow">70%</span></td>
-                    </tr>
-                    <tr>
-                      <td>3.</td>
-                      <td>Cron job running</td>
-                      <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-light-blue">30%</span></td>
-                    </tr>
-                    <tr>
-                      <td>4.</td>
-                      <td>Fix and squish bugs</td>
-                      <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-green">90%</span></td>
-                    </tr>
+                   <%} %>  
                   </table>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
