@@ -1,0 +1,26 @@
+.container{
+	width: 400px;
+	height: 250px;
+}
+.btn{
+width: 100px;
+position : relative;
+top:10px;
+left:35px;
+}
+.well{
+text-align:center;
+height:85px;
+}
+.payC{
+text-align:center;
+color:blue;
+}
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 250px;
+  margin: 20px auto;
+}
