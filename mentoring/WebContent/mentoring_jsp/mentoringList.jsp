@@ -83,18 +83,28 @@
 	    });
 	    
 	    
-	    var listcount = 0;
-		   
+	    var listMore = 4;  //최초 4개의 이미지를 보여줌
+	    var totalCnt = 9;  // 총 보이는 리스트 목록의 갯수
+	    
+	    
+	    //최초 4개보다 적거나 같으면 리스트를 보여줌
+	    for(var i = 1; i<=totalCnt; i++){
+	    	if(i <=  listMore){
+	    		 $('.list').show();
+	    	}
+	    }
+		 
+	    //더보기 버튼을 눌렀을 때
 	    $('#addlist').click(function(){
-	    	 alert('dd');
 	    	
-// 	       	listcount += 3;
-// 	    	$.post("/mentoring/mentoring_jsp/studyList.jsp", { "count: listcount"}, function(data){
-	    		
-// 	    		 var oldlist = $('#listbody').html();
-// 	    		 $('#listbody').html(oldlist+data);
-	    		
-// 	    	});
+	    	 var listMore =  $('.list').html();
+	    	 listMore =  listMore + 4; //누를때마다 4개씩 추가
+	    	 
+	    	 if(i <= last){
+	    		 $('.list').style.display='block';
+	    	 }
+	    	
+	        
 
 	    });
 	    $('#registMentoring').click(function(){
@@ -124,7 +134,7 @@
                             <input type="button" class="sidebar" value="찜한 목록"><br>
                             <input type="button" class="sidebar" id="registMentoring" name="registMentoring" value="멘토링 개설하기">
                          </div> 
-                         
+           <form name='frm'>           
 		<div class="section">
 			<div class="container">
 				
@@ -146,7 +156,7 @@
 						<!-- portfolio items start -->
 						<div class="isotope-container row grid-space-20">
 							<%for(Prolist p: pList) {%>
-							<div class="col-sm-6 col-md-3 isotope-item web-design" id='listbody'>
+							<div class="col-sm-6 col-md-3 isotope-item web-design list">
 								<div class="image-box">
 									<div class="overlay-container">
 										<img src="/mentoring/imageupload/<%=p.getiPath()%>" alt="">
@@ -168,6 +178,7 @@
 				</div>
 			</div>
 		</div>
+		</form>
 		<!-- section end -->
 
 		<!-- JavaScript files placed at the end of the document so the pages load faster

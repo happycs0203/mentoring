@@ -12,6 +12,7 @@
 	
 	Project p = (Project)request.getAttribute("mentoringView");
 	Image i = (Image)request.getAttribute("mentoringImage");
+
 	
 	
 	ArrayList list = (ArrayList)session.getAttribute("pNumList");
@@ -43,7 +44,20 @@
    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
    <!-- Custom styles -->
    <link rel="stylesheet" href="/mentoring/mentoring_jsp/assets/css/styles.css">
+	<style>
+	  .btn_admin {
+    width: 130px;
+	height: 35px;
+	color: white;
+	font-size: 15px;
+	font-family: 'Raleway', sans-serif;
+	background-color: #505050;
+	margin-bottom: 11px;
+	}
+	 
 	
+	
+	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
 	
 	<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -56,6 +70,9 @@
 	<script type="text/javascript"
 	src="//apis.daum.net/maps/maps3.js?apikey=d7cd900845b5f9c431bb5325b827e675&libraries=services"></script>
 	<script>
+	
+	
+	
 	$(function(){
 		var geocoder = new daum.maps.services.Geocoder();
 
@@ -92,6 +109,16 @@
 		%>
 		});
 		
+		$('#confirm').click(function(){
+			$("#frm").attr("action","xxx.admin?cmd=confirm-update");
+			$('#frm').submit();
+		});
+		
+		$('#reject').click(function(){
+			$("#frm").attr("action","xxx.admin?cmd=confirm-cancel");
+			$('#frm').submit();
+		});
+		
 	});
 </script>
 
@@ -99,7 +126,7 @@
 <body>
 
 	<header id="header">
-		<jsp:include page="mentoringHeader.jsp"/>
+		<jsp:include page="adminHeader.jsp"/>
 	</header>
 
 <main id="main">
@@ -113,10 +140,6 @@
 
 		<p ><img src="/mentoring/imageupload/<%=i.getiPath()%>" alt="여기에 포스터 넣어주기"></p>
 		
-		<input type="button" class="btn_login" value="신청" id="assignMentoring" style="position:relative;">
-		<input type="button" class="btn_login" value="공유하기" id="share">
-		<input type="button" class="btn_login" value="찜하기" id="zzim">
-	
 			
 			<div class="small-title">멘토이름</div>
 			<div class='navbar navbar-default'>
@@ -150,6 +173,11 @@
 				<div id="map" style="width: 100%; height: 300px;"></div>
 			</div>
            
+         <form name='frm' id='frm' method='post' >
+            <input type="hidden" name="pNum" value="<%=p.getpNum()%>">
+           <button class='btn_admin' id="confirm">승인</button>
+           <button class='btn_admin' id="reject">거절</button>
+         </form>
 	</div>	<!-- /container -->
 	
 </main>

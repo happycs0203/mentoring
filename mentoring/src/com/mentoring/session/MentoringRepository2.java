@@ -2,6 +2,7 @@ package com.mentoring.session;
 
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -41,7 +42,7 @@ public class MentoringRepository2 {
 		}
 	}
 	
-	public List<Project> confirmRequestList(){
+	public List<Callist> confirmRequestList(){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{
 			return sqlSess.selectList(namespace+".confirmRequestList");
@@ -57,6 +58,25 @@ public class MentoringRepository2 {
 		}finally{
 			sqlSess.close();
 		}
+	}
+	
+	public Integer confirmUpdate(int pNum){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		int result = 0;
+		try{
+			String statement = namespace + ".confirmUpdate";
+			HashMap map = new HashMap<>();
+			map.put("pNum", pNum);
+			result = sqlSess.update(statement, map);
+			if(result > 0){
+				sqlSess.commit();
+			}else{
+				sqlSess.rollback();
+			}
+		}finally{
+			sqlSess.close();
+		}
+		return result;
 	}
 
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.mentoring.model.Callist;
 import com.mentoring.model.Project;
 import com.mentoring.service.MentoringService;
 
@@ -18,9 +19,9 @@ public class CommandConfirmRequest implements Command {
 	public String execute(HttpServletRequest request) throws CommandException {
 		try {
 
-			List<Project> pList= MentoringService.getInstance().confirmRequestList();
+			List<Callist> cList= MentoringService.getInstance().confirmRequestList();
 			
-			request.setAttribute("pList", pList);
+			request.setAttribute("cList", cList);
 			
 		} catch (Exception ex) {
 			throw new CommandException("CommandConfirmRequest.java" + ex.toString());

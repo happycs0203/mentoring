@@ -63,7 +63,7 @@ public class MentoringService {
 	   return repo2.adminMemberList();	
 	}
 	
-	public List<Project> confirmRequestList(){
+	public List<Callist> confirmRequestList(){
 		return repo2.confirmRequestList();
 	}
 	
@@ -90,6 +90,11 @@ public class MentoringService {
 	      return repo2.dateInput();
 	   }
 	
+	//승인하기
+	public Integer confirmUpdate(int pNum){
+		return repo2.confirmUpdate(pNum);
+	}
+	
 	public Project showMentoringView(int pNum){
 		return repo1.showMentoringView(pNum);
 	}
@@ -97,5 +102,7 @@ public class MentoringService {
 	public Image showMentoringImage(int iNum){
 		return repo1.showMentoringImage(iNum);
 	}
+	
+
 	
 }

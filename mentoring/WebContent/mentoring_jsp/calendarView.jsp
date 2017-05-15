@@ -10,7 +10,7 @@
 <%
 
  List<Callist> list = (List<Callist>)request.getAttribute("cList");
- System.out.println(list);
+
  
 
 Calendar cal = Calendar.getInstance();

@@ -11,10 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.mentoring.command.Command;
 import com.mentoring.command.CommandConfirmRequest;
+import com.mentoring.command.CommandConfirmUpdate;
 import com.mentoring.command.CommandDeleteNotice;
 import com.mentoring.command.CommandException;
 import com.mentoring.command.CommandInsertNotice;
 import com.mentoring.command.CommandMemberList;
+import com.mentoring.command.CommandMentoringView;
+import com.mentoring.command.CommandMentoringView2;
 import com.mentoring.command.CommandModifyNotice;
 import com.mentoring.command.CommandNoticeList;
 import com.mentoring.command.CommandNoticeView;
@@ -49,6 +52,9 @@ public class AdminControl extends HttpServlet {
 		commandMap.put("go-modify",	new CommandNull("modifyNotice.jsp") );
 		commandMap.put("modify-notice",	new CommandModifyNotice("adminPreview.jsp") );
 		commandMap.put("delete-notice",	new CommandDeleteNotice("deleteTemp.jsp") );
+		commandMap.put("adminmentoring-view", new CommandMentoringView2("adminMentoringView.jsp"));
+		commandMap.put("confirm-update", new CommandConfirmUpdate("ConfirmReqeustList.jsp"));
+		commandMap.put("confirm-cancel", new CommandNull("ConfirmReqeustList.jsp"));
 	}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

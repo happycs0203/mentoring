@@ -1,4 +1,4 @@
-<%@page import="com.mentoring.model.Project"%>
+<%@page import="com.mentoring.model.*"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -11,7 +11,7 @@
 %>
 
 <%
-    List<Project> pList = (List<Project>)request.getAttribute("pList");
+    List<Callist> cList = (List<Callist>)request.getAttribute("cList");
 %>
     
     
@@ -72,7 +72,7 @@
 		</colgroup>
 		
 		<thead>
-		<% if (pList.isEmpty()) { %>
+		<% if (cList.isEmpty()) { %>
 			<tr><td colspan="5"> 등록된 게시물이 없습니다. </td></tr>
 	       <% } else { %>
 	       
@@ -84,12 +84,13 @@
 			</tr>
 		</thead>
 		<tbody>
-		 <% for(Project p : pList) { %>
+		 <% for(Callist c : cList) { %>
 			<tr>
-				<td align="center"><%= p.getpNum() %></td>
-				<td><%= p.getpTitle() %></a></td>
-				<td align="center"><%= p.getuId() %></td>
-				<td align="center"><%= p.getpEnroll() %></td>
+				<td align="center" ><%= c.getpNum() %></td>
+				<td><a href="xxxx.admin?cmd=adminmentoring-view&pNum=<%=c.getpNum()%>&iNum=<%= c.getiNum() %>">
+				<%= c.getpTitle() %></a></td>
+				<td align="center"><%= c.getuId() %></td>
+				<td align="center"><%= c.getpEnroll() %></td>
 			</tr>
 			<%}//end of for %>
 
@@ -102,7 +103,7 @@
 			</tr>
 		</tfoot>	
 	</table>
-	  <button id="btn_comfirmed">등록</button>	
+		
 		
 </form>
 </body>

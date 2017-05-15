@@ -84,7 +84,7 @@
 		 <% for(User u : uList) { %>
 			<tr>
 				<td align="center"><%= u.getuId() %></td>
-				<td><%= u.getuName() %></a></td>
+				<td><%= u.getuName() %></td>
 				<td align="center"><%= u.getuPass() %></td>
 				<td align="center"><%= u.getuPhone() %></td>
 				<td align="center"><%= u.getuAddr() %></td>
