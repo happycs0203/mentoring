@@ -47,7 +47,7 @@
 <div class="form">
 <form class="login-form">
 글제목 <input type="text" value="<%=n.getnTitle()%>" disabled><br>
-글내용 <textarea disabled><%=n.getnContent() %></textarea><br>
+글내용 <textarea rows="20" disabled><%=n.getnContent() %></textarea><br>
 등록일 <input type="text" value="<%=n.getnDate() %>" disabled><br>
 </form>
 </div>
