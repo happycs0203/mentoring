@@ -45,7 +45,7 @@
 <input type="hidden" name="cmd" value="modify-notice">
 <div>공지사항 수정</div><br>
 제목 <input type="text" id="noticeTitle" name="noticeTitle" value="<%=t%>"><br>
-내용 <textarea id="noticeContent" name="noticeContent"><%=c%></textarea><br>
+내용 <textarea rows="20" id="noticeContent" name="noticeContent"><%=c%></textarea><br>
 <input type="hidden" name=noticeDate value="<%=d%>">
 <input type="hidden" name=noticeNum value="<%=num%>">
 <button id="modifyNoticeBtn">수정</button>

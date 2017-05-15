@@ -38,7 +38,7 @@
 <input type="hidden" name="cmd" value="insert-notice">
 <div>공지사항 등록</div><br>
 제목 <input type="text" id="noticeTitle" name="noticeTitle"><br>
-내용 <textarea id="noticeContent" name="noticeContent"></textarea><br>
+내용 <textarea rows="20" id="noticeContent" name="noticeContent"></textarea><br>
 <button id="registNoticeBtn">등록</button>
 </form>
 </div>
