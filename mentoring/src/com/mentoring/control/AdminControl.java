@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.mentoring.command.Command;
+import com.mentoring.command.CommandConfirmRequest;
 import com.mentoring.command.CommandDeleteNotice;
 import com.mentoring.command.CommandException;
 import com.mentoring.command.CommandInsertNotice;
@@ -39,10 +40,8 @@ public class AdminControl extends HttpServlet {
 		commandMap = new HashMap();
 		//null占쏙옙 db占싫곤옙占쌕울옙
 		commandMap.put("show-noticelist",	new CommandNoticeList("AdminNoticeList.jsp") );
-		commandMap.put("regist-notice",	new CommandNull("registNotice.jsp") );
-		//commandMap.put("confirm-mentoringlist",	new CommandConfirmedMentoringList("ConfirmedMentoringList.jsp") );
-		commandMap.put("confirm-mentoringlist",	new CommandNull("ConfirmedMentoringList.jsp") );
-		
+		commandMap.put("regist-notice",	new CommandNull("registNotice.jsp"));
+		commandMap.put("confirm-requestlist",	new CommandConfirmRequest("ConfirmRequestList.jsp") );
 		commandMap.put("insert-notice",	new CommandInsertNotice("adminPreview.jsp") );
 		commandMap.put("noticeview-page",	new CommandNoticeView("adminNoticeView.jsp") );
 		commandMap.put("go-modify",	new CommandNull("modifyNotice.jsp") );

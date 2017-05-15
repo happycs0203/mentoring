@@ -1,4 +1,4 @@
-<%@page import="com.mentoring.model.Notice"%>
+<%@page import="com.mentoring.model.Project"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -11,7 +11,7 @@
 %>
 
 <%
-    
+    List<Project> pList = (List<Project>)request.getAttribute("pList");
 %>
     
     
@@ -30,7 +30,24 @@
    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
    <!-- Custom styles -->
    <link rel="stylesheet" href="/mentoring/mentoring_jsp/assets/css/styles.css">
+   <style>
+     .top_board {
+          background-color: #64CD3C; 
+     }
+     
+     .form button{
+        background-color: #4CAF50;
+        width: 60px;
+        height: 30px;
+        border: 0;
+        color: #fff;
+        font-size: 18px;
+        font-family: "Roboto", sans-serif;
+        cursor: pointer; 
+    
+     }
    
+   </style>
    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
@@ -41,10 +58,11 @@
 	<jsp:include page="adminHeader.jsp"/>
 </header>
 
+<form class='form'>
 	<a style="font-size:40px; font-family:bold; ">개설된 멘토링 목록</a>
 	<marquee behavior="alternate" scrolldelay="100" direction="right">
 	    개설된 멘토링목록입니다.</marquee>
-	<table class="bbs"  width="1000" height="300" border="1" background-color="#505050" align="center">
+	<table class="bbs"  width="1000" height="150" border="1" align="center">
 	
 		<colgroup>
 			<col width="50" align="center"/>
@@ -54,46 +72,38 @@
 		</colgroup>
 		
 		<thead>
+		<% if (pList.isEmpty()) { %>
+			<tr><td colspan="5"> 등록된 게시물이 없습니다. </td></tr>
+	       <% } else { %>
+	       
 			<tr>
-				<th>번 호</th>
-				<th>제 목</th>
-				<th>작성자</th>
-				<th>작성일</th>
-				<th>조 회</th>
+				<th class='top_board'>번 호</th>
+				<th class='top_board'>제 목</th>
+				<th class='top_board'>작성자</th>
+				<th class='top_board'>작성일</th>
 			</tr>
 		</thead>
 		<tbody>
+		 <% for(Project p : pList) { %>
 			<tr>
-				<td align="center">3</td>
-				<td><a href="Board_View.jsp">게시판 글</a></td>
-				<td align="center">작성자</td>
-				<td align="center">작성일</td>
-				<td align="center">1234</td>
+				<td align="center"><%= p.getpNum() %></td>
+				<td><%= p.getpTitle() %></a></td>
+				<td align="center"><%= p.getuId() %></td>
+				<td align="center"><%= p.getpEnroll() %></td>
 			</tr>
-			<tr>
-				<td align="center">2</td>
-				<td><a href="Board_View.jsp">게시판 글</a></td>
-				<td align="center">작성자</td>
-				<td align="center">작성일</td>
-				<td align="center">123</td>
-			</tr>
-			<tr>
-				<td align="center">1</td>
-				<td><a href="Board_View.jsp">게시판 글</a></td>
-				<td align="center">작성자</td>
-				<td align="center">작성일</td>
-				<td align="center">12</td>
-			</tr>
+			<%}//end of for %>
+
+	     <% } // end else %>	
+	     
 		</tbody>
 		<tfoot>
 			<tr>
 				<td align="center" colspan="5">1</td>
 			</tr>
-		</tfoot>		
+		</tfoot>	
 	</table>
-	  <a  href="xxx.admin?cmd=regist-notice">등록</a>
+	  <button id="btn_comfirmed">등록</button>	
 		
-
+</form>
 </body>
-
 </html>

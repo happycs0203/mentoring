@@ -12,4 +12,10 @@ select u_id, p_title, p_enroll
 from projectmento
 </select>
 
+<!-- 개설된 멘토링 목록 보기 -->
+<select id="confirmRequestList" resultType="project">
+select p_num, p_title, u_id, p_enroll 
+from projectmento
+</select>
+
 </mapper>

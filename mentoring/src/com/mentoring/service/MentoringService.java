@@ -58,6 +58,10 @@ public class MentoringService {
 		return repo1.showNoticeList();
 	}
 	
+	public List<Project> confirmRequestList(){
+		return repo2.confirmRequestList();
+	}
+	
 //	public Image insertImage(Image img){
 //		return repo1.insertImage(img);
 //	}

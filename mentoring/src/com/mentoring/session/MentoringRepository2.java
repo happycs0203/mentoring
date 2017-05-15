@@ -39,5 +39,13 @@ public class MentoringRepository2 {
 		}
 	}
 	
+	public List<Project> confirmRequestList(){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			return sqlSess.selectList(namespace+".comfirmedMentoringList");
+		}finally{
+			sqlSess.close();
+		}
+	}
 
 }
