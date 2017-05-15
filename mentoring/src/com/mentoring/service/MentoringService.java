@@ -2,6 +2,7 @@ package com.mentoring.service;
 
 import java.util.List;
 
+import com.mentoring.model.Callist;
 import com.mentoring.model.Image;
 import com.mentoring.model.Notice;
 import com.mentoring.model.Project;
@@ -85,7 +86,7 @@ public class MentoringService {
 	}
 
 	
-	public List<Project> dateInput(){
+	public List<Callist> dateInput(){
 	      return repo2.dateInput();
 	   }
 	

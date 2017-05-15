@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.mentoring.model.Callist;
 import com.mentoring.model.Project;
 import com.mentoring.model.Prolist;
 import com.mentoring.service.MentoringService;
@@ -19,9 +20,9 @@ public class CommandDateInput implements Command{
 		try{
 			
 			
-		List<Project> pList = MentoringService.getInstance().dateInput();
+		List<Callist> cList = MentoringService.getInstance().dateInput();
 		
-		request.setAttribute("pList", pList);
+		request.setAttribute("cList", cList);
 		
 		
 		}catch(Exception ex){

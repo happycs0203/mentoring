@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.mentoring.model.Callist;
 import com.mentoring.model.Image;
 import com.mentoring.model.Project;
 import com.mentoring.model.Prolist;
@@ -30,7 +31,7 @@ public class MentoringRepository2 {
 		return factory;
 	}
 	
-	public List<Project> dateInput(){
+	public List<Callist> dateInput(){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{
 			return sqlSess.selectList(namespace+".dateInput");

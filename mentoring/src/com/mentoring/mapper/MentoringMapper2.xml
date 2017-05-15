@@ -6,10 +6,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="MentoringMapper2">
 
+<resultMap type="callist" id="callistMap">
+	<result column="i_num" 	property="iNum"/>
+	<result column="p_num" 	property="pNum"/>
+	<result column="u_id" 	property="uId"/>
+	<result column="u_name"	property="uName"/>
+	<result column="p_enroll"	property="pEnroll"/>
+	<result column="p_title"	property="pTitle"/>
+</resultMap>
 
-<select id="dateInput" resultType="project">
-select u_id, p_title, p_enroll 
-from projectmento
+
+<select id="dateInput" resultMap="callistMap">
+select i.i_num i_num, p.p_num p_num, u.u_id u_id, u.u_name u_name, p.p_enroll p_enroll,  p.p_title p_title
+from projectmento p inner join imagemento i on p.p_num =  i.p_num 
+inner join usermento u on p.u_id = u.u_id
+where  p.p_div = 'mentoring'
 </select>
 
 <!-- 개설된 멘토링 목록 보기 -->

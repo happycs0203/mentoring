@@ -3,13 +3,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.*"%>
-<%@page import="com.mentoring.model.Project"%>
+<%@page import="com.mentoring.model.*"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%
 
- List<Project> list = (List<Project>)request.getAttribute("pList");
+ List<Callist> list = (List<Callist>)request.getAttribute("cList");
  System.out.println(list);
  
 
@@ -301,9 +301,9 @@ for(int index = 1; index <= endDay; index++)
 
        <%   
        
-       for(Project p : list){
+       for(Callist c : list){
        
-       String str = p.getpEnroll();
+       String str = c.getpEnroll();
        StringTokenizer st = new StringTokenizer(str, "/");
        int yy=0, mm=0, dd=0;
 
@@ -315,8 +315,9 @@ for(int index = 1; index <= endDay; index++)
        }
 
        if(index == dd){
-    	   out.println(p.getuId() + "<br>" + p.getpTitle() + "<br>");
-    	   
+    	   out.println("<a href='/mentoring/mentoring.mento?cmd=mentoring-view&pNum="+c.getpNum()+"&iNum="+c.getiNum()+"'>");
+    	   out.println("<br>" + c.getuName() + "<br>" + c.getpTitle());
+    	   out.println("</a>");
        }
        
        
