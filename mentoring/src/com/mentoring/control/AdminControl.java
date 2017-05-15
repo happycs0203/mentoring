@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.mentoring.command.Command;
 import com.mentoring.command.CommandConfirmRequest;
 import com.mentoring.command.CommandConfirmUpdate;
+import com.mentoring.command.CommandConfirmed;
 import com.mentoring.command.CommandDeleteNotice;
 import com.mentoring.command.CommandException;
 import com.mentoring.command.CommandInsertNotice;
@@ -47,6 +48,7 @@ public class AdminControl extends HttpServlet {
 		commandMap.put("member-list",	new CommandMemberList("adminMemberList.jsp") );
 		commandMap.put("regist-notice",	new CommandNull("registNotice.jsp"));
 		commandMap.put("confirm-requestlist",	new CommandConfirmRequest("ConfirmRequestList.jsp") );
+		commandMap.put("confirmed-list",	new CommandConfirmed("ConfirmedList.jsp") );
 		commandMap.put("insert-notice",	new CommandInsertNotice("adminPreview.jsp") );
 		commandMap.put("noticeview-page",	new CommandNoticeView("adminNoticeView.jsp") );
 		commandMap.put("go-modify",	new CommandNull("modifyNotice.jsp") );

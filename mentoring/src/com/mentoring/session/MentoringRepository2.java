@@ -51,6 +51,15 @@ public class MentoringRepository2 {
 		}
 	}
 	
+	public List<Project> confirmedList(){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			return sqlSess.selectList(namespace+".confirmedList");
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
 	public List<User> adminMemberList(){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{

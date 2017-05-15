@@ -28,7 +28,7 @@
          <div class="navbar-collapse collapse">
             
             <ul class="nav navbar-nav">
-               <li><a href="#">개설된 멘토링 목록</a></li>
+               <li><a href="/mentoring/admin.admin?cmd=confirmed-list">개설된 멘토링 목록</a></li>
                <li><a href="/mentoring/admin.admin?cmd=confirm-requestlist">멘토링 개설 요청</a></li>
                <li><a href="/mentoring/admin.admin?cmd=member-list">회원 목록</a></li>
                <li><a href="#">공지사항</a></li>

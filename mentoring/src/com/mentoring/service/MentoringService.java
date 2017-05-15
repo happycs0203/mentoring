@@ -95,6 +95,11 @@ public class MentoringService {
 		return repo2.confirmUpdate(pNum);
 	}
 	
+	//개설된 멘토링 목록 보기
+	public List<Project> confirmedList(){
+		return repo2.confirmedList();
+	}
+	
 	public Project showMentoringView(int pNum){
 		return repo1.showMentoringView(pNum);
 	}

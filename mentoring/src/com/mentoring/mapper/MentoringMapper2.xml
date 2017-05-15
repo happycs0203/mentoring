@@ -23,12 +23,19 @@ inner join usermento u on p.u_id = u.u_id
 where  p.p_div = 'mentoring'
 </select>
 
-<!-- 개설된 멘토링 목록 보기 -->
+<!-- 개설요청한 멘토링 목록 보기 -->
 <select id="confirmRequestList" resultMap="callistMap">
 select i.i_num i_num, p.p_num p_num, u.u_id u_id, u.u_name u_name, p.p_enroll p_enroll,  p.p_title p_title
 from projectmento p inner join imagemento i on p.p_num =  i.p_num 
 inner join usermento u on p.u_id = u.u_id
 where  p.p_div = 'mentoring'
+</select>
+
+<!-- 개설된 멘토링 목록 보기 -->
+<select id="confirmedList" resultType="project">
+    select p_num, p_title, p_enroll
+    from projectmento
+    where p_confirm = 'Y'
 </select>
 
 <!-- 회원 목록 보기 -->
