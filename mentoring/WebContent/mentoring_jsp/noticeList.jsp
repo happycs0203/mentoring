@@ -73,7 +73,7 @@
 			  if(rec.getnContent().length()>20){
 					content = rec.getnContent().substring(0,15)+"....";
 			  };%>
-			<pre><%=content%></pre>
+			&nbsp;&nbsp;&nbsp;&nbsp;<%=content%>
 			</td>
 			<td><%= rec.getnDate() %></td>		
 			<td><%= rec.getnHits() %></td>
