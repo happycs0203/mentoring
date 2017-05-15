@@ -97,8 +97,11 @@ public class MentoringRepository1 {
 		public Notice showNotice2(int nNum) {
 			SqlSession sqlSess = getSelSessionFactory().openSession();
 			try{
+				HashMap map = new HashMap<>();
+				map.put("nNum", nNum);
+				
 				String statement = namespace + ".upCount";
-				int result = sqlSess.update(statement,nNum);
+				int result = sqlSess.update(statement,map);
 				if(result > 0) {
 					sqlSess.commit();
 					//JDBC : auto-commit, Mybatis : 아님
@@ -107,8 +110,6 @@ public class MentoringRepository1 {
 				}
 				
 				
-				HashMap map = new HashMap<>();
-				map.put("nNum", nNum);
 				return sqlSess.selectOne(namespace+".showNotice",map);
 			}finally{
 				sqlSess.close();

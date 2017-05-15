@@ -43,7 +43,7 @@
          <div class="navbar-collapse collapse">
             
             <ul class="nav navbar-nav">
-               <li><a href="/metoring/xxx.mento?cmd=mentoring-noticelist">공지사항</a></li>
+               <li><a href="xxx.mento?cmd=mentoring-noticelist">공지사항</a></li>
                <li class="active"><a href="/mentoring/mentoring.mento?cmd=mentoring-list">멘토링</a></li>
                <li><a href="/mentoring/mentoring.mento?cmd=study-list">스터디</a></li>
                <li><a href="/mentoring/mentoring.mento?cmd=calendar-view">캘린더</a></li>

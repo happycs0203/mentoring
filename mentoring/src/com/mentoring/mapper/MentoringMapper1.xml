@@ -96,8 +96,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 	
 	<!-- 공지사항 조회수 올리기 -->
-	<update id="upCount">
-		UPDATE noticemento SET n_hits = n_hits+1;
+	<update id="upCount" parameterType="hashmap">
+		UPDATE noticemento SET n_hits = n_hits+1
 		WHERE n_num=#{nNum}
 	</update>
 	
