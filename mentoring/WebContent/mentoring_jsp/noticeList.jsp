@@ -46,7 +46,7 @@
 <body>
 
 <header id="header">
-	<jsp:include page="adminHeader.jsp"/>
+	<jsp:include page="mentoringHeader.jsp"/>
 </header>
 
 </body>
@@ -67,7 +67,7 @@
 		<tr>
 			<td><%= rec.getnNum() %></td>
 			<td>
-			<a href="xxxx.admin?cmd=noticeview-page&nNum=<%=rec.getnNum()%>">
+			<a href="xxxx.mento?cmd=noticeview-page&nNum=<%=rec.getnNum()%>">
 			<%= rec.getnTitle()%></a>
 			</td>
 			<td><%= rec.getnDate() %></td>		
@@ -77,5 +77,4 @@
 
 	<% } // end else %>
 </table>
-<a href="xxx.admin?cmd=regist-notice">등록</a>
 </html>

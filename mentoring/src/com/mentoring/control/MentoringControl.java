@@ -4,11 +4,10 @@ import java.io.IOException;
 import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;  
-import javax.servlet.annotation.WebServlet;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse; 
+import javax.servlet.http.HttpServletResponse;
 
 import com.mentoring.command.Command;
 import com.mentoring.command.CommandDateInput;
@@ -18,6 +17,8 @@ import com.mentoring.command.CommandLogin;
 import com.mentoring.command.CommandLogout;
 import com.mentoring.command.CommandMentoringList;
 import com.mentoring.command.CommandMentoringView;
+import com.mentoring.command.CommandNoticeList;
+import com.mentoring.command.CommandNoticeView2;
 import com.mentoring.command.CommandNull;
 import com.mentoring.command.CommandStudyInput;
 import com.mentoring.command.CommandStudyList;
@@ -55,6 +56,8 @@ public class MentoringControl extends HttpServlet {
 		commandMap.put("study-inputdo", new CommandStudyInput("study_form/studyViewjsp"));
 		commandMap.put("register-form", new CommandUserInput("registerSave.jsp"));//�쉶�썝媛��엯 �뤌
 		commandMap.put("logout", new CommandLogout("mainPage.jsp"));
+		commandMap.put("noticeview-page", new CommandNoticeView2("noticeView.jsp"));
+		commandMap.put("mentoring-noticelist", new CommandNoticeList("noticeList.jsp"));
 	}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

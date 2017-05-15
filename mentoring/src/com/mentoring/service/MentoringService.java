@@ -29,6 +29,27 @@ public class MentoringService {
 	MentoringRepository2 repo2 = new MentoringRepository2();
 	MentoringRepository3 repo3 = new MentoringRepository3();
 	
+	
+	public void deleteNotice(int nNum){
+		repo1.deleteNotice(nNum);
+	}
+	
+	public void modifyNotice(Notice n) {
+		repo1.modifyNotice(n);
+	}
+	//관리자에서 보여주는 페이지
+	public Notice showNotice(int nNum){
+		return repo1.showNotice(nNum);
+	}
+	//일반 사용자에서 보여주는 페이지
+	public Notice showNotice2(int nNum){
+		return repo1.showNotice2(nNum);
+	}
+	
+	public void insertNotice(Notice no){
+		repo1.insertNotice(no);
+	}
+	
 	public Integer insertMentoring(Project project, Image image){
 		return repo1.insertMentoring(project, image);
 	}

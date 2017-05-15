@@ -4,23 +4,19 @@ import java.io.IOException;
 import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;  
-import javax.servlet.annotation.WebServlet;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse; 
+import javax.servlet.http.HttpServletResponse;
 
 import com.mentoring.command.Command;
-import com.mentoring.command.CommandDateInput;
+import com.mentoring.command.CommandDeleteNotice;
 import com.mentoring.command.CommandException;
-import com.mentoring.command.CommandInput;
-import com.mentoring.command.CommandLogin;
-import com.mentoring.command.CommandMentoringList;
-import com.mentoring.command.CommandMentoringView;
+import com.mentoring.command.CommandInsertNotice;
+import com.mentoring.command.CommandModifyNotice;
 import com.mentoring.command.CommandNoticeList;
+import com.mentoring.command.CommandNoticeView;
 import com.mentoring.command.CommandNull;
-import com.mentoring.command.CommandConfirmedMentoringList;
-import com.mentoring.command.CommandUserInput;
 
 /**
  * Servlet implementation class MentoringControl 
@@ -46,6 +42,12 @@ public class AdminControl extends HttpServlet {
 		commandMap.put("regist-notice",	new CommandNull("registNotice.jsp") );
 		//commandMap.put("confirm-mentoringlist",	new CommandConfirmedMentoringList("ConfirmedMentoringList.jsp") );
 		commandMap.put("confirm-mentoringlist",	new CommandNull("ConfirmedMentoringList.jsp") );
+		
+		commandMap.put("insert-notice",	new CommandInsertNotice("adminPreview.jsp") );
+		commandMap.put("noticeview-page",	new CommandNoticeView("adminNoticeView.jsp") );
+		commandMap.put("go-modify",	new CommandNull("modifyNotice.jsp") );
+		commandMap.put("modify-notice",	new CommandModifyNotice("adminPreview.jsp") );
+		commandMap.put("delete-notice",	new CommandDeleteNotice("deleteTemp.jsp") );
 	}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
