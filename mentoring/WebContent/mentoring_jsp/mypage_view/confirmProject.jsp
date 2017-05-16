@@ -1,5 +1,10 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.mentoring.model.*" %>
+<%@ page import="java.util.*" %>
+<%
+	List<Applylist> applyList = (List<Applylist>)request.getAttribute("applyList");
 
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,24 +66,24 @@
 
         <!-- Project One -->
         <div class="row">
-       
+        	<%for(Applylist a : applyList){ %> 
             <div class="col-md-7">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                    <img class="img-responsive" src="/mentoring/imageupload/<%=a.getiPath()%>" alt="">
                 </a>
             </div>
             <div class="col-md-5">
-                <h3>Project One</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <h3><%=a.getpTitle()%></h3>
+                <p><%=a.getpContent()%></p>
+                <a class="btn btn-primary" href="/mentoring/mentoring.mento?cmd=mentoring-view&pNum=<%=a.getpNum()%>&iNum=<%=a.getiNum()%>">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
-            
+             <%} %>
           <!-- 여기 필요한 부분만 붙여 넣으면됨 --> 
         </div>
         <!-- /.row -->
-
+		
         <hr>
+       
 
     </div>
     <!-- /.container -->
