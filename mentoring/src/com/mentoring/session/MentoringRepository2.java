@@ -69,10 +69,14 @@ public class MentoringRepository2 {
 		}
 	}
 	
-	public List<User> mypageInfoList(){
+	public User mypageInfoList(String uId){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{
-			return sqlSess.selectList(namespace+".mypageInfoList");
+			String statement = namespace+".mypageInfoList";
+			HashMap map = new HashMap<>();
+			map.put("uId", uId);
+			
+			return sqlSess.selectOne(statement, map);
 		}finally{
 			sqlSess.close();
 		}

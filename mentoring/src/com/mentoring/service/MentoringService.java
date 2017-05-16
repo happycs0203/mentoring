@@ -64,8 +64,8 @@ public class MentoringService {
 	   return repo2.adminMemberList();	
 	}
 	
-	public List<User> mypageInfoList(){
-		return repo2.mypageInfoList();
+	public User mypageInfoList(String uId){
+		return repo2.mypageInfoList(uId);
 	}
 	
 	public List<Callist> confirmRequestList(){

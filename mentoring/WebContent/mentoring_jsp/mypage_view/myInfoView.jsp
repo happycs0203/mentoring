@@ -2,10 +2,17 @@
 <%@ page import="com.mentoring.model.*" %>
 <%@ page import="java.util.*" %>
 
+<%  //웹브라우저가 게시글 목록을 캐싱할 경우 새로운 글이 추가되더라도 새글이 목록에 안 보일 수 있기 때문에 설정 캐쉬 삭제?
+	response.setHeader("Pragma","No-cache");		// HTTP 1.0 version
+	response.setHeader("Cache-Control","no-cache");	// HTTP 1.1 version
+	response.setHeader("Cache-Control","no-store"); // 일부 파이어폭스 버스 관련
+	response.setDateHeader("Expires", 1L);			// 현재 시간 이전으로 만료일을 지정함으로써 응답결과가 캐쉬되지 않도록 설정
+%>
+
 
 <%
 
- List<User> uList = (List<User>)request.getAttribute("uList");
+ User user= (User)request.getAttribute("user");
 
 %>
 <!DOCTYPE html>
@@ -108,37 +115,39 @@
            
             <div class="col-md-5">
                 <h3 style="font-size:40px; font-family:bold; ">내정보</h3>
-                <h4>김일주 님</h4>
+               
+                <h4><%= user.getuName() %></h4>
  
    <table width="1000" height="400" style="padding:5px 0 5px 0;">
    
       <tr height="2" bgcolor="#FFC8C3"><td colspan="2"></td>
       </tr>
       
+       
       <tr>
-         <th> 이 름</th><td><input type="text" name="uName" value="김일주"></td> </tr>
+         <th> 이 름</th><td><input type="text" name="uName" value="<%=user.getuName()%>"></td> </tr>
 
        <tr><th>아이디</th>
-         <td><input type="text" name="uId" value="ilju"></td>
+         <td><input type="text" name="uId" value="<%=user.getuId()%>"></td>
        </tr>
        
        <tr><th>비밀번호</th>
-         <td><input type="text" name="uPass" value="1004">
+         <td><input type="text" name="uPass" value="<%=user.getuPass()%>">
        </tr>
        
           <tr>
-         <th>전화번호</th><td><input type="text"name="uPhone" value="5303"> 
+         <th>전화번호</th><td><input type="text"name="uPhone" value="<%=user.getuPhone()%>"> 
            </td>
         </tr>
        
 
          <tr><th>주 소</th>
            <td>
-             <input type="text" name="uAddr" value="파주">
+             <input type="text" name="uAddr" value="<%=user.getuAddr()%>">
            </td>
          </tr>
          
-
+ 
            <tr>
              <td colspan="2" align="center">
                <input type="button" class='btn_modify' value="수정">
