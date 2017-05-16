@@ -303,7 +303,7 @@ for(int index = 1; index <= endDay; index++)
        while(st.hasMoreElements()) {
            yy = Integer.parseInt((String)st.nextElement());
            mm = Integer.parseInt((String)st.nextElement());
-           dd = Integer.parseInt((String)st.nextElement());
+           dd = Integer.parseInt((String)st.nextElement()); 
          
        }
        

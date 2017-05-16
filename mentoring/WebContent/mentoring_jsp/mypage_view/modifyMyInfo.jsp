@@ -126,7 +126,7 @@
             <div class="col-md-5">
                 <h3 style="font-size:40px; font-family:bold; ">내정보</h3>
                
-                <h4><%= user.getuName() %></h4>
+                <h4></h4>
  
    <table width="1000" height="400" style="padding:5px 0 5px 0;">
    

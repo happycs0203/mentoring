@@ -15,7 +15,7 @@
 
         <link href="//code.jboxcdn.com/0.4.7/jBox.css" rel="stylesheet">
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="/mentoring/mentoring_jsp/worthy_v.1.0/images/favicon.ico">
+		<link rel="shortcut icon" href="/mentoring/mentoring_jzsp/worthy_v.1.0/images/favicon.ico">
 
 		<!-- Web Fonts -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -82,35 +82,12 @@
 	        $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false});
 	    });
 	    
-	    
-	    var listMore = 4;  //최초 4개의 이미지를 보여줌
-	    var totalCnt = 9;  // 총 보이는 리스트 목록의 갯수
-	    
-	    
-	    //최초 4개보다 적거나 같으면 리스트를 보여줌
-	    for(var i = 1; i<=totalCnt; i++){
-	    	if(i <=  listMore){
-	    		 $('.list').show();
-	    	}
-	    }
-		 
-	    //더보기 버튼을 눌렀을 때
-	    $('#addlist').click(function(){
-	    	
-	    	 var listMore =  $('.list').html();
-	    	 listMore =  listMore + 4; //누를때마다 4개씩 추가
-	    	 
-	    	 if(i <= last){
-	    		 $('.list').style.display='block';
-	    	 }
-	    	
-	        
-
-	    });
+	    //멘토링 개설하기 버튼 눌렀을때
 	    $('#registMentoring').click(function(){
 	    	location.href="/mentoring/mentoring.mento?cmd=mentoring-input"
 	    });
 	    
+
 	    
 	    
 	});
@@ -154,7 +131,7 @@
 						<!-- isotope filters end -->
 
 						<!-- portfolio items start -->
-						<div class="isotope-container row grid-space-20">
+						<div class="isotope-container row grid-space-20" >
 							<%for(Prolist p: pList) {%>
 							<div class="col-sm-6 col-md-3 isotope-item web-design list">
 								<div class="image-box">
@@ -167,7 +144,7 @@
 									</div>
 									<a class="btn btn-default btn-block" href="/mentoring/mentoring.mento?cmd=mentoring-view&pNum=<%=p.getpNum()%>&iNum=<%=p.getiNum()%>"><%=p.getpTitle()%></a>
 								</div>
-								
+								 
 							</div>
 							<%} %>
 							

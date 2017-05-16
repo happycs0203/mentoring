@@ -82,7 +82,7 @@
             <ul class="nav sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                       Brand
+                       List
                     </a>
                 </li>
                 <li>
@@ -117,7 +117,7 @@
           
     <!-- Page Content -->
     <div class="container">
-<form name='frm' class='frm2' action="/mentoring/mentoring.mento?cmd=go-modifymyinfo">	
+ <form name='frm' class='frm2' method='post' action="/mentoring/mentoring.mento?cmd=go-modifymyinfo">	
         <!-- Project One -->
         <div class="row">
           <!-- 여기 필요한 부분만 붙여 넣으면됨 --> 
@@ -125,7 +125,7 @@
             <div class="col-md-5">
                 <h3 style="font-size:40px; font-family:bold; ">내정보</h3>
                
-                <h4><%= user.getuName() %></h4>
+                <h4><%= user.getuName()%> 님 </h4>
  
    <table width="1000" height="400" style="padding:5px 0 5px 0;">
    
@@ -156,8 +156,12 @@
            </td>
          </tr>
          
- </form>
-           <tr>
+
+          
+           </table>
+           
+           
+             <tr>
              <td colspan="2" align="center">
             
                <input type="button" id="btn_modify" class='btn_modify' value="수정">
@@ -165,7 +169,7 @@
                <input type="reset" class='btn_cancel' value="취소">
             </td>
            </tr>
-           </table>
+           
             </div>
           <!-- 여기 필요한 부분만 붙여 넣으면됨 --> 
         </div>
@@ -181,6 +185,6 @@
 
     </div>
     <!-- /#wrapper -->
-
+</form>
 </body>
 </html>
