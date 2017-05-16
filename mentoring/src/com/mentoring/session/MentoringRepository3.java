@@ -78,7 +78,7 @@ public class MentoringRepository3 {
 	public Project searchPayment(Project project){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{
-			String statement = namespace + ".confirmLogin";
+			String statement = namespace + ".searchPayment";
 			return sqlSess.selectOne(statement, project);
 		}finally{
 			sqlSess.close();

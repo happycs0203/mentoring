@@ -21,7 +21,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 결제 정보 검색-->
 <select id="searchPayment" parameterType="Project">
-	SELECT #{pTitle}, #{pCost}  FROM projectmento
+	SELECT p_title, p_cost  FROM projectmento WHERE #{pNum} = p_num
 </select>
 
 </mapper>

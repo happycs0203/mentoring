@@ -26,6 +26,7 @@ import com.mentoring.command.CommandNoticeView2;
 import com.mentoring.command.CommandNull;
 import com.mentoring.command.CommandStudyInput;
 import com.mentoring.command.CommandStudyList;
+import com.mentoring.command.CommandTranferPayment;
 import com.mentoring.command.CommandUserInput;
 
 /**
@@ -47,7 +48,7 @@ public class MentoringControl extends HttpServlet {
     //
     private void initCommand(){
 		commandMap = new HashMap();
-		//null占쏙옙 db占싫곤옙占쌕울옙
+		
 		commandMap.put("main-page",	new CommandNull("mainPage.jsp") );
 		commandMap.put("main-page2",new CommandLogin("mainPage.jsp") );
 		commandMap.put("mentoring-input", new CommandNull("registMentoring.jsp") );//�굹以묒뿉 留덉씠�럹�씠吏� �솕硫댁쑝濡� �꽆寃⑥＜湲�
@@ -66,8 +67,13 @@ public class MentoringControl extends HttpServlet {
 		commandMap.put("now-project", new CommandMyApplyPro("mypage_view/confirmProject.jsp"));
 		commandMap.put("myinfo-view", new CommandMypageInfo("mypage_view/myInfoView.jsp"));
 		commandMap.put("register-view", new CommandNull("register.jsp"));
+
 		commandMap.put("payment-form", new CommandNull("payment.jsp"));
 		commandMap.put("go-modifymyinfo", new CommandNull("mypage_view/modifyMyInfo.jsp"));
+
+		commandMap.put("payment-form", new CommandTranferPayment("payment.jsp")); 
+		commandMap.put("go-modifymyinfo", new CommandNull("modifyMyInfo.jsp")); 
+
 	    commandMap.put("modify-info", new CommandModifyInfo("mypage_view/myInfoView.jsp"));
 	}
 
