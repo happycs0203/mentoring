@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.mentoring.model.Apply;
 import com.mentoring.model.Image;
 import com.mentoring.model.Project;
 import com.mentoring.model.Prolist;
@@ -55,6 +56,24 @@ public class MentoringRepository3 {
 		}finally{
 			sqlSess.close();
 		}
+	}
+	
+	//결제 정보 변경 N -> Y
+	public Integer updateApply(Apply apply){
+		//JDBC : Connection, Mybatis : SqlSession 
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			String statment = namespace + ".updateApply";
+			int result = sqlSess.update(statment, apply);
+			if(result > 0){
+				sqlSess.commit();
+			}else{
+				sqlSess.rollback();
+			}
+		}finally{
+			sqlSess.close();
+		}
+		return 0;
 	}
 }
 

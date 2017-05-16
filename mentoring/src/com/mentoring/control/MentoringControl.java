@@ -65,6 +65,7 @@ public class MentoringControl extends HttpServlet {
 		commandMap.put("now-project", new CommandMyApplyPro("mypage_view/confirmProject.jsp"));
 		commandMap.put("myinfo-view", new CommandMypageInfo("mypage_view/myInfoView.jsp"));
 		commandMap.put("register-view", new CommandNull("register.jsp"));
+		commandMap.put("payment-form", new CommandNull("payment.jsp"));
 	}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -13,4 +13,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	VALUES(#{uId}, #{uName}, #{uPass}, #{uPhone}, #{uAddr})
 </insert>
 
+
+<!-- 결제 정보 변경 -->
+<update id="updateApply" parameterType="Apply">
+	UPDATE applymento SET #{aConfirm} = "Y" WHERE 
+</update>
+
 </mapper>
