@@ -16,10 +16,10 @@ import com.mentoring.model.Image;
 import com.mentoring.model.Project;
 import com.mentoring.service.MentoringService;
 
-public class CommandInput implements Command {
+public class CommandMyInfo implements Command {
 	private String next;
 
-	public CommandInput(String _next) {
+	public CommandMyInfo(String _next) {
 		next = _next;
 	}
 

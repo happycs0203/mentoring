@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="com.mentoring.model.*" %>
 <%@ page import="java.util.*" %>
+<%@page import="java.text.SimpleDateFormat"%>
 <%
 	List<Project> proList  = (List<Project>)request.getAttribute("proList");
 	int i = 0;
@@ -37,7 +38,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">내정보</a>
+                    <a href="/mentoring/mentoring.mento?cmd=myinfo-views">내정보</a>
                 </li>
                 <li>
                     <a href="/mentoring/mentoring.mento?cmd=show-project">신청현황</a>
@@ -75,11 +76,11 @@
                   	           
                     <tr>
                       <th>#</th>
-                      <th>Task</th>
+                      <th>멘토링 제목</th>
                       <th style="text-align:right">시작날짜</th>
-                      <th>Progress</th>
+                      <th>진행상황</th>
                       <th>종료날짜</th>
-                      <th>Label</th>
+                      <th>%</th>
                     </tr>
                     <%for(Project p : proList) {
 						String fullTime = p.getpTime();
@@ -88,8 +89,8 @@
                     	String endDate = new String();
                         startDate = st.nextToken();
                         endDate = st.nextToken();
-                        int startNum= 0;
-                        int endNum= 0;
+                        double startNum= 0.0;
+                        double endNum= 0.0;
                         
                         StringTokenizer st1 = new StringTokenizer(startDate, "/");
                         st1.nextToken();
@@ -100,7 +101,28 @@
                         st2.nextToken();
                         endNum = endNum + (30 *Integer.parseInt(st2.nextToken()));
                         endNum += Integer.parseInt(st2.nextToken());
-                        System.out.println(endNum-startNum);
+                        double totalNum = endNum-startNum;
+                        
+                        Calendar now = Calendar.getInstance();
+                        double nowNum = 0.0;
+                        nowNum += 30*(now.get(Calendar.MONTH) + 1); // 월을 리턴
+                        nowNum += now.get(Calendar.DAY_OF_MONTH); // 일을 리턴
+                        double passNum = nowNum - startNum;
+                        double percent = 0.0;
+                        
+                        if(passNum > 0){
+                        	double num = (double)(passNum % totalNum);
+                        	percent = (passNum / totalNum) * 100;
+                        	System.out.println("num = " + num);
+                        }
+                        
+                        System.out.println("per = " + percent);
+                        System.out.println("pass = " + passNum);
+                        System.out.println("start = " + startNum);
+                        System.out.println("total = " + totalNum);
+                        System.out.println("now = " + nowNum);
+                        
+                
                     %>   
                     <tr>
                       <td><%=i+1 %></td>
@@ -110,13 +132,13 @@
                       </td>
                       <td>
                         <div class="progress progress-xs">
-                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                          <div class="progress-bar progress-bar-danger" style="width: <%=Math.floor(percent)%>%"></div>
                         </div>
                         </td>
                         <td>
                        <label><%=endDate %></label>
                       </td>
-                      <td><span class="badge bg-red">55%</span></td>
+                      <td><span class="badge bg-red"><%=Math.floor(percent)%>%</span></td>
                     </tr>
                    <%} %>  
                   </table>
