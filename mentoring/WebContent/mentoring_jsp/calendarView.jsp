@@ -13,35 +13,32 @@
 
  
 
-Calendar cal = Calendar.getInstance();
-
+//년도와 월을 받아옴
 String strYear = request.getParameter("year");
 String strMonth = request.getParameter("month");
 
- 
+ //년,월,일 지정
+Calendar cal = Calendar.getInstance();
 
 int year = cal.get(Calendar.YEAR);
 int month = cal.get(Calendar.MONTH);
 int date = cal.get(Calendar.DATE);
 
- 
-
+//null이 아닌 다른 값을 받아오면
 if(strYear != null)
 {
+	//다시 지정
   year = Integer.parseInt(strYear);
   month = Integer.parseInt(strMonth);
 
 }else{
 
- 
-
+	
 }
 
-//년도/월 셋팅
-
+//년도,월 셋팅
 cal.set(year, month, 1);
 
- 
 
 int startDay = cal.getMinimum(java.util.Calendar.DATE);
 int endDay = cal.getActualMaximum(java.util.Calendar.DAY_OF_MONTH);
@@ -150,7 +147,7 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 <table width="100%" border="0" cellspacing="1" cellpadding="1">
 <tr>
        <td align="right">
-             <input type="button"  onclick="javascript:location.href='<c:url value='/mentoring_jsp/calendarView.jsp'/>'"  value="오늘"/>
+             <input type="button"  onclick="javascript:location.href='/mentoring/mento.mento?cmd=calendar-view'"  value="오늘"/>
        </td>
 
 </tr>
@@ -175,30 +172,28 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 
        <tr>
              <td align="center" >
-                    <a href="<c:url value='/mentoring_jsp/calendarView.jsp' />?year=<%=year-1%>&amp;month=<%=month%>" target="_self">
-                           <b>&lt;&lt;</b><!-- 이전해 -->
-                    </a>
-
+                   
                     <% if(month > 0 ){ %>
 
-                    <a href="<c:url value='/mentoring_jsp/calendarView.jsp' />?year=<%=year%>&amp;month=<%=month-1%>" target="_self">
-                           <b>&lt;</b><!-- 이전달 -->
+                    <a href="/mentoring/mento.mento?cmd=calendar-view&year=<%=year%>&month=<%=month-1%>">
+                           <b>&lt;</b>
+                           
+                           <!-- 이전달 -->
                     </a>
 
                     <% } else { %>
+                    
                            <b>&lt;</b>
                     <%} %>
 
                    &nbsp;&nbsp;
 
-                    <%=year%>년
-                   
-
-                    <%=month+1%>월
+                    <%=year%>년    <%=month+1%>월
                     &nbsp;&nbsp;
+                    
                     <%if(month < 11 ) { %>
 
-                    <a href="<c:url value='/mentoring/mentoring_jsp/calendarView.jsp' />?year=<%=year%>&amp;month=<%=month+1%>" target="_self">
+                    <a href="/mentoring/mento.mento?cmd=calendar-view&year=<%=year%>&month=<%=month+1%>" >
 
                          <b>&gt;</b>
                     </a>
@@ -207,11 +202,7 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
                           <b>&gt;</b>
                     <% } %>
 
-                    <a href="<c:url value='/mentoring_jsp/calendarView.jsp' />?year=<%=year+1%>&amp;month=<%=month%>" target="_self">
-
-                           <!-- 다음해 --><b>&gt;&gt;</b>
-
-                    </a>
+                   
              </td>
        </tr>
 
@@ -318,7 +309,7 @@ for(int index = 1; index <= endDay; index++)
        
        
        //태그달기
-       if(index == dd){
+       if( (month+1) == mm && index == dd){
     	   out.println("<a href='/mentoring/mentoring.mento?cmd=mentoring-view&pNum="+c.getpNum()+"&iNum="+c.getiNum()+"'>");
     	   out.println("<br>" + c.getuName() + "<br>" + c.getpTitle());
     	   out.println("</a>");
