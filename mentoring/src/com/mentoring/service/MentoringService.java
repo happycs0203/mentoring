@@ -80,7 +80,7 @@ public class MentoringService {
 	
 //	public Image insertImage(Image img){
 //		return repo1.insertImage(img);
-//	}
+//	} //image
 	public Integer insertUser(User user){
 		return repo3.insertUser(user);
 	}
