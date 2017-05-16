@@ -308,7 +308,7 @@ for(int index = 1; index <= endDay; index++)
        }
        
        
-       //태그달기
+       //일정 태그 달기
        if( (month+1) == mm && index == dd){
     	   out.println("<a href='/mentoring/mentoring.mento?cmd=mentoring-view&pNum="+c.getpNum()+"&iNum="+c.getiNum()+"'>");
     	   out.println("<br>" + c.getuName() + "<br>" + c.getpTitle());
