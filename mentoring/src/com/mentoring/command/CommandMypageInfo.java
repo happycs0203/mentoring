@@ -3,6 +3,7 @@ package com.mentoring.command;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import com.mentoring.model.User;
 import com.mentoring.service.MentoringService;
@@ -18,8 +19,9 @@ public class CommandMypageInfo implements Command {
 	public String execute(HttpServletRequest request) throws CommandException {
 		try {
             
-
-			String uId = request.getParameter("uId");
+             
+			HttpSession session = request.getSession();
+			String uId = (String)session.getAttribute("uId");
 			User user = MentoringService.getInstance().mypageInfoList(uId);
 			request.setAttribute("user", user);
 			
