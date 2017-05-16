@@ -129,7 +129,9 @@ public class MentoringService {
 	public Integer updateApply(Apply apply){
 		return repo3.updateApply(apply);
 	}
-	
+	public Project searchPayment(Project project){
+		return repo3.searchPayment(project);
+	}
 
 	
 }

@@ -19,4 +19,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	UPDATE applymento SET #{aConfirm} = "Y" WHERE 
 </update>
 
+<!-- 결제 정보 검색-->
+<select id="searchPayment" parameterType="Project">
+	SELECT #{pTitle}, #{pCost}  FROM projectmento
+</select>
+
 </mapper>
