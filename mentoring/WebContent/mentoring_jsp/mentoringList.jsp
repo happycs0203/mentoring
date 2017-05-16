@@ -87,6 +87,10 @@
 	    	location.href="/mentoring/mentoring.mento?cmd=mentoring-input"
 	    });
 	    
+	    $('.star').click(function(){
+	    	alert("클릭");
+	    });
+	    
 
 	    
 	    
@@ -142,7 +146,10 @@
 											<span>Web Design</span>
 										</a>
 									</div>
+									<input type="hidden" name="pNum" value="<%=p.getpNum()%>"/>
+									<input type="hidden" name="pTitle" value="<%=p.getpTitle()%>"/>
 									<a class="btn btn-default btn-block" href="/mentoring/mentoring.mento?cmd=mentoring-view&pNum=<%=p.getpNum()%>&iNum=<%=p.getiNum()%>"><%=p.getpTitle()%></a>
+									<img src="/mentoring/mentoring_jsp/church/images/new.png" class="star"/>
 								</div>
 								 
 							</div>

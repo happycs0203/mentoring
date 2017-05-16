@@ -88,6 +88,23 @@ public class MentoringRepository3 {
 			sqlSess.close();
 		}
 	}
+	
+	public Integer insertApply(Apply apply){
+		      //JDBC : Connection, Mybatis : SqlSession 
+		      SqlSession sqlSess = getSelSessionFactory().openSession();
+		      try{
+		         String statment = namespace + ".insertApply";
+		         int result = sqlSess.insert(statment, apply);
+		         if(result > 0){
+		            sqlSess.commit();
+		         }else{
+		            sqlSess.rollback();
+		         }
+		      }finally{
+		         sqlSess.close();
+		      }
+		      return 0;
+	}
 }
 
 

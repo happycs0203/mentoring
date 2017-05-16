@@ -24,6 +24,7 @@ import com.mentoring.command.CommandMypageInfo;
 import com.mentoring.command.CommandNoticeList;
 import com.mentoring.command.CommandNoticeView2;
 import com.mentoring.command.CommandNull;
+import com.mentoring.command.CommandPayment;
 import com.mentoring.command.CommandStudyInput;
 import com.mentoring.command.CommandStudyList;
 import com.mentoring.command.CommandTemp;
@@ -77,7 +78,7 @@ public class MentoringControl extends HttpServlet {
 
 	    commandMap.put("modify-info", new CommandModifyInfo("mypage_view/myInfoView.jsp"));
 	    commandMap.put("user-list", new CommandUserList("mypage_view/userList.jsp"));
-	    
+	    commandMap.put("payment-form2", new CommandPayment("mainPage.jsp"));
 	}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

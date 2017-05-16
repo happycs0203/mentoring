@@ -135,6 +135,9 @@ public class MentoringService {
 	public List<User> searchUserList(int pNum){
 		return repo.searchUserList(pNum);
 	}
+	public Integer insertApply(Apply apply){
+		   return repo3.insertApply(apply);
+	}
 
 	
 }
