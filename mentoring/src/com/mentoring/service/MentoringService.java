@@ -129,8 +129,8 @@ public class MentoringService {
 	public Integer updateApply(Apply apply){
 		return repo3.updateApply(apply);
 	}
-	public Project searchPayment(Project project){
-		return repo3.searchPayment(project);
+	public Project searchPayment(int pNum){
+		return repo3.searchPayment(pNum);
 	}
 	public List<User> searchUserList(int pNum){
 		return repo.searchUserList(pNum);
