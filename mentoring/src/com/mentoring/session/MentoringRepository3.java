@@ -2,6 +2,7 @@ package com.mentoring.session;
 
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -75,11 +76,14 @@ public class MentoringRepository3 {
 		}
 		return 0;
 	}
-	public Project searchPayment(Project project){
+	public Project searchPayment(int pNum){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{
+			HashMap map = new HashMap<>();
+			map.put("pNum", pNum);
 			String statement = namespace + ".searchPayment";
-			return sqlSess.selectOne(statement, project);
+			System.out.println("출력 나오나"+statement);
+			return sqlSess.selectOne(statement, map);
 		}finally{
 			sqlSess.close();
 		}

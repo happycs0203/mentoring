@@ -20,8 +20,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </update>
 
 <!-- 결제 정보 검색-->
-<select id="searchPayment" parameterType="Project">
-	SELECT p_title, p_cost  FROM projectmento WHERE #{pNum} = p_num
+<select id="searchPayment" parameterType="hashmap" resultType="Project">
+	SELECT *  FROM projectmento WHERE p_num = #{pNum}
 </select>
 
 </mapper>

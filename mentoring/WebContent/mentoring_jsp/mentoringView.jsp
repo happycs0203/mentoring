@@ -95,7 +95,7 @@
 	});
 	$(function(){
 		$("#assignMentoring").click(function(){
-			location.href="/mentoring/mentoring.mento?cmd=payment-form&pTitle=<%=p.getpTitle()%>&pCost=<%=p.getpCost()%>&pNum=<%=p.getpNum()%>";
+			location.href="/mentoring/mentoring.mento?cmd=payment-form&pNum=<%=p.getpNum()%>";
 		});
 	});
 	

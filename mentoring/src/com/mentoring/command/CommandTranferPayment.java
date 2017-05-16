@@ -25,13 +25,12 @@ public class CommandTranferPayment implements Command{
 	public String execute(HttpServletRequest request) throws CommandException {
 		try {
 	
-		Project project = new Project();
-		project.setpTitle(request.getParameter("pTitle"));
-		project.setpCost(Integer.parseInt(request.getParameter("pCost")));
-		project.setpNum(Integer.parseInt(request.getParameter("pNum")));
-		System.out.println("CommandTranferPayment.java"+project);
+	
+		int pNum = Integer.parseInt(request.getParameter("pNum"));
+		System.out.println("넘버야 왜 안 찍히니"+Integer.parseInt(request.getParameter("pNum")));
+		System.out.println("CommandTranferPayment.java"+pNum);
 		//Repository를 호출 
-		Project p = MentoringService.getInstance().searchPayment(project);
+		Project p = MentoringService.getInstance().searchPayment(pNum);
 		request.setAttribute("mentoringview_register", p);
 		} catch (Exception ex) {
 			throw new CommandException("CommandTranferPayment.java" + ex.toString());
