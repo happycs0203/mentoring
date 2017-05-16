@@ -63,8 +63,7 @@
 <script type="text/javascript">
  $(function(){
 	 $('#btn_modify').click(function(){
-		     //버튼을 눌렀을 때 수정페이지로 이동
-	    	location.href="/mentoring/mentoring.mento?cmd=go-modifyinfo";
+		     $('.frm2').submit();
 	    });
  });
 
@@ -74,7 +73,7 @@
 <body>
 
 <!-- body부분 -->
-<form name='frm' id='frm' action="/mentoring/mentoring.mento?cmd=go-modifyinfo">
+
     <div id="wrapper">
         <div class="overlay"></div>
     
@@ -118,7 +117,7 @@
           
     <!-- Page Content -->
     <div class="container">
-	
+<form name='frm' class='frm2' action="/mentoring/mentoring.mento?cmd=go-modifymyinfo">	
         <!-- Project One -->
         <div class="row">
           <!-- 여기 필요한 부분만 붙여 넣으면됨 --> 
@@ -157,7 +156,7 @@
            </td>
          </tr>
          
- 
+ </form>
            <tr>
              <td colspan="2" align="center">
             
@@ -182,6 +181,6 @@
 
     </div>
     <!-- /#wrapper -->
-</form>
+
 </body>
 </html>

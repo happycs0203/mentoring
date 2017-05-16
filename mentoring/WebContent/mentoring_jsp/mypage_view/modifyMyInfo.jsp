@@ -63,7 +63,7 @@
 <script type="text/javascript">
  $(function(){
 	 
-	 $('#btn_modify').click(function(){
+	 $('#bmodify').click(function(){
 		     $('#frm').submit();
 	    });
  });
@@ -161,7 +161,7 @@
            <tr>
              <td colspan="2" align="center">
             
-               <input type="button" id="btn_modify" class='btn_modify' value="수정">
+               <input type="button" id="bmodify" class='btn_modify' value="수정">
 
             </td>
            </tr>
