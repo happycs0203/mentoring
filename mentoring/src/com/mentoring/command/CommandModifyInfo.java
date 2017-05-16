@@ -31,6 +31,7 @@ public class CommandModifyInfo implements Command {
 
 			HttpSession session = request.getSession();
 			String uId = (String)session.getAttribute("uId");
+			System.out.println(uId);
 			
 			User user = new User();
 			user.setuName(request.getParameter("uName"));
