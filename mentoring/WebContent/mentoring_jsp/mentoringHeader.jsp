@@ -16,7 +16,7 @@
                <li class="active"><a href="/mentoring/mentoring.mento?cmd=register-view" >회원가입</a></li>
             <%} else{ %>
                <li class="active"><a href="/mentoring/mentoring.mento?cmd=logout" id='logout'>로그아웃</a></li>
-               <li class="active"><a href="#" id='mypage'>마이페이지</a></li>
+               <li class="active"><a href="/mentoring/mentoring.mento?cmd=myinfo-view" id='mypage'>마이페이지</a></li>
                
             <% }%>
                

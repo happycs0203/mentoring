@@ -38,7 +38,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/mentoring/mentoring.mento?cmd=myinfo-views">내정보</a>
+                    <a href="/mentoring/mentoring.mento?cmd=myinfo-view">내정보</a>
                 </li>
                 <li>
                     <a href="/mentoring/mentoring.mento?cmd=show-project">내 프로젝트</a>
