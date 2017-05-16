@@ -41,10 +41,10 @@
                     <a href="/mentoring/mentoring.mento?cmd=myinfo-views">내정보</a>
                 </li>
                 <li>
-                    <a href="/mentoring/mentoring.mento?cmd=show-project">신청현황</a>
+                    <a href="/mentoring/mentoring.mento?cmd=show-project">내 프로젝트</a>
                 </li>
                 <li>
-                    <a href="/mentoring/mentoring.mento?cmd=now-project">프로젝트 개설 여부</a>
+                    <a href="/mentoring/mentoring.mento?cmd=now-project">나의 신청 프로젝트</a>
                 </li>
 <!--                 <li> -->
 <!--                     <a href="#">Team</a> -->
@@ -78,7 +78,7 @@
                       <th>#</th>
                       <th>멘토링 제목</th>
                       <th style="text-align:right">시작날짜</th>
-                      <th>진행상황</th>
+                      <th style="text-align:center">진행상황</th>
                       <th>종료날짜</th>
                       <th>%</th>
                     </tr>

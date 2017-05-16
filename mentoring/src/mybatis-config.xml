@@ -18,6 +18,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAlias type="com.mentoring.model.Image" alias='image'/>
 	<typeAlias type="com.mentoring.model.Notice" alias='notice'/>
 	<typeAlias type="com.mentoring.model.Callist" alias='calendarlist'/>
+	<typeAlias type="com.mentoring.model.Applylist" alias='applylist'/>
+	<typeAlias type="com.mentoring.model.Apply" alias='apply'/>
  </typeAliases>
  <environments default="development">
 	<environment id="development">

@@ -55,12 +55,13 @@
     			<span class="hamb-middle"></span>
 				<span class="hamb-bottom"></span>
             </button>
-          
+        
     <!-- Page Content -->
     <div class="container">
 
         <!-- Project One -->
         <div class="row">
+       
             <div class="col-md-7">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x300" alt="">
@@ -72,6 +73,8 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
                 <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
+            
+          <!-- 여기 필요한 부분만 붙여 넣으면됨 --> 
         </div>
         <!-- /.row -->
 

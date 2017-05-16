@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.mentoring.model.Applylist;
 import com.mentoring.model.Image;
 import com.mentoring.model.Project;
 import com.mentoring.model.Prolist;
@@ -76,6 +77,17 @@ public class MentoringRepository {
 			HashMap map = new HashMap<>();
 			map.put("uId", uId);
 			return sqlSess.selectList(namespace+".selectMyProject", map);
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
+	public List<Applylist> showMyApplyPro(String uId){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			HashMap map = new HashMap<>();
+			map.put("uId", uId);
+			return sqlSess.selectList(namespace+".selectMyApplyPro", map);
 		}finally{
 			sqlSess.close();
 		}

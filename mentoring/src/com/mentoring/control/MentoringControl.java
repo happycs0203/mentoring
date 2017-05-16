@@ -17,6 +17,7 @@ import com.mentoring.command.CommandLogin;
 import com.mentoring.command.CommandLogout;
 import com.mentoring.command.CommandMentoringList;
 import com.mentoring.command.CommandMentoringView;
+import com.mentoring.command.CommandMyApplyPro;
 import com.mentoring.command.CommandMyRegisterPro;
 import com.mentoring.command.CommandMypageInfo;
 import com.mentoring.command.CommandNoticeList;
@@ -61,7 +62,7 @@ public class MentoringControl extends HttpServlet {
 		commandMap.put("noticeview-page", new CommandNoticeView2("noticeView.jsp"));
 		commandMap.put("mentoring-noticelist", new CommandNoticeList("noticeList.jsp"));
 		commandMap.put("show-project", new CommandMyRegisterPro("mypage_view/mypageView.jsp"));
-		commandMap.put("now-project", new CommandNull("mypage_view/confirmProject.jsp"));
+		commandMap.put("now-project", new CommandMyApplyPro("mypage_view/confirmProject.jsp"));
 		commandMap.put("myinfo-view", new CommandMypageInfo("mypage_view/myInfoView.jsp"));
 		commandMap.put("register-view", new CommandNull("register.jsp"));
 	}

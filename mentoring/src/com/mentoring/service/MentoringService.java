@@ -2,6 +2,7 @@ package com.mentoring.service;
 
 import java.util.List;
 
+import com.mentoring.model.Applylist;
 import com.mentoring.model.Callist;
 import com.mentoring.model.Image;
 import com.mentoring.model.Notice;
@@ -114,6 +115,10 @@ public class MentoringService {
 	
 	public List<Project> showMyRegisterPro(String uId){
 		return repo.showMyRegisterPro(uId);
+	}
+	
+	public List<Applylist> showMyApplyPro(String uId){
+		return repo.showMyApplyPro(uId);
 	}
 	
 
