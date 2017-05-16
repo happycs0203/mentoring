@@ -93,6 +93,14 @@
 		});
 		
 	});
+	$(function(){
+		$("#assignMentoring").click(function(){
+			alert('<%=p.getpTitle()%>');
+			alert('<%=p.getpCost()%>');
+			location.href="/mentoring/mentoring.mento?cmd=payment-form&xxxxx=<%=p.getpTitle()%>&yyyyy=<%=p.getpCost()%>";
+		});
+	});
+	
 </script>
 
 </head>
@@ -112,8 +120,12 @@
 				</header>
 
 		<p ><img src="/mentoring/imageupload/<%=i.getiPath()%>" alt="여기에 포스터 넣어주기"></p>
-		
-		<input type="button" class="btn_login" value="신청" id="assignMentoring" style="position:relative;">
+	<!-- 	 <input type="submit" class="btn_login" value="text" id="assignMentoring" name="assignMentoring" style="position:relative;">
+			<form type="hidden" action="/mentoring/mentoring.mento?cmd=payment-form" method="post">
+			</form>
+		</input>  -->
+	    
+	    <input type="button" class="btn_login" value="신청" id="assignMentoring" style="position:relative;"> 
 		<input type="button" class="btn_login" value="공유하기" id="share">
 		<input type="button" class="btn_login" value="찜하기" id="zzim">
 	
