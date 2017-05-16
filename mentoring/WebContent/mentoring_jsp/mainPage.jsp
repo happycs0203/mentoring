@@ -50,7 +50,7 @@
          
             <p>Minju's college는 배우려는 사람들과 배움을 주려는 사람들이 모여 서로 지식을 공유하고 함께 성장해 나갈 수 있는 공간을 드립니다.</p>
              <section id="carousel-section" class="section-global-wrapper"> 
-        <div class="container-fluid-kamn" ">
+        <div class="container-fluid-kamn" >
             <div class="row">
                 <div id="carousel-1" class="carousel slide" data-ride="carousel">
 

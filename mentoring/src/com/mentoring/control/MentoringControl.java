@@ -26,6 +26,7 @@ import com.mentoring.command.CommandNoticeView2;
 import com.mentoring.command.CommandNull;
 import com.mentoring.command.CommandStudyInput;
 import com.mentoring.command.CommandStudyList;
+import com.mentoring.command.CommandTemp;
 import com.mentoring.command.CommandTranferPayment;
 import com.mentoring.command.CommandUserInput;
 import com.mentoring.command.CommandUserList;
@@ -69,7 +70,7 @@ public class MentoringControl extends HttpServlet {
 		commandMap.put("myinfo-view", new CommandMypageInfo("mypage_view/myInfoView.jsp"));
 		commandMap.put("register-view", new CommandNull("register.jsp"));
 		commandMap.put("payment-form", new CommandNull("payment.jsp"));
-		commandMap.put("go-modifymyinfo", new CommandNull("mypage_view/modifyMyInfo.jsp"));
+		commandMap.put("go-modifymyinfo", new CommandTemp("mypage_view/modifyMyInfo.jsp"));
 	    commandMap.put("modify-info", new CommandModifyInfo("mypage_view/myInfoView.jsp"));
 	    commandMap.put("user-list", new CommandUserList("mypage_view/userList.jsp"));
 	    

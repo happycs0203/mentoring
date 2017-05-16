@@ -11,8 +11,7 @@
 
 
 <%
-
- User user= (User)request.getAttribute("user");
+   User user = (User)request.getAttribute("user");
 
 %>
 <!DOCTYPE html>
@@ -74,7 +73,7 @@
 <body>
 
 <!-- body부분 -->
-<form name='frm' id='frm' action="/mentoring/mentoring.mento?cmd=modify-info">
+
     <div id="wrapper">
         <div class="overlay"></div>
     
@@ -122,11 +121,9 @@
         <!-- Project One -->
         <div class="row">
           <!-- 여기 필요한 부분만 붙여 넣으면됨 --> 
-           
+   <form name='frm' id='frm' method='post' action="/mentoring/mentoring.mento?cmd=modify-info">          
             <div class="col-md-5">
-                <h3 style="font-size:40px; font-family:bold; ">내정보</h3>
-               
-                <h4><%= user.getuName() %> 님</h4>
+                <h3 style="font-size:40px; font-family:bold; ">내 정보수정</h3>           
  
    <table width="1000" height="400" style="padding:5px 0 5px 0;">
    
@@ -135,38 +132,40 @@
       
        
       <tr>
-         <th> 이 름</th><td><input type="text" name="uName" value="<%=user.getuName()%>"></td> </tr>
+         <th> 이 름</th><td><input type="text" name="uName" value="<%= user.getuName()  %>"></td> </tr>
 
        <tr><th>아이디</th>
-         <td><input type="text" name="uId" value="<%=user.getuId()%>"></td>
+         <td><input type="text" name="uId" value="<%= user.getuId() %>"></td>
        </tr>
        
        <tr><th>비밀번호</th>
-         <td><input type="text" name="uPass" value="<%=user.getuPass()%>">
+         <td><input type="text" name="uPass" value="<%= user.getuPass() %>">
        </tr>
        
           <tr>
-         <th>전화번호</th><td><input type="text"name="uPhone" value="<%=user.getuPhone()%>"> 
+         <th>전화번호</th><td><input type="text"name="uPhone" value="<%= user.getuPhone() %>"> 
            </td>
         </tr>
        
 
          <tr><th>주 소</th>
            <td>
-             <input type="text" name="uAddr" value="<%=user.getuAddr()%>">
+             <input type="text" name="uAddr" value="<%= user.getuAddr() %>">
            </td>
          </tr>
          
  
            <tr>
              <td colspan="2" align="center">
-            
+               
                <input type="button" id="bmodify" class='btn_modify' value="수정">
 
             </td>
            </tr>
            </table>
+           
             </div>
+           </form> 
           <!-- 여기 필요한 부분만 붙여 넣으면됨 --> 
         </div>
         <!-- /.row -->

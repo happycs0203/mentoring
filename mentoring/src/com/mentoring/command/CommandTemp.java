@@ -18,10 +18,10 @@ import javax.servlet.http.Part;
 import com.mentoring.model.*;
 import com.mentoring.service.MentoringService;
 
-public class CommandModifyInfo implements Command {
+public class CommandTemp implements Command {
 	private String next;
 
-	public CommandModifyInfo(String _next) {
+	public CommandTemp(String _next) {
 		next = _next;
 	}
 
@@ -29,8 +29,6 @@ public class CommandModifyInfo implements Command {
 	public String execute(HttpServletRequest request) throws CommandException {
 		try {
 
-			
-			
 			User user = new User();
 			user.setuName(request.getParameter("uName"));
 			user.setuId(request.getParameter("uId"));
@@ -38,12 +36,13 @@ public class CommandModifyInfo implements Command {
 			user.setuPhone(request.getParameter("uPhone"));
 			user.setuAddr(request.getParameter("uAddr"));
 			
+			System.out.println(request.getParameter("uName"));
+			System.out.println(request.getParameter("uId"));
 			
-			MentoringService.getInstance().modifyInfo(user);
 			request.setAttribute("user", user);
 
 		} catch (Exception ex) {
-			throw new CommandException("CommandModifyInfo.java" + ex.toString());
+			throw new CommandException("CommandTemp.java" + ex.toString());
 		}
 		return next;
 	}

@@ -12,7 +12,9 @@
 
 <%
 
+
  User user= (User)request.getAttribute("user");
+               
 
 %>
 <!DOCTYPE html>
@@ -64,6 +66,7 @@
  $(function(){
 	 $('#btn_modify').click(function(){
 		     $('.frm2').submit();
+		     
 	    });
  });
 
@@ -117,15 +120,14 @@
           
     <!-- Page Content -->
     <div class="container">
- <form name='frm' class='frm2' method='post' action="/mentoring/mentoring.mento?cmd=go-modifymyinfo">	
+
         <!-- Project One -->
         <div class="row">
           <!-- 여기 필요한 부분만 붙여 넣으면됨 --> 
-           
+ <form name='frm' class='frm2' method='post' action="/mentoring/mentoring.mento?cmd=go-modifymyinfo">	           
             <div class="col-md-5">
-                <h3 style="font-size:40px; font-family:bold; ">내정보</h3>
-               
-                <h4><%= user.getuName()%> 님 </h4>
+                <h3 style="font-size:40px; font-family:bold; "><%= user.getuName()%> 님 정보</h3>
+
  
    <table width="1000" height="400" style="padding:5px 0 5px 0;">
    
@@ -156,20 +158,22 @@
            </td>
          </tr>
          
-
-          
-           </table>
-           
-           
-             <tr>
+          <tr>
              <td colspan="2" align="center">
-            
-               <input type="button" id="btn_modify" class='btn_modify' value="수정">
+               
+               <input type="hidden" name="uName" value="<%=user.getuName() %>">
+               <input type="hidden" name="uId" value="<%=user.getuId() %>">
+               <input type="hidden" name="uPass" value="<%=user.getuPass() %>">
+               <input type="hidden" name="uPhone" value="<%=user.getuPhone() %>">
+               <input type="hidden" name="uAddr" value="<%=user.getuAddr() %>">
+               <input type="button" id="btn_modify" class='btn_modify'  value="수정">
               
                <input type="reset" class='btn_cancel' value="취소">
             </td>
            </tr>
-           
+      </table>
+      
+    </form>     
             </div>
           <!-- 여기 필요한 부분만 붙여 넣으면됨 --> 
         </div>
@@ -185,6 +189,6 @@
 
     </div>
     <!-- /#wrapper -->
-</form>
+
 </body>
 </html>
