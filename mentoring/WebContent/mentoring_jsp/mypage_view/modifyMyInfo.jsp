@@ -62,9 +62,9 @@
 <script type="text/javascript" src="/mentoring/mentoring_jsp/mypage/js/mypage.js"></script>
 <script type="text/javascript">
  $(function(){
+	 
 	 $('#btn_modify').click(function(){
-		     //버튼을 눌렀을 때 수정페이지로 이동
-	    	location.href="/mentoring/mentoring.mento?cmd=go-modifyinfo";
+		     $('#frm').submit();
 	    });
  });
 
@@ -74,7 +74,7 @@
 <body>
 
 <!-- body부분 -->
-<form name='frm' id='frm' action="/mentoring/mentoring.mento?cmd=go-modifyinfo">
+<form name='frm' id='frm' action="/mentoring/mentoring.mento?cmd=modify-info">
     <div id="wrapper">
         <div class="overlay"></div>
     
@@ -135,25 +135,25 @@
       
        
       <tr>
-         <th> 이 름</th><td><input type="text" name="uName" value="<%=user.getuName()%>" disabled></td> </tr>
+         <th> 이 름</th><td><input type="text" name="uName" value="<%=user.getuName()%>"></td> </tr>
 
        <tr><th>아이디</th>
-         <td><input type="text" name="uId" value="<%=user.getuId()%>" disabled></td>
+         <td><input type="text" name="uId" value="<%=user.getuId()%>"></td>
        </tr>
        
        <tr><th>비밀번호</th>
-         <td><input type="text" name="uPass" value="<%=user.getuPass()%>" disabled>
+         <td><input type="text" name="uPass" value="<%=user.getuPass()%>">
        </tr>
        
           <tr>
-         <th>전화번호</th><td><input type="text"name="uPhone" value="<%=user.getuPhone()%>" disabled> 
+         <th>전화번호</th><td><input type="text"name="uPhone" value="<%=user.getuPhone()%>"> 
            </td>
         </tr>
        
 
          <tr><th>주 소</th>
            <td>
-             <input type="text" name="uAddr" value="<%=user.getuAddr()%>" disabled>
+             <input type="text" name="uAddr" value="<%=user.getuAddr()%>">
            </td>
          </tr>
          
@@ -162,8 +162,7 @@
              <td colspan="2" align="center">
             
                <input type="button" id="btn_modify" class='btn_modify' value="수정">
-              
-               <input type="reset" class='btn_cancel' value="취소">
+
             </td>
            </tr>
            </table>

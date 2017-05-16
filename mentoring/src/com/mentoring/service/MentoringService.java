@@ -49,6 +49,11 @@ public class MentoringService {
 		return repo1.showNotice2(nNum);
 	}
 	
+	//회원정보 수정하는 페이지
+	   public Integer modifyInfo(User user) {
+	      return repo2.modifyInfo(user);
+	   }
+	
 	public void insertNotice(Notice no){
 		repo1.insertNotice(no);
 	}

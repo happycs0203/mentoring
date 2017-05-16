@@ -12,6 +12,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.mentoring.model.Callist;
 import com.mentoring.model.Image;
+import com.mentoring.model.Notice;
 import com.mentoring.model.Project;
 import com.mentoring.model.Prolist;
 import com.mentoring.model.User;
@@ -31,6 +32,24 @@ public class MentoringRepository2 {
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(inputStream);
 		return factory;
 	}
+	
+	//내정보 수정하기
+		public Integer modifyInfo(User user) {
+			SqlSession sqlSess = getSelSessionFactory().openSession();
+			int result = 0;
+			try{
+				result = sqlSess.update(namespace + ".modifyInfo", user);
+				if(result > 0) {
+					sqlSess.commit();
+					//JDBC : auto-commit, Mybatis : 아님
+				}else{
+					sqlSess.rollback();
+				}
+			}finally{
+				sqlSess.close();
+			}
+			return result;
+		}
 	
 	//캘린더 일정
 	public List<Callist> dateInput(){

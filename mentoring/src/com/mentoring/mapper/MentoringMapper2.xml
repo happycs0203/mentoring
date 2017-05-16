@@ -50,6 +50,12 @@ select * from usermento
 where u_id=#{uId}
 </select>
 
+<!-- 마이페이지 내정보 수정 -->
+<update id="modifyInfo" parameterType="user">
+		UPDATE usermento SET u_name = #{uName}, u_id = #{uId}, u_pass = #{uPass}, u_phone = #{uPhone}, u_addr = #{uAddr}
+		WHERE u_id = #{uId}
+</update>
+
 
 <!-- 승인하기 -->
 <update id="confirmUpdate" parameterType="hashmap">
