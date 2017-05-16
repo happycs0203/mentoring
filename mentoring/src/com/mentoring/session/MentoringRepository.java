@@ -93,4 +93,15 @@ public class MentoringRepository {
 		}
 	}
 	
+	public List<User> searchUserList(int pNum){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			HashMap map = new HashMap<>();
+			map.put("pNum", pNum);
+			return sqlSess.selectList(namespace+".searchUserList", map);
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
 }

@@ -13,9 +13,33 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <link rel="stylesheet" href="/mentoring/mentoring_jsp/mypage/css/mypage.css" />
+
+<link href="//code.jboxcdn.com/0.4.7/jBox.css" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="/mentoring/mentoring_jsp/mypage/js/bootstrap.js"></script>
 <script type="text/javascript" src="/mentoring/mentoring_jsp/mypage/js/mypage.js"></script>
+<script src="/mentoring/mentoring_jsp/mypage/js/jBox.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".list").click(function(){
+		new jBox('Modal', {
+			  attach: $(this),
+			  ajax: {
+			    url: '/mentoring/mentoring.mento?cmd=user-list',  
+			    data: {
+			      pNum: $(this).parent().find("input").val()
+			    },
+			    reload: 'strict'
+			  }
+		});
+	});
+	
+	
+});
+
+
+
+</script>
 <style type="text/css">
 .startdate{
 	width: 20px,
@@ -81,6 +105,7 @@
                       <th style="text-align:center">진행상황</th>
                       <th>종료날짜</th>
                       <th>%</th>
+                      <th style="text-align:center">신청리스트</th>
                     </tr>
                     <%for(Project p : proList) {
 						String fullTime = p.getpTime();
@@ -125,7 +150,7 @@
                 
                     %>   
                     <tr>
-                      <td><%=i+1 %></td>
+                      <td><%=++i %></td>
                       <td><%=p.getpTitle() %></td>
                       <td style="text-align:right">
                       	<label><%=startDate %></label>
@@ -139,6 +164,7 @@
                        <label><%=endDate %></label>
                       </td>
                       <td><span class="badge bg-red"><%=Math.floor(percent)%>%</span></td>
+                      <td style="text-align:center"><label class="list">보기</label><input type="hidden" value="<%=p.getpNum()%>"/></td>
                     </tr>
                    <%} %>  
                   </table>

@@ -28,6 +28,7 @@ import com.mentoring.command.CommandStudyInput;
 import com.mentoring.command.CommandStudyList;
 import com.mentoring.command.CommandTranferPayment;
 import com.mentoring.command.CommandUserInput;
+import com.mentoring.command.CommandUserList;
 
 /**
  * Servlet implementation class MentoringControl 
@@ -75,6 +76,8 @@ public class MentoringControl extends HttpServlet {
 		commandMap.put("go-modifymyinfo", new CommandNull("modifyMyInfo.jsp")); 
 
 	    commandMap.put("modify-info", new CommandModifyInfo("mypage_view/myInfoView.jsp"));
+	    commandMap.put("user-list", new CommandUserList("mypage_view/userList.jsp"));
+	    
 	}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -80,7 +80,7 @@ public class MentoringService {
 	
 //	public Image insertImage(Image img){
 //		return repo1.insertImage(img);
-//	} //image
+//	}
 	public Integer insertUser(User user){
 		return repo3.insertUser(user);
 	}
@@ -131,6 +131,9 @@ public class MentoringService {
 	}
 	public Project searchPayment(Project project){
 		return repo3.searchPayment(project);
+	}
+	public List<User> searchUserList(int pNum){
+		return repo.searchUserList(pNum);
 	}
 
 	

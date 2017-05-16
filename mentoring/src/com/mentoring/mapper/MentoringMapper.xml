@@ -76,6 +76,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	WHERE a.u_id='hcs' AND a.a_confrim = 'Y'
 </select>
 
+<select id="searchUserList" parameterType="hashmap" resultType="user">
+	SELECT u.U_NAME u_name, u.U_PHONE u_phone
+	FROM applymento a inner join usermento u
+	ON a.U_ID = u.U_ID
+	WHERE p_num = #{pNum}
+</select>
+
 
 
 
