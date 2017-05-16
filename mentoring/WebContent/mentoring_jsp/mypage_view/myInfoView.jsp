@@ -1,12 +1,55 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="com.mentoring.model.*" %>
 <%@ page import="java.util.*" %>
+
+
+<%
+
+ List<User> uList = (List<User>)request.getAttribute("uList");
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="/mentoring/mentoring_jsp/mypage/css/mypage.css" />
 <link rel="stylesheet" href="/mentoring/mentoring_jsp/mypage/css/1-col-portfolio.css" />
+<style>
+   th{
+      font-family: 'Nanum Pen Script', serif;
+      font-size: 20px;
+      
+   }
+   
+   input[type="text"]{
+       height: 30px;
+       width: 300px;
+       font-family: 'Nanum Pen Script', serif;
+       font-size: 18px;
+       margin-bottom: 10px;
+   }
+   
+   .btn_modify{
+    width: 100px;
+	height: 35px;
+	color: white;
+	font-size: 15px;
+	font-family: 'Raleway', sans-serif;
+	background-color: #ff3333;
+	margin-bottom: 11px;
+   }
+   
+    .btn_cancel{
+    width: 100px;
+	height: 35px;
+	color: white;
+	font-size: 15px;
+	font-family: 'Raleway', sans-serif;
+	background-color: #3399ff;
+	margin-bottom: 11px;
+   }
+
+</style>
 <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="/mentoring/mentoring_jsp/mypage/js/bootstrap.js"></script>
 <script type="text/javascript" src="/mentoring/mentoring_jsp/mypage/js/mypage.js"></script>
@@ -66,11 +109,44 @@
             <div class="col-md-5">
                 <h3 style="font-size:40px; font-family:bold; ">내정보</h3>
                 <h4>김일주 님</h4>
-                 
-                <a class="btn btn-primary" href="#"> 수정 <span class="glyphicon glyphicon-chevron-right"></span></a>
-               </table>
-            </div>
+ 
+   <table width="1000" height="400" style="padding:5px 0 5px 0;">
+   
+      <tr height="2" bgcolor="#FFC8C3"><td colspan="2"></td>
+      </tr>
+      
+      <tr>
+         <th> 이 름</th><td><input type="text" name="uName" value="김일주"></td> </tr>
+
+       <tr><th>아이디</th>
+         <td><input type="text" name="uId" value="ilju"></td>
+       </tr>
+       
+       <tr><th>비밀번호</th>
+         <td><input type="text" name="uPass" value="1004">
+       </tr>
+       
+          <tr>
+         <th>전화번호</th><td><input type="text"name="uPhone" value="5303"> 
+           </td>
+        </tr>
+       
+
+         <tr><th>주 소</th>
+           <td>
+             <input type="text" name="uAddr" value="파주">
+           </td>
+         </tr>
          
+
+           <tr>
+             <td colspan="2" align="center">
+               <input type="button" class='btn_modify' value="수정">
+               <input type="reset" class='btn_cancel' value="취소">
+            </td>
+           </tr>
+           </table>
+            </div>
           <!-- 여기 필요한 부분만 붙여 넣으면됨 --> 
         </div>
         <!-- /.row -->
