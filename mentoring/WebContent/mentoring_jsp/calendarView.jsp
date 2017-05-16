@@ -111,7 +111,12 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
              select {font-family: "돋움"; font-size: 10pt; color:#595959;}
 
  
-
+/*              .btn_today{ */
+/*                width: 50px; */
+/*                height: 20px; */
+/*                background-color: #505050; */
+/*                color: white; */
+/*              } */
  
 
              .divDotText {
@@ -144,12 +149,9 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 
 <table width="100%" border="0" cellspacing="1" cellpadding="1">
 <tr>
-
-       <td align ="right">
-             <input type="button" onclick="javascript:location.href='<c:url value='/calendarView.jsp' />'" value="오늘"/>
+       <td align="right">
+             <input type="button"  onclick="javascript:location.href='<c:url value='/mentoring_jsp/calendarView.jsp'/>'"  value="오늘"/>
        </td>
-
- 
 
 </tr>
 
@@ -173,13 +175,13 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 
        <tr>
              <td align="center" >
-                    <a href="<c:url value='/calendarView.jsp' />?year=<%=year-1%>&amp;month=<%=month%>" target="_self">
+                    <a href="<c:url value='/mentoring_jsp/calendarView.jsp' />?year=<%=year-1%>&amp;month=<%=month%>" target="_self">
                            <b>&lt;&lt;</b><!-- 이전해 -->
                     </a>
 
                     <% if(month > 0 ){ %>
 
-                    <a href="<c:url value='/calendarView.jsp' />?year=<%=year%>&amp;month=<%=month-1%>" target="_self">
+                    <a href="<c:url value='/mentoring_jsp/calendarView.jsp' />?year=<%=year%>&amp;month=<%=month-1%>" target="_self">
                            <b>&lt;</b><!-- 이전달 -->
                     </a>
 
@@ -196,7 +198,7 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
                     &nbsp;&nbsp;
                     <%if(month < 11 ) { %>
 
-                    <a href="<c:url value='/calendarView.jsp' />?year=<%=year%>&amp;month=<%=month+1%>" target="_self">
+                    <a href="<c:url value='/mentoring/mentoring_jsp/calendarView.jsp' />?year=<%=year%>&amp;month=<%=month+1%>" target="_self">
 
                          <b>&gt;</b>
                     </a>
@@ -205,7 +207,7 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
                           <b>&gt;</b>
                     <% } %>
 
-                    <a href="<c:url value='/calendarView.jsp' />?year=<%=year+1%>&amp;month=<%=month%>" target="_self">
+                    <a href="<c:url value='/mentoring_jsp/calendarView.jsp' />?year=<%=year+1%>&amp;month=<%=month%>" target="_self">
 
                            <!-- 다음해 --><b>&gt;&gt;</b>
 

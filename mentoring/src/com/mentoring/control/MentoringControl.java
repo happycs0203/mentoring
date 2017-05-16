@@ -18,6 +18,7 @@ import com.mentoring.command.CommandLogout;
 import com.mentoring.command.CommandMentoringList;
 import com.mentoring.command.CommandMentoringView;
 import com.mentoring.command.CommandMyRegisterPro;
+import com.mentoring.command.CommandMypageInfo;
 import com.mentoring.command.CommandNoticeList;
 import com.mentoring.command.CommandNoticeView2;
 import com.mentoring.command.CommandNull;
@@ -61,7 +62,7 @@ public class MentoringControl extends HttpServlet {
 		commandMap.put("mentoring-noticelist", new CommandNoticeList("noticeList.jsp"));
 		commandMap.put("show-project", new CommandMyRegisterPro("mypage_view/mypageView.jsp"));
 		commandMap.put("now-project", new CommandNull("mypage_view/confirmProject.jsp"));
-		commandMap.put("myinfo-view", new CommandNull("mypage_view/myInfoView.jsp"));
+		commandMap.put("myinfo-view", new CommandMypageInfo("mypage_view/myInfoView.jsp"));
 	}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

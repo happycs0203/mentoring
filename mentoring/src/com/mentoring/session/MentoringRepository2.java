@@ -69,6 +69,15 @@ public class MentoringRepository2 {
 		}
 	}
 	
+	public List<User> mypageInfoList(){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			return sqlSess.selectList(namespace+".mypageInfoList");
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
 	public Integer confirmUpdate(int pNum){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		int result = 0;

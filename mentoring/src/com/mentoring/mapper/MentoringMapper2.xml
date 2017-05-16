@@ -44,6 +44,11 @@ select * from usermento
 
 </select>
 
+<!--마이페이지 내정보 보기 -->
+<select id="mypageInfoList" resultType="user">
+select * from usermento
+</select>
+
 
 <!-- 승인하기 -->
 <update id="confirmUpdate" parameterType="hashmap">
