@@ -15,7 +15,7 @@ import javax.servlet.http.Part;
 import com.mentoring.model.Project;
 import com.mentoring.service.MentoringService;
 
-public class CommandTranferPayment {
+public class CommandTranferPayment implements Command{
 	private String next;
 	
 	public CommandTranferPayment(String _next){
@@ -28,11 +28,13 @@ public class CommandTranferPayment {
 		Project project = new Project();
 		project.setpTitle(request.getParameter("pTitle"));
 		project.setpCost(Integer.parseInt(request.getParameter("pCost")));
-		System.out.println("CommandInput.java"+project);
+		project.setpNum(Integer.parseInt(request.getParameter("pNum")));
+		System.out.println("CommandTranferPayment.java"+project);
 		//Repository를 호출 
-		MentoringService.getInstance().searchPayment(project);
+		Project p = MentoringService.getInstance().searchPayment(project);
+		request.setAttribute("mentoringview_register", p);
 		} catch (Exception ex) {
-			throw new CommandException("CommandUserInput.java" + ex.toString());
+			throw new CommandException("CommandTranferPayment.java" + ex.toString());
 		}
 		return next;
 	}

@@ -55,14 +55,14 @@
 				<div>
 					<label class="control-label">강의명</label> 
 					<div type="text" class="form-control" placeholder="Mentoring Name" size="2" autocomplete='off'>
-					<%=p.getpTitle()%> 
+					 <%=p.getpTitle()%> 
 					</div>
 					<!-- <input type="text" class="form-control" placeholder="Mentoring Name" size="2" autocomplete='off'> -->
 				</div>
 				<div>
 					<label class="control-label">결제금액</label> 
 					<div type="text" class="form-control" placeholder="Pyament" size="2" autocomplete='off'>
-					<%=p.getpCost()%> 
+					 <%=p.getpCost()%> 
 					</div>
 					<!-- <input type="text" class="form-control" placeholder="Pyament" size="2" autocomplete='off'> -->
 				</div>
