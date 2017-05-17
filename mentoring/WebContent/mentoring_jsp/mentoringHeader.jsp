@@ -29,17 +29,17 @@
          <div class="navbar-collapse collapse">
             
             <ul class="nav navbar-nav">
-               <li class="active"><a style="margin-left: 600px;" href="xxx.mento?cmd=mentoring-noticelist">Notice</a></li>
-               <li class="active"><a href="/mentoring/mentoring.mento?cmd=mentoring-list">Mentoring</a></li>
-               <li class="active"><a href="/mentoring/mentoring.mento?cmd=study-list">Study</a></li>
-               <li class="active" ><a href="/mentoring/mentoring.mento?cmd=calendar-view">Calendar</a></li>
+               <li class="active"><a style="margin-left: 40%;" href="xxx.mento?cmd=mentoring-noticelist">Notice</a></li>
+               <li class="active"><a style="margin-left: 40%;" href="/mentoring/mentoring.mento?cmd=mentoring-list">Mentoring</a></li>
+               <li class="active"><a style="margin-left: 40%;" href="/mentoring/mentoring.mento?cmd=study-list">Study</a></li>
+               <li class="active" ><a style="margin-left: 40%;" href="/mentoring/mentoring.mento?cmd=calendar-view">Calendar</a></li>
                
             <%if ( uId.equals("")){ %>
-               <li class="active"><a style="margin-left: 450px;" href="#" id='login'>Login</a></li>
-               <li class="active"><a href="/mentoring/mentoring.mento?cmd=register-view" >Sign</a></li>
+               <li class="active"><a style="margin-left: 450%;" href="#" id='login'>Login</a></li>
+               <li class="active"><a style="margin-left: 500%;" href="/mentoring/mentoring.mento?cmd=register-view" >Sign</a></li>
             <%} else{ %>
-               <li class="active"><a style="margin-left: 450px;" href="/mentoring/mentoring.mento?cmd=logout" id='logout'>Logout</a></li>
-               <li class="active"><a href="/mentoring/mentoring.mento?cmd=myinfo-view" id='mypage'>Mypage</a></li>
+               <li class="active"><a style="margin-left: 450%;" href="/mentoring/mentoring.mento?cmd=logout" id='logout'>Logout</a></li>
+               <li class="active"><a style="margin-left: 450%;" href="/mentoring/mentoring.mento?cmd=myinfo-view" id='mypage'>Mypage</a></li>
                
             <% }%>
                
