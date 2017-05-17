@@ -185,7 +185,6 @@
 							
 						</div>
 						<!-- portfolio items end -->
-					 <div id='addlist' style='cursor:pointer; font-size:18px; position:relative; left:630px'> + 더보기 </div>
 					</div>
 				</div>
 			</div>
