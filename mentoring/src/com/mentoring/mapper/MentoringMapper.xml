@@ -74,7 +74,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	on a.p_num = p.p_num
 	inner join imagemento i
 	on p.p_num = i.p_num
-	WHERE a.u_id='hcs' AND a.a_confirm = 'Y'
+	WHERE a.u_id= #{uId}
 </select>
 
 <select id="searchUserList" parameterType="hashmap" resultType="user">
