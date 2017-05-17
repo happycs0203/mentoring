@@ -137,9 +137,10 @@
 						<div class="filters text-center">
 							<ul class="nav nav-pills">
 								<li class="active"><a href="#" data-filter="*">All</a></li>
-								<li><a href="#" data-filter=".web-design">Web design</a></li>
-								<li><a href="#" data-filter=".app-development">App development</a></li>
-								<li><a href="#" data-filter=".site-building">Site building</a></li>
+								<li><a href="#" data-filter=".excercise">excercise</a></li>
+								<li><a href="#" data-filter=".learning">learning</a></li>
+								<li><a href="#" data-filter=".hobby">hobby</a></li>
+								<li><a href="#" data-filter=".other">other</a></li>
 							</ul>
 						</div>
 						<!-- isotope filters end -->
@@ -148,7 +149,7 @@
 						
 						<div class="isotope-container row grid-space-20" id='listbody'>
 							<%for(Prolist p: pList) {%>
-							<div class="col-sm-6 col-md-3 isotope-item web-design">
+							<div class="col-sm-6 col-md-3 isotope-item <%=p.getpCategory()%>">
 								<div class="image-box">
 									<div class="overlay-container">
 										<img src="/mentoring/imageupload/<%=p.getiPath()%>" alt="">

@@ -93,6 +93,18 @@ function readURL(input) {
         </div>
       </div>
       
+      <div class="form-group">
+        <label for="pCategory" class="col-sm-2 control-label">카테고리:</label>
+        <div class="col-sm-4">
+          	<select class="form-control inputstl" id="pCategory" name="pCategory">
+          	<option value="excercise">excercise</option>
+          	<option value="learning">learning</option>
+          	<option value="hobby">hobby</option>
+          	<option value="other">other</option>
+        	</select>
+        </div>
+      </div>
+      
       
       <div class="form-group">
         <label for="pTitle" class="col-sm-2 control-label">멘토링 제목:</label>

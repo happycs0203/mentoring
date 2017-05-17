@@ -88,7 +88,21 @@
 	    });
 	    
 	    $('.star').click(function(){
-	    	alert("클릭");
+	    	alert("장바구니에 추가하셨습니다.");
+	    	$.ajax({
+	               url : "xx.mento?cmd=insert-word",
+	               data : {"uId" : $("#input_uId").val(), "pNum" : $("#input_pNum").val(), "wContent" : $("#wContent").val()},
+	               dataType : "text",
+	               contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+	               success : function(data){
+	                  var obj = {};
+	                  obj=eval("("+data+")");
+
+	               },
+	               error : function(request,status, error){
+	                   alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+	                }
+	            });
 	    });
 	    
 
@@ -127,9 +141,10 @@
 						<div class="filters text-center">
 							<ul class="nav nav-pills">
 								<li class="active"><a href="#" data-filter="*">All</a></li>
-								<li><a href="#" data-filter=".web-design">Web design</a></li>
-								<li><a href="#" data-filter=".app-development">App development</a></li>
-								<li><a href="#" data-filter=".site-building">Site building</a></li>
+								<li><a href="#" data-filter=".excercise">excercise</a></li>
+								<li><a href="#" data-filter=".learning">learning</a></li>
+								<li><a href="#" data-filter=".hobby">hobby</a></li>
+								<li><a href="#" data-filter=".other">other</a></li>
 							</ul>
 						</div>
 						<!-- isotope filters end -->
@@ -137,7 +152,7 @@
 						<!-- portfolio items start -->
 						<div class="isotope-container row grid-space-20" >
 							<%for(Prolist p: pList) {%>
-							<div class="col-sm-6 col-md-3 isotope-item web-design list">
+							<div class="col-sm-6 col-md-3 isotope-item <%=p.getpCategory()%> list">
 								<div class="image-box">
 									<div class="overlay-container">
 										<img src="/mentoring/imageupload/<%=p.getiPath()%>" alt="">
@@ -149,7 +164,10 @@
 									<input type="hidden" name="pNum" value="<%=p.getpNum()%>"/>
 									<input type="hidden" name="pTitle" value="<%=p.getpTitle()%>"/>
 									<a class="btn btn-default btn-block" href="/mentoring/mentoring.mento?cmd=mentoring-view&pNum=<%=p.getpNum()%>&iNum=<%=p.getiNum()%>"><%=p.getpTitle()%></a>
-									<img src="/mentoring/mentoring_jsp/church/images/new.png" class="star"/>
+									<div align="right">
+										<img  src="/mentoring/mentoring_jsp/assets/images/on.PNG" class="star"/>
+									</div>
+									
 								</div>
 								 
 							</div>

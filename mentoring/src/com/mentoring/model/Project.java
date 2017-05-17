@@ -14,6 +14,7 @@ public class Project {
 	private String pEnroll;
 	private String pConfirm;
 	private String pIntroduce;
+	private String pCategory;
 	
 	public String getpIntroduce() {
 		return pIntroduce;
@@ -92,6 +93,12 @@ public class Project {
 	}
 	public void setpConfirm(String pConfirm) {
 		this.pConfirm = pConfirm;
+	}
+	public String getpCategory() {
+		return pCategory;
+	}
+	public void setpCategory(String pCategory) {
+		this.pCategory = pCategory;
 	}
 	
 	

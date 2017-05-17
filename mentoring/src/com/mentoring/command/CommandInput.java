@@ -39,6 +39,7 @@ public class CommandInput implements Command {
 			pro.setpTime(request.getParameter("startDate") + "~" + request.getParameter("endDate") +" "+ request.getParameter("detailDate"));
 			pro.setpContent(request.getParameter("pContent"));
 			pro.setpIntroduce(request.getParameter("pIntroduce"));
+			pro.setpCategory(request.getParameter("pCategory"));
 
 			//이미지 업로드
 
