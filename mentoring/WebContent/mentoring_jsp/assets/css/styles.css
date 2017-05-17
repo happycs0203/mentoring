@@ -94,17 +94,9 @@ form-input: before {
   -webkit-border-radius: 0;
   -webkit-background-clip: padding-box;
   -moz-border-radius: 0;
-  -moz-background-clip: padding;
-  border-radius: 0;
-  background-clip: padding-box;
   width: 100%;
 }
-.navbar.stick {
-  position: fixed;
-  top: 0;
-  left: 0;
-  opacity: .85;
-}
+
 .navbar-collapse {
   -webkit-border-radius: 0;
   -webkit-background-clip: padding-box;
@@ -136,36 +128,26 @@ form-input: before {
   padding: 5px 30px;
 }
 .navbar-default {
-  background-color: #ffffff;
+  background-color: #242424;
   border-color: #cccccc;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #454545;
+  color: #242424;
 }
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #000000;
-  background-color: #ffffff;
-}
+
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #000000;
-  background-color: #ffffff;
+  color: white;
+  background-color: #242424;
 }
-.navbar-default .dropdown ul.dropdown-menu > li > a {
-  color: #454545;
-}
-.navbar-default .dropdown ul.dropdown-menu > li > a:hover {
-  background-color: #eeeeee;
-  color: #000000;
-}
+
 .navbar-default .navbar-toggle {
-  border-color: #666666;
+  border-color: #ffffff;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #ffffff;
+  background-color: red;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #333333;
@@ -174,12 +156,7 @@ form-input: before {
 .navbar-default .navbar-form {
   border-color: #cccccc;
 }
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-  background-color: #ffffff;
-  color: #000000;
-}
+
 /****************************************************************************************
 
 
@@ -821,7 +798,8 @@ footer.entry-meta .meta-in {
 **********************************************************************/
 .carousel-inner {
   position: relative;
-  width: 100%;
+  width: 1080px;
+  height: 500px;
   overflow: hidden;
 }
 

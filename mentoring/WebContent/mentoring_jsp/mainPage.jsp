@@ -48,7 +48,7 @@
 
          <!-- Article main content -->
          
-            <p>Minju's college는 배우려는 사람들과 배움을 주려는 사람들이 모여 서로 지식을 공유하고 함께 성장해 나갈 수 있는 공간을 드립니다.</p>
+       
              <section id="carousel-section" class="section-global-wrapper"> 
         <div class="container-fluid-kamn" >
             <div class="row">
@@ -65,7 +65,7 @@
                     <div class="carousel-inner" role="listbox">
                         <!-- Begin Slide 1 -->
                         <div class="item active">
-                            <img src="/mentoring/mentoring_jsp/assets/images/slider1.png" height="400" alt="first">
+                            <img src="/mentoring/mentoring_jsp/assets/images/slider1.png" height="600" alt="first">
                             <div class="carousel-caption">
                                 <h3 class="carousel-title hidden-xs">Office BOOTSTRAP TEMPLATE</h3>
                                 <p class="carousel-body">RESPONSIVE \ MULTI PAGE</p>
@@ -75,7 +75,7 @@
 
                         <!-- Begin Slide 2 -->
                         <div class="item">
-                            <img src="/mentoring/mentoring_jsp/assets/images/slider2.png" height="400" alt="second">
+                            <img src="/mentoring/mentoring_jsp/assets/images/slider2.png" height="600" alt="second">
                             <div class="carousel-caption">
                                 <h3 class="carousel-title hidden-xs">EASY TO CUSTOMIZE</h3>
                                 <p class="carousel-body">BEAUTIFUL \ CLEAN \ MINIMAL</p>
@@ -85,7 +85,7 @@
 
                         <!-- Begin Slide 3 -->
                         <div class="item">
-                            <img src="/mentoring/mentoring_jsp/assets/images/slider3.png" height="400" alt="third">
+                            <img src="/mentoring/mentoring_jsp/assets/images/slider3.png" height="600" alt="third">
                             <div class="carousel-caption">
                                 <h3 class="carousel-title hidden-xs">MULTI-PURPOSE TEMPLATE</h3>
                                 <p class="carousel-body">PORTFOLIO \ CORPORATE \ CREATIVE</p>
