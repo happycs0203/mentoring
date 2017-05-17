@@ -31,8 +31,8 @@
                <li><a href="/mentoring/admin.admin?cmd=confirmed-list">개설된 멘토링 목록</a></li>
                <li><a href="/mentoring/admin.admin?cmd=confirm-requestlist">멘토링 개설 요청</a></li>
                <li><a href="/mentoring/admin.admin?cmd=member-list">회원 목록</a></li>
-               <li><a href="#">공지사항</a></li>
-               <li><a href="#">신고된 스터디</a></li>
+               <li><a href="xxx.admin?cmd=show-noticelist">공지사항</a></li>
+               <li><a href="xxx.admin?cmd=show-reportinglist">신고된 스터디</a></li>
             </ul>
          
          </div><!--/.nav-collapse -->         

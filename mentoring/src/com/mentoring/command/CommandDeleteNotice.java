@@ -26,7 +26,7 @@ public class CommandDeleteNotice implements Command {
 	}
 
 	@Override
-	public String execute(HttpServletRequest request) throws CommandException {
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
 		try {
 
 			//삭제할 공지사항 번호 가져오기

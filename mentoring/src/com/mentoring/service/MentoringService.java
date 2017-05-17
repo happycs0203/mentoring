@@ -1,16 +1,20 @@
 package com.mentoring.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.mentoring.model.Apply;
 import com.mentoring.model.Applylist;
 import com.mentoring.model.Callist;
+import com.mentoring.model.Claim;
+import com.mentoring.model.Claim2;
 import com.mentoring.model.Image;
 import com.mentoring.model.Notice;
 import com.mentoring.model.Project;
 import com.mentoring.model.Prolist;
 import com.mentoring.model.StudyContentList;
 import com.mentoring.model.User;
+import com.mentoring.model.Word;
 import com.mentoring.session.MentoringRepository;
 import com.mentoring.session.MentoringRepository1;
 import com.mentoring.session.MentoringRepository2;
@@ -32,6 +36,26 @@ public class MentoringService {
 	MentoringRepository2 repo2 = new MentoringRepository2();
 	MentoringRepository3 repo3 = new MentoringRepository3();
 	
+	
+	public Word insertWord(Word word){
+		return repo1.insertWord(word);
+	}
+	
+	public List<Word> showWordList(int pNum){
+		return repo1.showWordList(pNum);
+	}
+	
+	public void deleteClaim(ArrayList cList){
+		repo1.deleteClaim(cList);
+	}
+	
+	public List<Claim2> showReportingList(){
+		return repo1.showReportingList();
+	}
+	
+	public void reporting(Claim c) {
+		repo1.reporting(c);
+	}
 	
 	public void deleteNotice(int nNum){
 		repo1.deleteNotice(nNum);

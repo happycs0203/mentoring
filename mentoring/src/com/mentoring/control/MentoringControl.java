@@ -13,6 +13,7 @@ import com.mentoring.command.Command;
 import com.mentoring.command.CommandDateInput;
 import com.mentoring.command.CommandException;
 import com.mentoring.command.CommandInput;
+import com.mentoring.command.CommandInsertWord;
 import com.mentoring.command.CommandLogin;
 import com.mentoring.command.CommandLogout;
 import com.mentoring.command.CommandMentoringList;
@@ -25,6 +26,7 @@ import com.mentoring.command.CommandNoticeList;
 import com.mentoring.command.CommandNoticeView2;
 import com.mentoring.command.CommandNull;
 import com.mentoring.command.CommandPayment;
+import com.mentoring.command.CommandReporting;
 import com.mentoring.command.CommandStudyInput;
 import com.mentoring.command.CommandStudyList;
 import com.mentoring.command.CommandTemp;
@@ -79,6 +81,11 @@ public class MentoringControl extends HttpServlet {
 	    commandMap.put("modify-info", new CommandModifyInfo("mypage_view/myInfoView.jsp"));
 	    commandMap.put("user-list", new CommandUserList("mypage_view/userList.jsp"));
 	    commandMap.put("payment-form2", new CommandPayment("mainPage.jsp"));
+	    
+	    
+	    commandMap.put("study-view", new CommandMentoringView("studyView.jsp") );
+		commandMap.put("report", new CommandReporting("reportingTemp.jsp") );
+		commandMap.put("insert-word", new CommandInsertWord("studyView.jsp"));
 	}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -110,7 +117,7 @@ public class MentoringControl extends HttpServlet {
 				throw new CommandException("mentoring : 지정할 명령어가 존재하지 않음");
 			}
 			//System.out.println(cmd);
-			nextPage = cmd.execute( request );
+			nextPage = cmd.execute( request,response );
 			//System.out.println(nextPage);
 
 		}catch( CommandException e ){

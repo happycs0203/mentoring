@@ -22,7 +22,7 @@ public class CommandTranferPayment implements Command{
 		next = _next;
 	}
 	
-	public String execute(HttpServletRequest request) throws CommandException {
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
 		try {
 	
 	

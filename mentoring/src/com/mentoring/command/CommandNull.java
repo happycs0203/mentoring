@@ -1,6 +1,7 @@
 package com.mentoring.command;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class CommandNull implements Command{
 	private String next;
@@ -9,7 +10,7 @@ public class CommandNull implements Command{
 		next = _next;
 	}
 
-	public String execute( HttpServletRequest request ) throws CommandException{
+	public String execute( HttpServletRequest request , HttpServletResponse response) throws CommandException{
 		return next;
 	}
 

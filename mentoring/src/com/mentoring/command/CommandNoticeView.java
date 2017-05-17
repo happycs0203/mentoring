@@ -23,7 +23,7 @@ public class CommandNoticeView implements Command {
 	}
 
 	@Override
-	public String execute(HttpServletRequest request) throws CommandException {
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
 		try {
 
 			Notice no = new Notice();

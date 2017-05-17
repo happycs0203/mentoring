@@ -13,16 +13,17 @@ import com.mentoring.command.Command;
 import com.mentoring.command.CommandConfirmRequest;
 import com.mentoring.command.CommandConfirmUpdate;
 import com.mentoring.command.CommandConfirmed;
+import com.mentoring.command.CommandDeleteClaim;
 import com.mentoring.command.CommandDeleteNotice;
 import com.mentoring.command.CommandException;
 import com.mentoring.command.CommandInsertNotice;
 import com.mentoring.command.CommandMemberList;
-import com.mentoring.command.CommandMentoringView;
 import com.mentoring.command.CommandMentoringView2;
 import com.mentoring.command.CommandModifyNotice;
 import com.mentoring.command.CommandNoticeList;
 import com.mentoring.command.CommandNoticeView;
 import com.mentoring.command.CommandNull;
+import com.mentoring.command.CommandReportingList;
 
 /**
  * Servlet implementation class MentoringControl 
@@ -57,6 +58,8 @@ public class AdminControl extends HttpServlet {
 		commandMap.put("adminmentoring-view", new CommandMentoringView2("adminMentoringView.jsp"));
 		commandMap.put("confirm-update", new CommandConfirmUpdate("ConfirmReqeustList.jsp"));
 		commandMap.put("confirm-cancel", new CommandNull("ConfirmReqeustList.jsp"));
+		commandMap.put("show-reportinglist",	new CommandReportingList("reportingList.jsp") );
+		commandMap.put("delete-claim",	new CommandDeleteClaim("deleteTemp2.jsp") );
 	}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -89,7 +92,7 @@ public class AdminControl extends HttpServlet {
 				throw new CommandException("admin : 지정할 명령어가 존재하지 않음");
 			}
 			//System.out.println("cmd : " + cmd);
-			nextPage = cmd.execute( request );
+			nextPage = cmd.execute( request,response );
 			//System.out.println("nextPage : " + nextPage);
 
 		}catch( CommandException e ){

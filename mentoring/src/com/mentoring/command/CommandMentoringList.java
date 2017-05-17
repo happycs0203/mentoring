@@ -3,6 +3,7 @@ package com.mentoring.command;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import com.mentoring.model.Project;
 import com.mentoring.model.Prolist;
@@ -16,7 +17,7 @@ public class CommandMentoringList implements Command {
 	}
 
 	@Override
-	public String execute(HttpServletRequest request) throws CommandException {
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
 		try {
              
 			String project = "mentoring";

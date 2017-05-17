@@ -2,6 +2,7 @@ package com.mentoring.session;
 
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -10,10 +11,12 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.mentoring.model.Claim;
+import com.mentoring.model.Claim2;
 import com.mentoring.model.Image;
 import com.mentoring.model.Notice;
 import com.mentoring.model.Project;
-import com.mentoring.model.User;
+import com.mentoring.model.Word;
 
 public class MentoringRepository1 {
 	String namespace="MentoringMapper1";
@@ -56,7 +59,6 @@ public class MentoringRepository1 {
 	public void insertNotice(Notice no){
 		//JDBC : Connection, Mybatis : SqlSession
 		SqlSession sqlSess = getSelSessionFactory().openSession();
-		Notice n = new Notice();
 		try{
 			String statment = namespace + ".insertNotice";
 			int result = sqlSess.insert(statment, no);
@@ -151,6 +153,91 @@ public class MentoringRepository1 {
 			sqlSess.close();
 		}
 	}
+	
+	//스터디 신고하기
+	public void reporting(Claim c){
+		//JDBC : Connection, Mybatis : SqlSession
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			String statment = namespace + ".reporting";
+			int result = sqlSess.insert(statment, c);
+			if(result > 0){
+				sqlSess.commit();
+				//JDBC : auto-commit, Mybatis : �ƴ�
+			}else{
+				sqlSess.rollback();
+			}
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
+	//신고된 스터디 내용 가져오기
+		public List<Claim2> showReportingList(){
+			SqlSession sqlSess = getSelSessionFactory().openSession();
+			try{
+				return sqlSess.selectList(namespace+".showReportingList");
+			}finally{
+				sqlSess.close();
+			}
+		}
+		
+	//신고된 스터디들 삭제하기
+	public void deleteClaim(ArrayList cList){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			//projectmento에서 삭제
+			String statement = namespace + ".deleteClaim";
+			for(int i=0; i<cList.size(); i++){
+				HashMap map = new HashMap<>();
+				map.put("pNum", cList.get(i).toString());
+				int result = sqlSess.delete(statement,map);
+				if(result > 0) {
+					sqlSess.commit();
+					//JDBC : auto-commit, Mybatis : 아님
+				}else{
+					sqlSess.rollback();
+				}
+			}
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
+	//해당 스터디의 스터디 Q&A리스트 가져오기
+	public List showWordList(int pNum){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			HashMap map = new HashMap<>();
+			map.put("pNum", pNum);
+			return sqlSess.selectList(namespace+".showWordList",map);
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
+	public Word insertWord(Word word){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			String statment = namespace + ".insertWord";
+			
+			int result = sqlSess.insert(statment, word);
+			int seq = sqlSess.selectOne(namespace+".selectCurrval");
+			
+			if(result > 0){
+				sqlSess.commit();
+			}else{
+				sqlSess.rollback();
+			}
+			
+			HashMap map = new HashMap<>();
+			map.put("seq", seq);
+			return sqlSess.selectOne(namespace+".showWord", map);
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
 
 	//	public Image insertImage(Image img){
 	//		//JDBC : Connection, Mybatis : SqlSession
@@ -195,6 +282,5 @@ public class MentoringRepository1 {
 			sqlSess.close();
 		}
 	}
-	
-	
+
 }

@@ -24,7 +24,7 @@ public class CommandStudyInput implements Command {
 	}
 
 	@Override
-	public String execute(HttpServletRequest request) throws CommandException {
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
 		try {
 
 			//멘토링 등록 정보 가져오기

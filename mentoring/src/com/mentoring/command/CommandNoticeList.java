@@ -3,6 +3,7 @@ package com.mentoring.command;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import com.mentoring.model.Notice;
 import com.mentoring.service.MentoringService;
@@ -15,7 +16,7 @@ public class CommandNoticeList implements Command {
 	}
 
 	@Override
-	public String execute(HttpServletRequest request) throws CommandException {
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
 		try {
 
 			List<Notice> nList= MentoringService.getInstance().showNoticeList();

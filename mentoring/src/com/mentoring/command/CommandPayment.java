@@ -20,7 +20,7 @@ public class CommandPayment implements Command {
 		next = _next;
 	}
 	@Override
-	public String execute(HttpServletRequest request) throws CommandException {
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
 		try {
 			//결제 정보 가져오기
 			Apply apply = new Apply();

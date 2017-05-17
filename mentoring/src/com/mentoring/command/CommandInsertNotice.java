@@ -26,7 +26,7 @@ public class CommandInsertNotice implements Command {
 	}
 
 	@Override
-	public String execute(HttpServletRequest request) throws CommandException {
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
 		try {
 
 			//공지사항 등록 정보 가져오기

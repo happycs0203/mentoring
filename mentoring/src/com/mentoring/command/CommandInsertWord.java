@@ -12,14 +12,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import com.mentoring.model.Claim;
 import com.mentoring.model.Image;
 import com.mentoring.model.Project;
+import com.mentoring.model.Word;
 import com.mentoring.service.MentoringService;
 
-public class CommandMentoringView2 implements Command {
+public class CommandInsertWord implements Command {
 	private String next;
 
-	public CommandMentoringView2(String _next) {
+	public CommandInsertWord(String _next) {
 		next = _next;
 	}
 
@@ -27,22 +29,30 @@ public class CommandMentoringView2 implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
 		try {
 
-			
-			Project p = new Project();
-			Image i = new Image();
-					
+			//Q&A등록한것 가져오기
 			int pNum = Integer.parseInt(request.getParameter("pNum"));
-			int iNum = Integer.parseInt(request.getParameter("iNum"));
-			p = MentoringService.getInstance().showMentoringView(pNum);
-			i = MentoringService.getInstance().showMentoringImage(iNum);
+			String uId = request.getParameter("uId");
+			String wContent = request.getParameter("wContent");
 			
-			request.setAttribute("mentoringView", p);
-			request.setAttribute("mentoringImage", i);
-
+			Word word = new Word();
+			word.setpNum(pNum);
+			word.setuId(uId);
+			word.setwContent(wContent);
+			
+			Word w = MentoringService.getInstance().insertWord(word);
+			String result=null;
+			result = "{";
+			result += "wContent : '" + w.getwContent() +"',";
+			result += "wDate : '" + w.getwDate() +"',";
+			result += "uId : '" + w.getuId()+"'";
+			result += "}";
+			
+			response.setContentType("text/html;charset=UTF-8");
+			response.getWriter().print(result);
 		} catch (Exception ex) {
 			throw new CommandException("CommandInput.java" + ex.toString());
 		}
-		return next;
+		return null;
 	}
 
 }

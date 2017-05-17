@@ -26,7 +26,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="insertMentoring" parameterType="project">
 		INSERT INTO projectmento
 		VALUES(seq_project_num.nextval,#{uId}, 'mentoring', #{pTitle}, #{pPlace}, 1000, 5, 10, #{pContent},
-		#{pTime}, to_char(sysdate, 'yyyy/MM/dd'), 'N', #{pIntroduce})
+		#{pTime}, '2017/05/10', 'N', #{pIntroduce})
 		
 		
 	</insert>
@@ -69,7 +69,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="showNoticeList" resultType="notice">
 		SELECT * 
 		FROM noticemento
-		ORDER BY n_num
+		ORDER BY n_num DESC
 	</select>
 	
 	<!-- 공지사항 등록 -->
@@ -108,4 +108,47 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		DELETE FROM noticemento
 		WHERE n_num=#{nNum}
 	</delete>
+	
+	<!-- 스터디 신고 등록 -->
+	<insert id="reporting" parameterType="claim">
+		INSERT INTO claimmento
+		VALUES(seq_claim_num.nextval, #{pNum}, #{cContent})
+	</insert>
+	
+	<!-- 신고된 스터디 리스트 가져오기 -->
+	<select id="showReportingList" resultType="claim2">
+		SELECT p.p_num, p.p_title, c.c_content, c.c_num
+		FROM claimmento c, projectmento p
+		WHERE c.p_num = p.p_num
+	</select>
+	
+	<!-- 신고된 스터디목록 삭제하기 -->
+	<delete id="deleteClaim" parameterType="hashmap">
+		DELETE FROM projectmento
+		WHERE p_num=#{pNum}
+	</delete>
+	
+	<!-- 스터디 Q&A -->
+	<select id="showWordList" resultType="word" parameterType="hashmap">
+		SELECT * FROM wordmento
+		WHERE p_num = #{pNum}
+		ORDER BY w_date
+	</select>
+	
+	<!-- Q&A 등록 -->
+	<insert id="insertWord" parameterType="word">
+		INSERT INTO wordmento
+		VALUES(seq_word_num.nextval, #{pNum}, #{wContent}, sysdate, #{uId})	
+	</insert>
+	
+	<select id="selectCurrval" resultType="int">
+		SELECT seq_word_num.currval FROM dual
+	</select>
+	
+	<!-- Q&A 등록한 것 가져오기 -->
+	<select id="showWord" resultType="word" parameterType="hashmap">
+		SELECT *
+		FROM wordmento
+		WHERE w_num = #{seq}
+	</select>
 </mapper>

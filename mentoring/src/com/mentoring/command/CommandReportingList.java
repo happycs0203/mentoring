@@ -5,23 +5,23 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mentoring.model.User;
+import com.mentoring.model.Claim2;
 import com.mentoring.service.MentoringService;
 
-public class CommandMemberList implements Command {
+public class CommandReportingList implements Command {
 	private String next;
 	
-	public CommandMemberList(String _next) {
+	public CommandReportingList(String _next) {
 		next = _next;
 	}
-    
+
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
 		try {
 
-			List<User> uList= MentoringService.getInstance().adminMemberList();
+			List<Claim2> cList= MentoringService.getInstance().showReportingList();
 			
-			request.setAttribute("uList", uList);
+			request.setAttribute("cList", cList);
 			
 		} catch (Exception ex) {
 			throw new CommandException("CommandInput.java" + ex.toString());

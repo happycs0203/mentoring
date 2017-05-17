@@ -1,6 +1,7 @@
 package com.mentoring.command;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.mentoring.model.User;
@@ -17,7 +18,7 @@ public class CommandLogin implements Command{
 		next = _next;
 	}
 
-	public String execute( HttpServletRequest request ) throws CommandException{
+	public String execute( HttpServletRequest request, HttpServletResponse response ) throws CommandException{
 		try{
 			User user = new User();
 			user.setuId(request.getParameter("uId"));

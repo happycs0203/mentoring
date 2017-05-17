@@ -22,7 +22,7 @@ public class CommandStudyContent implements Command {
 	}
 	
 	@Override
-	public String execute(HttpServletRequest request) throws CommandException {
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
 		try{
 		StudyContentList scl = new StudyContentList();
 		scl.setuName(request.getParameter("uName"));
