@@ -89,20 +89,20 @@
 	    
 	    $('.star').click(function(){
 	    	alert("장바구니에 추가하셨습니다.");
-	    	$.ajax({
-	               url : "xx.mento?cmd=insert-word",
-	               data : {"uId" : $("#input_uId").val(), "pNum" : $("#input_pNum").val(), "wContent" : $("#wContent").val()},
-	               dataType : "text",
-	               contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-	               success : function(data){
-	                  var obj = {};
-	                  obj=eval("("+data+")");
+// 	    	$.ajax({
+// 	               url : "xx.mento?cmd=insert-word",
+// 	               data : {"uId" : $("#input_uId").val(), "pNum" : $("#input_pNum").val(), "wContent" : $("#wContent").val()},
+// 	               dataType : "text",
+// 	               contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+// 	               success : function(data){
+// 	                  var obj = {};
+// 	                  obj=eval("("+data+")");
 
-	               },
-	               error : function(request,status, error){
-	                   alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-	                }
-	            });
+// 	               },
+// 	               error : function(request,status, error){
+// 	                   alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+// 	                }
+// 	        });
 	    });
 	    
 

@@ -25,8 +25,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<insert id="insertMentoring" parameterType="project">
 		INSERT INTO projectmento
-		VALUES(seq_project_num.nextval,#{uId}, 'mentoring', #{pTitle}, #{pPlace}, 1000, 5, 10, #{pContent},
-		#{pTime}, '2017/05/10', 'N', #{pIntroduce}, #{pCategory})
+		VALUES(seq_project_num.nextval,#{uId}, #{pDiv}, #{pTitle}, #{pPlace}, #{pCost}, #{pMinmem},#{pMaxmem}, #{pContent},
+		#{pTime}, to_char(sysdate,'YYYY/MM/DD'), 'N', #{pIntroduce}, #{pCategory})
 		
 		
 	</insert>
