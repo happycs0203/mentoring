@@ -11,7 +11,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
 <link rel="stylesheet" href="/mentoring/mentoring_jsp/mypage/css/mypage.css" />
 
 <link href="//code.jboxcdn.com/0.4.7/jBox.css" rel="stylesheet">
@@ -28,11 +27,7 @@
    <!-- Custom styles -->
    <link rel="stylesheet" href="/mentoring/mentoring_jsp/assets/css/styles.css">
    
-
-
- 
-   
-<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+   <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="/mentoring/mentoring_jsp/mypage/js/bootstrap.js"></script>
 <script type="text/javascript" src="/mentoring/mentoring_jsp/mypage/js/mypage.js"></script>
 <script src="/mentoring/mentoring_jsp/mypage/js/jBox.js"></script>

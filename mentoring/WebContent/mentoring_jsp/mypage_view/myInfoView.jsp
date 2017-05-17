@@ -22,7 +22,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="/mentoring/mentoring_jsp/mypage/css/mypage.css" />
-<link rel="stylesheet" href="/mentoring/mentoring_jsp/mypage/css/1-col-portfolio.css" />
+<link href="//code.jboxcdn.com/0.4.7/jBox.css" rel="stylesheet">
+<link rel="shortcut icon" href="/mentoring/mentoring_jsp/assets/images/gt_favicon.png">
+   
+   <link href="//code.jboxcdn.com/0.4.7/jBox.css" rel="stylesheet">
+
+   <!-- Bootstrap -->
+   <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+   <!-- Icon font -->
+   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+   <!-- Fonts -->
+   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+   <!-- Custom styles -->
+   <link rel="stylesheet" href="/mentoring/mentoring_jsp/assets/css/styles.css">
+   
+
 <style>
    th{
       font-family: 'Nanum Pen Script', serif;
@@ -40,28 +54,38 @@
    
    .btn_modify{
     width: 100px;
-	height: 35px;
-	color: white;
-	font-size: 15px;
-	font-family: 'Raleway', sans-serif;
-	background-color: #ff3333;
-	margin-bottom: 11px;
+   height: 35px;
+   color: white;
+   font-size: 15px;
+   font-family: 'Raleway', sans-serif;
+   background-color: #ff3333;
+   margin-bottom: 11px;
    }
    
     .btn_cancel{
     width: 100px;
-	height: 35px;
-	color: white;
-	font-size: 15px;
-	font-family: 'Raleway', sans-serif;
-	background-color: #3399ff;
-	margin-bottom: 11px;
+   height: 35px;
+   color: white;
+   font-size: 15px;
+   font-family: 'Raleway', sans-serif;
+   background-color: #3399ff;
+   margin-bottom: 11px;
    }
 
 </style>
+
+
+
 <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="/mentoring/mentoring_jsp/mypage/js/bootstrap.js"></script>
 <script type="text/javascript" src="/mentoring/mentoring_jsp/mypage/js/mypage.js"></script>
+<script src="/mentoring/mentoring_jsp/mypage/js/jBox.js"></script>
+
+  <script src="//code.jboxcdn.com/0.4.7/jBox.min.js"></script>
+
+   <script type="text/javascript" src="/mentoring/mentoring_jsp/assets/js/jquery-ui-1.10.4.custom.min.js"></script> <!-- UI 플러그인 연동 -->
+   <script type="text/javascript" src="/mentoring/mentoring_jsp/assets/js/jquery.cookie.js"></script>  <!-- 쿠키 플러그인 연동 -->
+   <script type="text/javascript" src='/mentoring/mentoring_jsp/assets/js/script.js'></script>
 <script type="text/javascript">
  $(function(){
 	 $('#btn_modify').click(function(){
@@ -74,6 +98,9 @@
 <title></title>
 </head>
 <body>
+<header id="header">
+	<jsp:include page="/mentoring_jsp/mentoringHeader.jsp"/>
+</header>
 
 <!-- body부분 -->
 
@@ -126,7 +153,7 @@
           <!-- 여기 필요한 부분만 붙여 넣으면됨 --> 
  <form name='frm' class='frm2' method='post' action="/mentoring/mentoring.mento?cmd=go-modifymyinfo">	           
             <div class="col-md-5">
-                <h3 style="font-size:40px; font-family:bold; "><%= user.getuName()%> 님 정보</h3>
+                <h3 style="font-size:40px; font-color:black; font-family:bold; "><%= user.getuName()%> 님 정보</h3>
 
  
    <table width="1000" height="400" style="padding:5px 0 5px 0;">

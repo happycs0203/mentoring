@@ -135,7 +135,7 @@
          <th> 이 름</th><td><input type="text" name="uName" value="<%= user.getuName()  %>"></td> </tr>
 
        <tr><th>아이디</th>
-         <td><input type="text" name="uId" value="<%= user.getuId() %>"></td>
+         <td><input type="text" name="uId" value="<%= user.getuId() %>" disabled></td>
        </tr>
        
        <tr><th>비밀번호</th>
@@ -157,7 +157,7 @@
  
            <tr>
              <td colspan="2" align="center">
-               
+               <input type="hidden" name="uId" value="<%= user.getuId() %>" >
                <input type="button" id="bmodify" class='btn_modify' value="수정">
 
             </td>
