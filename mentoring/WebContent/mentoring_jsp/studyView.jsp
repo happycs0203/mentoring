@@ -87,6 +87,21 @@ tr:nth-child(even) {
 	
 <script>
 	$(function() {
+		
+		// 신고 팝업 창 띄우기
+		new jBox('Modal', {	
+		    attach: '#reporting',
+		    title: "신고하기",
+		    ajax: {
+		    	url:'/mentoring/mentoring_jsp/reportingForm.jsp',
+		    	data:{pNum : $("#pnum").val()},
+		    	reload: false
+		    }
+		    
+		});
+		
+		
+		
 		$("#QAbtn").click(function(){
 			if($("#input_uId").value == ""){
 				alert("로그인 이후 이용가능합니다.");
@@ -150,10 +165,9 @@ tr:nth-child(even) {
 				alt="여기에 포스터 넣어주기">
 		</p>
 
-		<input type="button" class="btn_login" value="신청" id="assignMentoring"
-			style="position: relative;"> <input type="hidden" id="pnum"
-			value="<%=p.getpNum()%>"> <input type="button"
-			class="btn_login" value="신고하기" id="reporting">
+		<input type="button" class="btn_login" value="신청" id="assignMentoring"style="position: relative;">
+		<input type="hidden" id="pnum" value="<%=p.getpNum()%>"> 
+		<input type="button"class="btn_login" value="신고하기" id="reporting">
 
 		<div class="small-title">멘토이름</div>
 		<div class='navbar navbar-default'>
