@@ -51,7 +51,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    ON p.p_num = i.p_num
    <where>
       <if test="pDiv != null ">
-          p_div = #{pDiv}
+          p_div = #{pDiv} AND p_confirm = 'Y'
       </if>
    </where>
 </select>
