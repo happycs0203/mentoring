@@ -51,7 +51,8 @@
 	
 	<div class="container">
 		<div>
-			<form role="form" method="post">
+			 <form role="form" id="frm" method="post" action="/mentoring/mentoring.mento?cmd=payment-form2">
+            <input type="hidden" name="pNum" value="<%=p.getpNum()%>"/>
 				<div>
 					<label class="control-label">강의명</label> 
 					<div type="text" class="form-control" placeholder="Mentoring Name" size="2" autocomplete='off'>

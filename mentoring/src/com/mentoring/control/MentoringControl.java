@@ -81,7 +81,7 @@ public class MentoringControl extends HttpServlet {
 
 	    commandMap.put("modify-info", new CommandModifyInfo("mypage_view/myInfoView.jsp"));
 	    commandMap.put("user-list", new CommandUserList("mypage_view/userList.jsp"));
-	    commandMap.put("payment-form2", new CommandPayment("mainPage.jsp"));
+	    commandMap.put("payment-form2", new CommandPayment("mypage_view/confirmProject.jsp"));
 	    
 	    
 	    commandMap.put("study-view", new CommandMentoringView("studyView.jsp") );

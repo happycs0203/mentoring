@@ -9,8 +9,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 import com.mentoring.model.Apply;
+import com.mentoring.model.Applylist;
 import com.mentoring.service.MentoringService;
 import com.mentoring.session.MentoringRepository3;
 	
@@ -23,15 +25,16 @@ public class CommandPayment implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
 		try {
 			//결제 정보 가져오기
-			Apply apply = new Apply();
-			apply.setaNum(Integer.parseInt(request.getParameter("aNum")));
-			apply.setpNum(Integer.parseInt(request.getParameter("pNum")));
-			apply.setuId(request.getParameter("uId"));
-			apply.setaConfirm(request.getParameter("aConfirm"));
-		
-			System.out.println("CommandPayment.java"+apply);
-			//Repository 호출 
-			MentoringService.getInstance().updateApply(apply);
+			 HttpSession session = request.getSession();
+	         String uId = (String)session.getAttribute("uId");
+	         Apply apply = new Apply();
+	         apply.setpNum(Integer.parseInt(request.getParameter("pNum")));
+	         apply.setuId(uId);
+	         //Repository 호출 
+	         MentoringService.getInstance().insertApply(apply);
+	         
+	         List<Applylist> applyList = MentoringService.getInstance().showMyApplyPro(uId);
+			 request.setAttribute("applyList", applyList);
 			
 		}catch (Exception ex) {
 		 throw new CommandException("CommandPayment.java" + ex.toString());

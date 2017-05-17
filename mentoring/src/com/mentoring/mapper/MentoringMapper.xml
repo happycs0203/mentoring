@@ -23,7 +23,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<result column="p_title"	property="pTitle"/>
 	<result column="p_content"	property="pContent"/>
 	<result column="i_num"	property="iNum"/>
-	<result column="i_path"	property="iPaths"/>
+	<result column="i_path"	property="iPath"/>
 </resultMap>
 
 <!-- # : PreparedStateMent형식, $ : Statement형식 -->
