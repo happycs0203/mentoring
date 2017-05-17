@@ -142,34 +142,34 @@
 		
 			
 			<div class="small-title">멘토이름</div>
-			<div class='navbar navbar-default'>
+			<div class='navbar navbar-default1'>
 			<%=p.getuId()%>
 			</div>
 			
 			<div class="small-title">내용</div>
-			<div class='navbar navbar-default'>
+			<div class='navbar navbar-default1'>
 			<%=p.getpContent()%>
 			</div>
 			
 			<div class="small-title">일정</div>
-			<div class='navbar navbar-default'>
+			<div class='navbar navbar-default1'>
 			<%=p.getpTime()%>
 			</div>
 			
 			<div class="small-title">비용</div>
-			<div class='navbar navbar-default'>
+			<div class='navbar navbar-default1'>
 			<%=p.getpCost()%>
 			</div>
 			
 			<div class="small-title">최소인원 / 최대인원</div>
-			<div class='navbar navbar-default'>
+			<div class='navbar navbar-default1'>
 			<%=p.getpMinmem()%> / <%=p.getpMaxmem()%>
 			</div>
 			
 			<div class="small-title">위치</div>	<br>
 			<%=p.getpPlace()%>
 			<input type="hidden" id="placeName" value="<%=p.getpPlace()%>">
-			<div class='navbar navbar-default'>
+			<div class='navbar navbar-default1'>
 				<div id="map" style="width: 100%; height: 300px;"></div>
 			</div>
            

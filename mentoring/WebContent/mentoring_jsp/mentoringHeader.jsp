@@ -8,21 +8,7 @@
 		uId = (String) uIdObj;
 	}
 %>
-<div class="login-join">
-            
-            <ul class="login-join form">
-            <%if ( uId.equals("")){ %>
-               <li class="active"><a href="#" id='login'>로그인</a></li>
-               <li class="active"><a href="/mentoring/mentoring.mento?cmd=register-view" >회원가입</a></li>
-            <%} else{ %>
-               <li class="active"><a href="/mentoring/mentoring.mento?cmd=logout" id='logout'>로그아웃</a></li>
-               <li class="active"><a href="/mentoring/mentoring.mento?cmd=myinfo-view" id='mypage'>마이페이지</a></li>
-               
-            <% }%>
-               
-            </ul>
-         
-         </div><!--/.nav-collapse -->
+
          
    <div id="head" class="parallax" parallax-speed="1">
 
@@ -43,11 +29,24 @@
          <div class="navbar-collapse collapse">
             
             <ul class="nav navbar-nav">
-               <li class="active"><a href="xxx.mento?cmd=mentoring-noticelist">Notice</a></li>
+               <li class="active"><a style="margin-left: 600px;" href="xxx.mento?cmd=mentoring-noticelist">Notice</a></li>
                <li class="active"><a href="/mentoring/mentoring.mento?cmd=mentoring-list">Mentoring</a></li>
                <li class="active"><a href="/mentoring/mentoring.mento?cmd=study-list">Study</a></li>
                <li class="active" ><a href="/mentoring/mentoring.mento?cmd=calendar-view">Calendar</a></li>
+               
+            <%if ( uId.equals("")){ %>
+               <li class="active"><a style="margin-left: 450px;" href="#" id='login'>Login</a></li>
+               <li class="active"><a href="/mentoring/mentoring.mento?cmd=register-view" >Sign</a></li>
+            <%} else{ %>
+               <li class="active"><a style="margin-left: 450px;" href="/mentoring/mentoring.mento?cmd=logout" id='logout'>Logout</a></li>
+               <li class="active"><a href="/mentoring/mentoring.mento?cmd=myinfo-view" id='mypage'>Mypage</a></li>
+               
+            <% }%>
+               
+        
+       
             </ul>
+            
          
          </div><!--/.nav-collapse -->         
       </div>   

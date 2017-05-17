@@ -18,7 +18,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AdminNoticeList</title>
+<title>NoticeList</title>
+
+ <link rel="shortcut icon" href="/mentoring/mentoring_jsp/assets/images/gt_favicon.png">
+   
+   <link href="//code.jboxcdn.com/0.4.7/jBox.css" rel="stylesheet">
 
 <!-- Bootstrap -->
    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
@@ -39,6 +43,13 @@
    	tr:nth-child(even){background-color:#f2f2f2}
    </style>
    
+   <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+   <script src="//code.jboxcdn.com/0.4.7/jBox.min.js"></script>
+
+   <script type="text/javascript" src="/mentoring/mentoring_jsp/assets/js/jquery-ui-1.10.4.custom.min.js"></script> <!-- UI 플러그인 연동 -->
+   <script type="text/javascript" src="/mentoring/mentoring_jsp/assets/js/jquery.cookie.js"></script>  <!-- 쿠키 플러그인 연동 -->
+   <script type="text/javascript" src='/mentoring/mentoring_jsp/assets/js/script.js'></script>
+  
    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 

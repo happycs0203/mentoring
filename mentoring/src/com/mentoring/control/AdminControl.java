@@ -56,8 +56,8 @@ public class AdminControl extends HttpServlet {
 		commandMap.put("modify-notice",	new CommandModifyNotice("adminPreview.jsp") );
 		commandMap.put("delete-notice",	new CommandDeleteNotice("deleteTemp.jsp") );
 		commandMap.put("adminmentoring-view", new CommandMentoringView2("adminMentoringView.jsp"));
-		commandMap.put("confirm-update", new CommandConfirmUpdate("ConfirmReqeustList.jsp"));
-		commandMap.put("confirm-cancel", new CommandNull("ConfirmReqeustList.jsp"));
+		commandMap.put("confirm-update", new CommandConfirmUpdate("updateconfirmlistTemp.jsp"));
+		commandMap.put("confirm-cancel", new CommandNull("ConfirmRequestList.jsp"));
 		commandMap.put("show-reportinglist",	new CommandReportingList("reportingList.jsp") );
 		commandMap.put("delete-claim",	new CommandDeleteClaim("deleteTemp2.jsp") );
 	}
@@ -100,6 +100,10 @@ public class AdminControl extends HttpServlet {
 			nextPage = error;
 			System.out.println("admin 오류 : " + e.getMessage() );
 		}
+		if(nextPage != null){
+			RequestDispatcher reqDp = getServletContext().getRequestDispatcher( jspDir + nextPage );
+			reqDp.forward( request, response );
+			}
 
 		RequestDispatcher reqDp = getServletContext().getRequestDispatcher( jspDir + nextPage );
 		reqDp.forward( request, response );
