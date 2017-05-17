@@ -82,7 +82,7 @@ function readURL(input) {
 </header>
 
 <div class="container">
-    <form class="form-horizontal" role="form" action="/mentoring/mentoring.mento?cmd=study-inputdo" method="post" enctype="multipart/form-data">
+    <form class="form-horizontal" role="form" action="mentoring.mento?cmd=study-inputdo" method="post" enctype="multipart/form-data">
       <input type="hidden" name="uId" value="<%=uIdObj%>"/>
       <img class="ccformfield" id="UploadedImg" src="http://arweb.sdsu.edu/es/virtual/images/placeholder.png" width="960"  height="450" />
       </br></br>
