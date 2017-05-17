@@ -100,11 +100,7 @@ public class AdminControl extends HttpServlet {
 			nextPage = error;
 			System.out.println("admin 오류 : " + e.getMessage() );
 		}
-		if(nextPage != null){
-			RequestDispatcher reqDp = getServletContext().getRequestDispatcher( jspDir + nextPage );
-			reqDp.forward( request, response );
-			}
-
+			
 		RequestDispatcher reqDp = getServletContext().getRequestDispatcher( jspDir + nextPage );
 		reqDp.forward( request, response );
 		
