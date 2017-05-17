@@ -13,7 +13,7 @@
    <div id="head" class="parallax" parallax-speed="1">
 
       <h1 id="logo" class="text-center">
-         <span class="title">Minju's College</span>
+         <span class="title"><a style="color:white;" href="/mentoring/mentoring.mento?cmd=main-page">Minju's College</a></span>
          <span class="tagline">시간과 공간을 초월한 학교<br>
             </span>
       </h1>

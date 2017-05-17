@@ -31,9 +31,13 @@
    <!-- Custom styles -->
    <link rel="stylesheet" href="/mentoring/mentoring_jsp/assets/css/styles.css">
    <style>
-     .top_board {
-          background-color: #64CD3C; 
-     }
+     table{
+   	margin-left : 10%;
+   	border-collapse : collapse;
+   	width:80%;}
+   	th,td{padding:8px;}
+   	tr:nth-child(even){background-color:#f2f2f2
+   	}
      
      .form button{
         background-color: #4CAF50;
@@ -62,7 +66,7 @@
 	<a style="font-size:40px; font-family:bold; ">멘토링 개설 요청</a>
 	<marquee behavior="alternate" scrolldelay="100" direction="right">
 	    멘토링 개설 요청 페이지입니다.</marquee>
-	<table class="bbs"  width="1000" height="150" border="1" align="center">
+	<table class="bbs" >
 	
 		<colgroup>
 			<col width="50" align="center"/>
@@ -77,10 +81,10 @@
 	       <% } else { %>
 	       
 			<tr>
-				<th class='top_board'>번 호</th>
-				<th class='top_board'>제 목</th>
-				<th class='top_board'>작성자</th>
-				<th class='top_board'>멘토링 등록일</th>
+				<td >번 호</td>
+				<td >제 목</td>
+				<td >작성자</td>
+				<td >멘토링 등록일</td>
 			</tr>
 		</thead>
 		<tbody>
