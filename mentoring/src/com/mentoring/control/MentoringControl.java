@@ -13,6 +13,7 @@ import com.mentoring.command.Command;
 import com.mentoring.command.CommandDateInput;
 import com.mentoring.command.CommandException;
 import com.mentoring.command.CommandInput;
+import com.mentoring.command.CommandInsertCart;
 import com.mentoring.command.CommandInsertWord;
 import com.mentoring.command.CommandLogin;
 import com.mentoring.command.CommandLogout;
@@ -86,6 +87,7 @@ public class MentoringControl extends HttpServlet {
 	    commandMap.put("study-view", new CommandMentoringView("studyView.jsp") );
 		commandMap.put("report", new CommandReporting("reportingTemp.jsp") );
 		commandMap.put("insert-word", new CommandInsertWord("studyView.jsp"));
+		commandMap.put("insert-cart", new CommandInsertCart("mentoringList.jsp"));
 	}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

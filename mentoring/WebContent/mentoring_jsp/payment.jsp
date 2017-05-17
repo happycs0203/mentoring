@@ -14,17 +14,17 @@
 
 <!-- Bootstrap -->
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
-<link rel="stylesheet" href="/MentoringPractice/mentoring_jsp/assets/css/payment.css">
+<link rel="stylesheet" href="/mentoring/mentoring_jsp/assets/css/payment.css">
 
 <!-- JQuery -->
-<script type="text/javascript" src="assets/js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="/mentoring/mentoring_jsp/assets/js/jquery-3.2.1.js"></script>
 <!-- payment.js -->
-<script type="text/javascript" src="assets/js/payment.js"></script>
+<script type="text/javascript" src="/mentoring/mentoring_jsp/assets/js/payment.js"></script>
 
 <!-- magnific.js -->
-<script type="text/javascript" src="assets/js/magnific.js"></script>
+<script type="text/javascript" src="/mentoring/mentoring_jsp/assets/js/magnific.js"></script>
 <!-- magnific.css -->
-<link rel="stylesheet" href="assets/css/magnific.css">
+<link rel="stylesheet" href="/mentoring/mentoring_jsp/assets/css/magnific.css">
 
 </head>
 <body>

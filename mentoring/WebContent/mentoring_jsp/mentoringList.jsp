@@ -88,14 +88,15 @@
 	    });
 	    
 	    $('.star').click(function(){
-	    	alert("장바구니에 추가하셨습니다.");
+	    	
 
 	    	var src= $(this).attr('src');
 	    	if(src === '/mentoring/mentoring_jsp/assets/images/off.PNG'){
+	    		alert("찜목록에 추가하셨습니다.");
 	    		$(this).attr('src', src.replace("off", "on"));
 		    	$.ajax({
-		               url : "xx.mento?cmd=insert-word",
-		               data : {"uId" : $("#input_uId").val(), "pNum" : $("#input_pNum").val(), "wContent" : $("#wContent").val()},
+		               url : "xx.mento?cmd=insert-cart",
+		               data : {"pNum" : $("#pNum").val(), "pCategory" : $("#pCategory").val()},
 		               dataType : "text",
 		               contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 		               success : function(data){
@@ -105,9 +106,10 @@
 		               },
 		               error : function(request,status, error){
 		                   alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-		                }
+		               }
 		        });
 	    	}else{
+	    		alert("찜목록에서 삭제하셨습니다.");
 	    		$(this).attr('src', src.replace("on", "off"));
 	    	}
 	    });

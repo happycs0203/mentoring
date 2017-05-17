@@ -30,21 +30,14 @@ public class CommandInsertWord implements Command {
 		try {
 
 			//Q&A등록한것 가져오기
-			int pNum = Integer.parseInt(request.getParameter("pNum"));
-			String uId = request.getParameter("uId");
-			String wContent = request.getParameter("wContent");
-			
-			Word word = new Word();
-			word.setpNum(pNum);
-			word.setuId(uId);
-			word.setwContent(wContent);
-			
-			Word w = MentoringService.getInstance().insertWord(word);
+
+			String pTitle = request.getParameter("pTitle");
+			String pCategory = request.getParameter("pCategory");
+
 			String result=null;
 			result = "{";
-			result += "wContent : '" + w.getwContent() +"',";
-			result += "wDate : '" + w.getwDate() +"',";
-			result += "uId : '" + w.getuId()+"'";
+			result += "pTitle : '" + pTitle +"',";
+			result += "pCategory : '" + pCategory +"',";
 			result += "}";
 			
 			response.setContentType("text/html;charset=UTF-8");
