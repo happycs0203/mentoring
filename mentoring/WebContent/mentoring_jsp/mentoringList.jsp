@@ -89,20 +89,27 @@
 	    
 	    $('.star').click(function(){
 	    	alert("장바구니에 추가하셨습니다.");
-// 	    	$.ajax({
-// 	               url : "xx.mento?cmd=insert-word",
-// 	               data : {"uId" : $("#input_uId").val(), "pNum" : $("#input_pNum").val(), "wContent" : $("#wContent").val()},
-// 	               dataType : "text",
-// 	               contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-// 	               success : function(data){
-// 	                  var obj = {};
-// 	                  obj=eval("("+data+")");
 
-// 	               },
-// 	               error : function(request,status, error){
-// 	                   alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-// 	                }
-// 	        });
+	    	var src= $(this).attr('src');
+	    	if(src === '/mentoring/mentoring_jsp/assets/images/off.PNG'){
+	    		$(this).attr('src', src.replace("off", "on"));
+		    	$.ajax({
+		               url : "xx.mento?cmd=insert-word",
+		               data : {"uId" : $("#input_uId").val(), "pNum" : $("#input_pNum").val(), "wContent" : $("#wContent").val()},
+		               dataType : "text",
+		               contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+		               success : function(data){
+		                  var obj = {};
+		                  obj=eval("("+data+")");
+
+		               },
+		               error : function(request,status, error){
+		                   alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		                }
+		        });
+	    	}else{
+	    		$(this).attr('src', src.replace("on", "off"));
+	    	}
 	    });
 	    
 
@@ -152,6 +159,7 @@
 						<!-- portfolio items start -->
 						<div class="isotope-container row grid-space-20" >
 							<%for(Prolist p: pList) {%>
+							
 							<div class="col-sm-6 col-md-3 isotope-item <%=p.getpCategory()%> list">
 								<div class="image-box">
 									<div class="overlay-container">
@@ -165,7 +173,7 @@
 									<input type="hidden" name="pTitle" value="<%=p.getpTitle()%>"/>
 									<a class="btn btn-default btn-block" href="/mentoring/mentoring.mento?cmd=mentoring-view&pNum=<%=p.getpNum()%>&iNum=<%=p.getiNum()%>"><%=p.getpTitle()%></a>
 									<div align="right">
-										<img  src="/mentoring/mentoring_jsp/assets/images/on.PNG" class="star"/>
+										<img  src="/mentoring/mentoring_jsp/assets/images/off.PNG" class="star"/>
 									</div>
 									
 								</div>
